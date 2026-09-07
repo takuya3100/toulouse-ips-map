@@ -16,23 +16,42 @@ OUT = Path(__file__).resolve().parents[1] / "data" / "schools.json"
 
 
 def get(dataset, where):
-    params = urllib.parse.urlencode({
-        "where": where,
-        "limit": 10000
-    })
+   all_results = []
+    offset = 0
+    limit = 100
 
-    url = BASE + dataset + "/records?" + params
-    print(f"GET {url}")
+    while True:
+        params = urllib.parse.urlencode({
+            "where": where,
+            "limit": limit,
+            "offset": offset
+        })
 
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "toulouse-ips-map/1.0"}
-    )
+        url = BASE + dataset + "/records?" + params
+        print(f"GET {url}")
 
-    with urllib.request.urlopen(req, timeout=60) as r:
-        payload = json.load(r)
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "toulouse-ips-map/1.0"}
+        )
 
-    return payload.get("results", [])
+        with urllib.request.urlopen(req, timeout=60) as r:
+            payload = json.load(r)
+
+        results = payload.get("results", [])
+        all_results.extend(results)
+
+        print(
+            f"  received {len(results)} records "
+            f"(total so far: {len(all_results)})"
+        )
+
+        if len(results) < limit:
+            break
+
+        offset += limit
+
+    return all_results
 
 
 def first(row, *names):
