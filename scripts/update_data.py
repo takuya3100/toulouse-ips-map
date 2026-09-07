@@ -1,61 +1,417 @@
-import json, urllib.parse, urllib.request
+import json
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
-BASE='https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/'
-DATASETS={
- 'directory':'fr-en-annuaire-education',
- 'elementaire':'fr-en-ips-ecoles-ap2022',
- 'college':'fr-en-ips-colleges-ap2023',
- 'lycee':'fr-en-ips-lycees-ap2023',
+BASE = "https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/"
+
+DATASETS = {
+    "directory": "fr-en-annuaire-education",
+    "elementaire": "fr-en-ips-ecoles-ap2022",
+    "college": "fr-en-ips-colleges-ap2023",
+    "lycee": "fr-en-ips-lycees-ap2023",
 }
-OUT=Path(__file__).resolve().parents[1]/'data'/'schools.json'
 
-def get(ds, where):
-    params=urllib.parse.urlencode({'where':where,'limit':10000})
-    with urllib.request.urlopen(BASE+ds+'/records?'+params, timeout=60) as r:
-        return json.load(r).get('results',[])
+OUT = Path(__file__).resolve().parents[1] / "data" / "schools.json"
 
-def val(row,*names):
-    for n in names:
-        if n in row and row[n] not in (None,''): return row[n]
+
+def get(dataset, where):
+    params = urllib.parse.urlencode({
+        "where": where,
+        "limit": 10000
+    })
+
+    url = BASE + dataset + "/records?" + params
+    print(f"GET {url}")
+
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "toulouse-ips-map/1.0"}
+    )
+
+    with urllib.request.urlopen(req, timeout=60) as r:
+        payload = json.load(r)
+
+    return payload.get("results", [])
+
+
+def first(row, *names):
+    for name in names:
+        if name in row and row[name] not in (None, ""):
+            return row[name]
     return None
 
-def year(v):
-    if v is None:return ''
-    return str(v).split('-')[0]
+
+def truthy(value):
+    if isinstance(value, bool):
+        return value
+
+    return str(value or "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "oui",
+        "y"
+    }
+
+
+def to_float(value):
+    if value in (None, ""):
+        return None
+
+    try:
+        return float(str(value).replace(",", "."))
+    except (TypeError, ValueError):
+        return None
+
+
+def school_year(value):
+    if value in (None, ""):
+        return ""
+
+    text = str(value).strip()
+
+    # 2025-2026 → 2025
+    if len(text) >= 4 and text[:4].isdigit():
+        return text[:4]
+
+    return text
+
+
+def normalize_sector(value):
+    text = str(value or "").strip().lower()
+
+    if "priv" in text:
+        return "Privé"
+
+    return "Public"
+
+
+def infer_type(directory_row):
+    # Maternelle uniquement
+    if (
+        truthy(directory_row.get("Ecole_maternelle"))
+        and not truthy(directory_row.get("Ecole_elementaire"))
+    ):
+        return "maternelle"
+
+    # École élémentaire
+    if truthy(directory_row.get("Ecole_elementaire")):
+        return "elementaire"
+
+    # Collège
+    type_etab = str(
+        directory_row.get("Type_etablissement") or ""
+    ).strip().lower()
+
+    if "coll" in type_etab:
+        return "college"
+
+    # Lycée
+    if any(
+        truthy(directory_row.get(key))
+        for key in (
+            "Voie_generale",
+            "Voie_technologique",
+            "Voie_professionnelle"
+        )
+    ):
+        return "lycee"
+
+    # Fallback
+    nature = str(
+        directory_row.get("libelle_nature") or ""
+    ).lower()
+
+    if "collège" in nature or "college" in nature:
+        return "college"
+
+    if "lycée" in nature or "lycee" in nature:
+        return "lycee"
+
+    if "maternelle" in nature:
+        return "maternelle"
+
+    if "élémentaire" in nature or "elementaire" in nature:
+        return "elementaire"
+
+    return None
+
+
+def get_ips(row, kind):
+    if kind == "elementaire":
+        return to_float(
+            first(row, "ips")
+        )
+
+    if kind == "college":
+        return to_float(
+            first(
+                row,
+                "ips",
+                "ips_etablissement"
+            )
+        )
+
+    if kind == "lycee":
+        return to_float(
+            first(
+                row,
+                "ips_de_l_etablissement",
+                "ips_etab",
+                "ips_ensemble_gt_pro"
+            )
+        )
+
+    return None
+
 
 def main():
-    directory=get(DATASETS['directory'],'nom_commune="TOULOUSE"')
-    by_uai={str(val(r,'UAI','uai')):r for r in directory if val(r,'UAI','uai')}
-    out={}
-    for kind,ds in [('elementaire',DATASETS['elementaire']),('college',DATASETS['college']),('lycee',DATASETS['lycee'])]:
-        rows=get(ds,'nom_de_la_commune="TOULOUSE"')
-        for r in rows:
-            u=str(val(r,'uai','UAI') or '')
-            if not u: continue
-            d=by_uai.get(u,{})
-            lat=val(d,'latitude','Latitude'); lon=val(d,'longitude','Longitude')
-            if lat is None or lon is None: continue
-            y=year(val(r,'rentree_scolaire','rentree scolaire'))
-            ips=val(r,'ips','ips_de_l_etablissement','IPS_de_l_etablissement')
-            try: ips=float(ips) if ips is not None else None
-            except: ips=None
-            out[(u,y,kind)]={
-              'uai':u,'name':val(r,'nom_de_l_etablissement','nom_de_l_etablissment','Nom_etablissement') or val(d,'Nom_etablissement') or '',
-              'type':kind,'sector':val(r,'secteur','Secteur') or val(d,'Code_type_etablissement') or 'Public',
-              'ips':ips,'year':y,'lat':float(lat),'lon':float(lon)
-            }
-    # Maternelles: directory entries whose nature/type contains maternelle; no IPS.
-    for u,d in by_uai.items():
-        nature=' '.join(str(val(d,k) or '') for k in ['Libelle_nature','libelle_nature','type_etablissement','Type_etablissement']).lower()
-        name=str(val(d,'Nom_etablissement','nom_etablissement') or '')
-        if 'maternelle' not in nature and 'maternelle' not in name.lower(): continue
-        lat=val(d,'latitude','Latitude');lon=val(d,'longitude','Longitude')
-        if lat is None or lon is None:continue
-        out[(u,'directory','maternelle')]={'uai':u,'name':name,'type':'maternelle','sector':'Privé' if 'priv' in str(val(d,'Code_type_contrat_prive','secteur') or '').lower() else 'Public','ips':None,'year':'directory','lat':float(lat),'lon':float(lon)}
-    rows=list(out.values())
-    rows.sort(key=lambda x:(x['type'],x['name'],x['year']))
-    OUT.write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
-    print(f'wrote {len(rows)} rows to {OUT}')
 
-if __name__=='__main__': main()
+    print("Fetching Toulouse school directory...")
+
+    # ★ ここが重要
+    # 公式データの項目名は nom_commune ではなく Nom_commune
+    directory_rows = get(
+        DATASETS["directory"],
+        'Nom_commune="TOULOUSE"'
+    )
+
+    print(
+        f"Directory records: {len(directory_rows)}"
+    )
+
+    # UAIをキーに学校情報を保存
+    directory = {}
+
+    for row in directory_rows:
+
+        uai = first(
+            row,
+            "Identifiant_de_l_etablissement",
+            "UAI",
+            "uai"
+        )
+
+        lat = to_float(
+            first(
+                row,
+                "latitude",
+                "Latitude"
+            )
+        )
+
+        lon = to_float(
+            first(
+                row,
+                "longitude",
+                "Longitude"
+            )
+        )
+
+        if not uai or lat is None or lon is None:
+            continue
+
+        directory[str(uai)] = {
+            "uai": str(uai),
+
+            "name": first(
+                row,
+                "Nom_etablissement",
+                "nom_etablissement"
+            ) or "",
+
+            "sector": normalize_sector(
+                first(
+                    row,
+                    "Statut_public_prive",
+                    "secteur",
+                    "Secteur"
+                )
+            ),
+
+            "type": infer_type(row),
+
+            "lat": lat,
+            "lon": lon
+        }
+
+    records = []
+
+    # IPSデータ
+    sources = [
+        (
+            "elementaire",
+            'nom_de_la_commune="TOULOUSE"'
+        ),
+        (
+            "college",
+            'nom_de_la_commune="TOULOUSE"'
+        ),
+        (
+            "lycee",
+            'nom_de_la_commune="TOULOUSE"'
+        )
+    ]
+
+    for kind, where in sources:
+
+        print(
+            f"Fetching {kind} IPS data..."
+        )
+
+        rows = get(
+            DATASETS[kind],
+            where
+        )
+
+        print(
+            f"{kind} IPS records: {len(rows)}"
+        )
+
+        for row in rows:
+
+            uai = first(
+                row,
+                "uai",
+                "UAI"
+            )
+
+            if not uai:
+                continue
+
+            uai = str(uai)
+
+            school = directory.get(uai)
+
+            if not school:
+                continue
+
+            ips = get_ips(
+                row,
+                kind
+            )
+
+            year = school_year(
+                first(
+                    row,
+                    "rentree_scolaire",
+                    "rentree scolaire",
+                    "annee"
+                )
+            )
+
+            if not year:
+                continue
+
+            name = first(
+                row,
+                "nom_de_l_etablissement",
+                "nom_de_l_etablissment",
+                "Nom_etablissement"
+            ) or school["name"]
+
+            sector = normalize_sector(
+                first(
+                    row,
+                    "secteur",
+                    "Secteur"
+                ) or school["sector"]
+            )
+
+            records.append({
+                "uai": uai,
+                "name": name,
+                "type": kind,
+                "sector": sector,
+                "ips": ips,
+                "year": year,
+                "lat": school["lat"],
+                "lon": school["lon"]
+            })
+
+    # Maternelle
+    # 公式IPSデータには含まれないためIPSはnull
+    for uai, school in directory.items():
+
+        if school["type"] != "maternelle":
+            continue
+
+        records.append({
+            "uai": uai,
+            "name": school["name"],
+            "type": "maternelle",
+            "sector": school["sector"],
+            "ips": None,
+            "year": "",
+            "lat": school["lat"],
+            "lon": school["lon"]
+        })
+
+    # 重複削除
+    unique = {}
+
+    for item in records:
+
+        key = (
+            item["uai"],
+            item["type"],
+            item["year"]
+        )
+
+        unique[key] = item
+
+    records = list(
+        unique.values()
+    )
+
+    # 並び順を安定させる
+    records.sort(
+        key=lambda x: (
+            x["type"],
+            x["name"],
+            x["year"],
+            x["uai"]
+        )
+    )
+
+    if not records:
+        raise RuntimeError(
+            "No Toulouse school records were produced. "
+            "Check the official API field names or dataset availability."
+        )
+
+    # JSONを書き出す
+    OUT.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    OUT.write_text(
+        json.dumps(
+            records,
+            ensure_ascii=False,
+            indent=2
+        ) + "\n",
+        encoding="utf-8"
+    )
+
+    print(
+        f"Wrote {len(records)} records to {OUT}"
+    )
+
+    print(
+        "Years:",
+        sorted(
+            {
+                r["year"]
+                for r in records
+                if r["year"]
+            },
+            reverse=True
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()
