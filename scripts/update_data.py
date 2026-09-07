@@ -16,7 +16,7 @@ OUT = Path(__file__).resolve().parents[1] / "data" / "schools.json"
 
 
 def get(dataset, where):
-   all_results = []
+    all_results = []
     offset = 0
     limit = 100
 
