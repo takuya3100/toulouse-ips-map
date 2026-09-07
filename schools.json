@@ -1,0 +1,7 @@
+[
+  {"uai":"SAMPLE-MAT-1","name":"École maternelle Exemple","type":"maternelle","sector":"Public","ips":null,"year":"2025","lat":43.6045,"lon":1.4442},
+  {"uai":"SAMPLE-ELEM-1","name":"École élémentaire Exemple","type":"elementaire","sector":"Public","ips":88,"year":"2025","lat":43.611,"lon":1.455},
+  {"uai":"SAMPLE-ELEM-2","name":"École élémentaire Exemple Privée","type":"elementaire","sector":"Privé","ips":128,"year":"2025","lat":43.598,"lon":1.432},
+  {"uai":"SAMPLE-COL-1","name":"Collège Exemple","type":"college","sector":"Public","ips":104,"year":"2025","lat":43.616,"lon":1.461},
+  {"uai":"SAMPLE-LYC-1","name":"Lycée Exemple","type":"lycee","sector":"Public","ips":119,"year":"2025","lat":43.590,"lon":1.449}
+]
