@@ -1,7 +1,6792 @@
 [
-  {"uai":"SAMPLE-MAT-1","name":"École maternelle Exemple","type":"maternelle","sector":"Public","ips":null,"year":"2025","lat":43.6045,"lon":1.4442},
-  {"uai":"SAMPLE-ELEM-1","name":"École élémentaire Exemple","type":"elementaire","sector":"Public","ips":88,"year":"2025","lat":43.611,"lon":1.455},
-  {"uai":"SAMPLE-ELEM-2","name":"École élémentaire Exemple Privée","type":"elementaire","sector":"Privé","ips":128,"year":"2025","lat":43.598,"lon":1.432},
-  {"uai":"SAMPLE-COL-1","name":"Collège Exemple","type":"college","sector":"Public","ips":104,"year":"2025","lat":43.616,"lon":1.461},
-  {"uai":"SAMPLE-LYC-1","name":"Lycée Exemple","type":"lycee","sector":"Public","ips":119,"year":"2025","lat":43.590,"lon":1.449}
+  {
+    "uai": "0311327Z",
+    "name": "COLLEGE ALPHONSE DE LAMARTINE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 102.4,
+    "year": "2023",
+    "lat": 43.59496720754326,
+    "lon": 1.4335994045576212
+  },
+  {
+    "uai": "0311327Z",
+    "name": "COLLEGE ALPHONSE DE LAMARTINE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 100.4,
+    "year": "2024",
+    "lat": 43.59496720754326,
+    "lon": 1.4335994045576212
+  },
+  {
+    "uai": "0311327Z",
+    "name": "COLLEGE ALPHONSE DE LAMARTINE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 105.0,
+    "year": "2025",
+    "lat": 43.59496720754326,
+    "lon": 1.4335994045576212
+  },
+  {
+    "uai": "0311332E",
+    "name": "COLLEGE ANATOLE FRANCE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 108.9,
+    "year": "2023",
+    "lat": 43.58604418851777,
+    "lon": 1.4623697483346583
+  },
+  {
+    "uai": "0311332E",
+    "name": "COLLEGE ANATOLE FRANCE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 106.0,
+    "year": "2024",
+    "lat": 43.58604418851777,
+    "lon": 1.4623697483346583
+  },
+  {
+    "uai": "0311332E",
+    "name": "COLLEGE ANATOLE FRANCE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 104.2,
+    "year": "2025",
+    "lat": 43.58604418851777,
+    "lon": 1.4623697483346583
+  },
+  {
+    "uai": "0310092G",
+    "name": "COLLEGE BELLEVUE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 119.6,
+    "year": "2023",
+    "lat": 43.55649269524502,
+    "lon": 1.457799474357203
+  },
+  {
+    "uai": "0310092G",
+    "name": "COLLEGE BELLEVUE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 121.6,
+    "year": "2024",
+    "lat": 43.55649269524502,
+    "lon": 1.457799474357203
+  },
+  {
+    "uai": "0310092G",
+    "name": "COLLEGE BELLEVUE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 121.5,
+    "year": "2025",
+    "lat": 43.55649269524502,
+    "lon": 1.457799474357203
+  },
+  {
+    "uai": "0310037X",
+    "name": "COLLEGE CLEMENCE ISAURE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 93.0,
+    "year": "2023",
+    "lat": 43.594157638970024,
+    "lon": 1.4308194234208624
+  },
+  {
+    "uai": "0310037X",
+    "name": "COLLEGE CLEMENCE ISAURE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 93.1,
+    "year": "2024",
+    "lat": 43.594157638970024,
+    "lon": 1.4308194234208624
+  },
+  {
+    "uai": "0310037X",
+    "name": "COLLEGE CLEMENCE ISAURE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 92.3,
+    "year": "2025",
+    "lat": 43.594157638970024,
+    "lon": 1.4308194234208624
+  },
+  {
+    "uai": "0311582B",
+    "name": "COLLEGE DES PONTS JUMEAUX",
+    "type": "college",
+    "sector": "Public",
+    "ips": 122.9,
+    "year": "2023",
+    "lat": 43.61240704760341,
+    "lon": 1.4149701048570695
+  },
+  {
+    "uai": "0311582B",
+    "name": "COLLEGE DES PONTS JUMEAUX",
+    "type": "college",
+    "sector": "Public",
+    "ips": 124.7,
+    "year": "2024",
+    "lat": 43.61240704760341,
+    "lon": 1.4149701048570695
+  },
+  {
+    "uai": "0311582B",
+    "name": "COLLEGE DES PONTS JUMEAUX",
+    "type": "college",
+    "sector": "Public",
+    "ips": 128.7,
+    "year": "2025",
+    "lat": 43.61240704760341,
+    "lon": 1.4149701048570695
+  },
+  {
+    "uai": "0311338L",
+    "name": "COLLEGE EMILE ZOLA",
+    "type": "college",
+    "sector": "Public",
+    "ips": 111.7,
+    "year": "2023",
+    "lat": 43.5884511989143,
+    "lon": 1.449119655906303
+  },
+  {
+    "uai": "0311338L",
+    "name": "COLLEGE EMILE ZOLA",
+    "type": "college",
+    "sector": "Public",
+    "ips": 113.2,
+    "year": "2024",
+    "lat": 43.5884511989143,
+    "lon": 1.449119655906303
+  },
+  {
+    "uai": "0311338L",
+    "name": "COLLEGE EMILE ZOLA",
+    "type": "college",
+    "sector": "Public",
+    "ips": 111.6,
+    "year": "2025",
+    "lat": 43.5884511989143,
+    "lon": 1.449119655906303
+  },
+  {
+    "uai": "0310086A",
+    "name": "COLLEGE GEORGE SAND",
+    "type": "college",
+    "sector": "Public",
+    "ips": 72.3,
+    "year": "2023",
+    "lat": 43.58810548390916,
+    "lon": 1.4087302727504742
+  },
+  {
+    "uai": "0310086A",
+    "name": "COLLEGE GEORGE SAND",
+    "type": "college",
+    "sector": "Public",
+    "ips": 71.9,
+    "year": "2024",
+    "lat": 43.58810548390916,
+    "lon": 1.4087302727504742
+  },
+  {
+    "uai": "0310086A",
+    "name": "COLLEGE GEORGE SAND",
+    "type": "college",
+    "sector": "Public",
+    "ips": 73.2,
+    "year": "2025",
+    "lat": 43.58810548390916,
+    "lon": 1.4087302727504742
+  },
+  {
+    "uai": "0313079D",
+    "name": "COLLEGE GUILHERMY TOULOUSE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 98.2,
+    "year": "2023",
+    "lat": 43.57305090649989,
+    "lon": 1.3692690226180708
+  },
+  {
+    "uai": "0311112R",
+    "name": "COLLEGE HENRI DE TOULOUSE LAUTREC",
+    "type": "college",
+    "sector": "Public",
+    "ips": 85.0,
+    "year": "2023",
+    "lat": 43.629648172251805,
+    "lon": 1.4407104510772466
+  },
+  {
+    "uai": "0311112R",
+    "name": "COLLEGE HENRI DE TOULOUSE LAUTREC",
+    "type": "college",
+    "sector": "Public",
+    "ips": 86.9,
+    "year": "2024",
+    "lat": 43.629648172251805,
+    "lon": 1.4407104510772466
+  },
+  {
+    "uai": "0311112R",
+    "name": "COLLEGE HENRI DE TOULOUSE LAUTREC",
+    "type": "college",
+    "sector": "Public",
+    "ips": 88.2,
+    "year": "2025",
+    "lat": 43.629648172251805,
+    "lon": 1.4407104510772466
+  },
+  {
+    "uai": "0311111P",
+    "name": "COLLEGE HUBERTINE AUCLERT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 90.6,
+    "year": "2023",
+    "lat": 43.63741158490173,
+    "lon": 1.4698694752369998
+  },
+  {
+    "uai": "0311111P",
+    "name": "COLLEGE HUBERTINE AUCLERT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 90.4,
+    "year": "2024",
+    "lat": 43.63741158490173,
+    "lon": 1.4698694752369998
+  },
+  {
+    "uai": "0311111P",
+    "name": "COLLEGE HUBERTINE AUCLERT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 91.0,
+    "year": "2025",
+    "lat": 43.63741158490173,
+    "lon": 1.4698694752369998
+  },
+  {
+    "uai": "0311333F",
+    "name": "COLLEGE JEAN MOULIN",
+    "type": "college",
+    "sector": "Public",
+    "ips": 106.6,
+    "year": "2023",
+    "lat": 43.573788312771015,
+    "lon": 1.455089487439257
+  },
+  {
+    "uai": "0311333F",
+    "name": "COLLEGE JEAN MOULIN",
+    "type": "college",
+    "sector": "Public",
+    "ips": 106.9,
+    "year": "2024",
+    "lat": 43.573788312771015,
+    "lon": 1.455089487439257
+  },
+  {
+    "uai": "0311333F",
+    "name": "COLLEGE JEAN MOULIN",
+    "type": "college",
+    "sector": "Public",
+    "ips": 105.8,
+    "year": "2025",
+    "lat": 43.573788312771015,
+    "lon": 1.455089487439257
+  },
+  {
+    "uai": "0310085Z",
+    "name": "COLLEGE JEAN PIERRE VERNANT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 108.2,
+    "year": "2023",
+    "lat": 43.59317295019101,
+    "lon": 1.4871404502311958
+  },
+  {
+    "uai": "0310085Z",
+    "name": "COLLEGE JEAN PIERRE VERNANT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 112.2,
+    "year": "2024",
+    "lat": 43.59317295019101,
+    "lon": 1.4871404502311958
+  },
+  {
+    "uai": "0310085Z",
+    "name": "COLLEGE JEAN PIERRE VERNANT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 113.8,
+    "year": "2025",
+    "lat": 43.59317295019101,
+    "lon": 1.4871404502311958
+  },
+  {
+    "uai": "0313080E",
+    "name": "COLLEGE JEANNE ET JEAN PHILLIPE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 86.9,
+    "year": "2024",
+    "lat": 43.56026604507529,
+    "lon": 1.393022137841312
+  },
+  {
+    "uai": "0313080E",
+    "name": "COLLEGE JEANNE ET JEAN PHILLIPE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 87.6,
+    "year": "2025",
+    "lat": 43.56026604507529,
+    "lon": 1.393022137841312
+  },
+  {
+    "uai": "0311264F",
+    "name": "COLLEGE JOLIMONT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 92.7,
+    "year": "2023",
+    "lat": 43.61682729385764,
+    "lon": 1.474239929505899
+  },
+  {
+    "uai": "0311264F",
+    "name": "COLLEGE JOLIMONT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 94.7,
+    "year": "2024",
+    "lat": 43.61682729385764,
+    "lon": 1.474239929505899
+  },
+  {
+    "uai": "0311264F",
+    "name": "COLLEGE JOLIMONT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 95.2,
+    "year": "2025",
+    "lat": 43.61682729385764,
+    "lon": 1.474239929505899
+  },
+  {
+    "uai": "0311328A",
+    "name": "COLLEGE LES CHALETS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 112.2,
+    "year": "2023",
+    "lat": 43.61523934074782,
+    "lon": 1.4387895339952173
+  },
+  {
+    "uai": "0311328A",
+    "name": "COLLEGE LES CHALETS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 110.7,
+    "year": "2024",
+    "lat": 43.61523934074782,
+    "lon": 1.4387895339952173
+  },
+  {
+    "uai": "0311328A",
+    "name": "COLLEGE LES CHALETS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 113.0,
+    "year": "2025",
+    "lat": 43.61523934074782,
+    "lon": 1.4387895339952173
+  },
+  {
+    "uai": "0310093H",
+    "name": "COLLEGE MARCELIN BERTHELOT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 101.4,
+    "year": "2023",
+    "lat": 43.58765098736702,
+    "lon": 1.443759389999192
+  },
+  {
+    "uai": "0310093H",
+    "name": "COLLEGE MARCELIN BERTHELOT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 98.3,
+    "year": "2024",
+    "lat": 43.58765098736702,
+    "lon": 1.443759389999192
+  },
+  {
+    "uai": "0310093H",
+    "name": "COLLEGE MARCELIN BERTHELOT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 96.0,
+    "year": "2025",
+    "lat": 43.58765098736702,
+    "lon": 1.443759389999192
+  },
+  {
+    "uai": "0311584D",
+    "name": "COLLEGE MARENGO",
+    "type": "college",
+    "sector": "Public",
+    "ips": 122.1,
+    "year": "2023",
+    "lat": 43.617168971112434,
+    "lon": 1.4596736284057998
+  },
+  {
+    "uai": "0311584D",
+    "name": "COLLEGE MARENGO",
+    "type": "college",
+    "sector": "Public",
+    "ips": 119.8,
+    "year": "2024",
+    "lat": 43.617168971112434,
+    "lon": 1.4596736284057998
+  },
+  {
+    "uai": "0311584D",
+    "name": "COLLEGE MARENGO",
+    "type": "college",
+    "sector": "Public",
+    "ips": 117.9,
+    "year": "2025",
+    "lat": 43.617168971112434,
+    "lon": 1.4596736284057998
+  },
+  {
+    "uai": "0311231V",
+    "name": "COLLEGE MAURICE BECANNE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 98.0,
+    "year": "2023",
+    "lat": 43.584375771338,
+    "lon": 1.4245700135225179
+  },
+  {
+    "uai": "0311231V",
+    "name": "COLLEGE MAURICE BECANNE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 95.4,
+    "year": "2024",
+    "lat": 43.584375771338,
+    "lon": 1.4245700135225179
+  },
+  {
+    "uai": "0311231V",
+    "name": "COLLEGE MAURICE BECANNE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 97.3,
+    "year": "2025",
+    "lat": 43.584375771338,
+    "lon": 1.4245700135225179
+  },
+  {
+    "uai": "0311631E",
+    "name": "COLLEGE MICHELET",
+    "type": "college",
+    "sector": "Public",
+    "ips": 136.0,
+    "year": "2023",
+    "lat": 43.604396096847545,
+    "lon": 1.4556795731069385
+  },
+  {
+    "uai": "0311631E",
+    "name": "COLLEGE MICHELET",
+    "type": "college",
+    "sector": "Public",
+    "ips": 128.9,
+    "year": "2024",
+    "lat": 43.604396096847545,
+    "lon": 1.4556795731069385
+  },
+  {
+    "uai": "0311631E",
+    "name": "COLLEGE MICHELET",
+    "type": "college",
+    "sector": "Public",
+    "ips": 131.8,
+    "year": "2025",
+    "lat": 43.604396096847545,
+    "lon": 1.4556795731069385
+  },
+  {
+    "uai": "0311718Z",
+    "name": "COLLEGE NICOLAS VAUQUELIN",
+    "type": "college",
+    "sector": "Public",
+    "ips": 87.0,
+    "year": "2023",
+    "lat": 43.58260081396834,
+    "lon": 1.401209929218137
+  },
+  {
+    "uai": "0311718Z",
+    "name": "COLLEGE NICOLAS VAUQUELIN",
+    "type": "college",
+    "sector": "Public",
+    "ips": 85.2,
+    "year": "2024",
+    "lat": 43.58260081396834,
+    "lon": 1.401209929218137
+  },
+  {
+    "uai": "0311718Z",
+    "name": "COLLEGE NICOLAS VAUQUELIN",
+    "type": "college",
+    "sector": "Public",
+    "ips": 86.3,
+    "year": "2025",
+    "lat": 43.58260081396834,
+    "lon": 1.401209929218137
+  },
+  {
+    "uai": "0311232W",
+    "name": "COLLEGE NOUGARO",
+    "type": "college",
+    "sector": "Public",
+    "ips": 104.1,
+    "year": "2023",
+    "lat": 43.62013833882529,
+    "lon": 1.433950084603474
+  },
+  {
+    "uai": "0311232W",
+    "name": "COLLEGE NOUGARO",
+    "type": "college",
+    "sector": "Public",
+    "ips": 102.1,
+    "year": "2024",
+    "lat": 43.62013833882529,
+    "lon": 1.433950084603474
+  },
+  {
+    "uai": "0311232W",
+    "name": "COLLEGE NOUGARO",
+    "type": "college",
+    "sector": "Public",
+    "ips": 105.4,
+    "year": "2025",
+    "lat": 43.62013833882529,
+    "lon": 1.433950084603474
+  },
+  {
+    "uai": "0313167Z",
+    "name": "COLLEGE PALEFICAT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 88.5,
+    "year": "2024",
+    "lat": 43.64450161464915,
+    "lon": 1.4554333493358242
+  },
+  {
+    "uai": "0313167Z",
+    "name": "COLLEGE PALEFICAT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 89.3,
+    "year": "2025",
+    "lat": 43.64450161464915,
+    "lon": 1.4554333493358242
+  },
+  {
+    "uai": "0311236A",
+    "name": "COLLEGE PIERRE DE FERMAT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 123.0,
+    "year": "2023",
+    "lat": 43.60280532848373,
+    "lon": 1.4403303595250898
+  },
+  {
+    "uai": "0311236A",
+    "name": "COLLEGE PIERRE DE FERMAT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 124.9,
+    "year": "2024",
+    "lat": 43.60280532848373,
+    "lon": 1.4403303595250898
+  },
+  {
+    "uai": "0311236A",
+    "name": "COLLEGE PIERRE DE FERMAT",
+    "type": "college",
+    "sector": "Public",
+    "ips": 121.3,
+    "year": "2025",
+    "lat": 43.60280532848373,
+    "lon": 1.4403303595250898
+  },
+  {
+    "uai": "0312885T",
+    "name": "COLLEGE PRIVE COLLEGI CALANDRETA DEL PAIS TOLZAN",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 138.2,
+    "year": "2023",
+    "lat": 43.57643348998152,
+    "lon": 1.389875951209224
+  },
+  {
+    "uai": "0312885T",
+    "name": "COLLEGE PRIVE COLLEGI CALANDRETA DEL PAIS TOLZAN",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 137.7,
+    "year": "2024",
+    "lat": 43.57643348998152,
+    "lon": 1.389875951209224
+  },
+  {
+    "uai": "0312885T",
+    "name": "COLLEGE PRIVE COLLEGI CALANDRETA DEL PAIS TOLZAN",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 138.3,
+    "year": "2025",
+    "lat": 43.57643348998152,
+    "lon": 1.389875951209224
+  },
+  {
+    "uai": "0311964S",
+    "name": "COLLEGE PRIVE EMILIE DE RODAT",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 147.3,
+    "year": "2023",
+    "lat": 43.595859912662654,
+    "lon": 1.4206068091565942
+  },
+  {
+    "uai": "0311964S",
+    "name": "COLLEGE PRIVE EMILIE DE RODAT",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 150.1,
+    "year": "2024",
+    "lat": 43.595859912662654,
+    "lon": 1.4206068091565942
+  },
+  {
+    "uai": "0311964S",
+    "name": "COLLEGE PRIVE EMILIE DE RODAT",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 151.3,
+    "year": "2025",
+    "lat": 43.595859912662654,
+    "lon": 1.4206068091565942
+  },
+  {
+    "uai": "0311570N",
+    "name": "COLLEGE PRIVE LA PRAIRIE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 137.7,
+    "year": "2023",
+    "lat": 43.57295187866739,
+    "lon": 1.4567062209609283
+  },
+  {
+    "uai": "0311570N",
+    "name": "COLLEGE PRIVE LA PRAIRIE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 138.5,
+    "year": "2024",
+    "lat": 43.57295187866739,
+    "lon": 1.4567062209609283
+  },
+  {
+    "uai": "0311570N",
+    "name": "COLLEGE PRIVE LA PRAIRIE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 138.8,
+    "year": "2025",
+    "lat": 43.57295187866739,
+    "lon": 1.4567062209609283
+  },
+  {
+    "uai": "0311962P",
+    "name": "COLLEGE PRIVE LE CAOUSOU",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 153.1,
+    "year": "2023",
+    "lat": 43.60104195449656,
+    "lon": 1.4610650596318953
+  },
+  {
+    "uai": "0311962P",
+    "name": "COLLEGE PRIVE LE CAOUSOU",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 153.1,
+    "year": "2024",
+    "lat": 43.60104195449656,
+    "lon": 1.4610650596318953
+  },
+  {
+    "uai": "0311962P",
+    "name": "COLLEGE PRIVE LE CAOUSOU",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 153.5,
+    "year": "2025",
+    "lat": 43.60104195449656,
+    "lon": 1.4610650596318953
+  },
+  {
+    "uai": "0311963R",
+    "name": "COLLEGE PRIVE LES MARISTES TOULOUSE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 133.1,
+    "year": "2023",
+    "lat": 43.57599329420358,
+    "lon": 1.4710623029725036
+  },
+  {
+    "uai": "0311963R",
+    "name": "COLLEGE PRIVE LES MARISTES TOULOUSE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 133.3,
+    "year": "2024",
+    "lat": 43.57599329420358,
+    "lon": 1.4710623029725036
+  },
+  {
+    "uai": "0311963R",
+    "name": "COLLEGE PRIVE LES MARISTES TOULOUSE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 132.1,
+    "year": "2025",
+    "lat": 43.57599329420358,
+    "lon": 1.4710623029725036
+  },
+  {
+    "uai": "0312284P",
+    "name": "COLLEGE PRIVE OHR TORAH",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 125.5,
+    "year": "2023",
+    "lat": 43.62182467981227,
+    "lon": 1.4620447858234036
+  },
+  {
+    "uai": "0312284P",
+    "name": "COLLEGE PRIVE OHR TORAH",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 121.7,
+    "year": "2024",
+    "lat": 43.62182467981227,
+    "lon": 1.4620447858234036
+  },
+  {
+    "uai": "0312284P",
+    "name": "COLLEGE PRIVE OHR TORAH",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 122.6,
+    "year": "2025",
+    "lat": 43.62182467981227,
+    "lon": 1.4620447858234036
+  },
+  {
+    "uai": "0311972A",
+    "name": "COLLEGE PRIVE SAINT JOSEPH LA SALLE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 147.8,
+    "year": "2023",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311972A",
+    "name": "COLLEGE PRIVE SAINT JOSEPH LA SALLE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 149.7,
+    "year": "2024",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311972A",
+    "name": "COLLEGE PRIVE SAINT JOSEPH LA SALLE",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 150.4,
+    "year": "2025",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311169C",
+    "name": "COLLEGE PRIVE SAINT LOUIS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 136.2,
+    "year": "2023",
+    "lat": 43.61827783673211,
+    "lon": 1.4581598558327278
+  },
+  {
+    "uai": "0311169C",
+    "name": "COLLEGE PRIVE SAINT LOUIS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 136.7,
+    "year": "2024",
+    "lat": 43.61827783673211,
+    "lon": 1.4581598558327278
+  },
+  {
+    "uai": "0311169C",
+    "name": "COLLEGE PRIVE SAINT LOUIS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 138.5,
+    "year": "2025",
+    "lat": 43.61827783673211,
+    "lon": 1.4581598558327278
+  },
+  {
+    "uai": "0311171E",
+    "name": "COLLEGE PRIVE SAINT NICOLAS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 136.8,
+    "year": "2023",
+    "lat": 43.59931937419616,
+    "lon": 1.4338533269548188
+  },
+  {
+    "uai": "0311171E",
+    "name": "COLLEGE PRIVE SAINT NICOLAS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 140.8,
+    "year": "2024",
+    "lat": 43.59931937419616,
+    "lon": 1.4338533269548188
+  },
+  {
+    "uai": "0311171E",
+    "name": "COLLEGE PRIVE SAINT NICOLAS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 139.1,
+    "year": "2025",
+    "lat": 43.59931937419616,
+    "lon": 1.4338533269548188
+  },
+  {
+    "uai": "0311150G",
+    "name": "COLLEGE PRIVE SAINT THOMAS D AQUIN",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 137.3,
+    "year": "2023",
+    "lat": 43.5968058989296,
+    "lon": 1.4478400779131373
+  },
+  {
+    "uai": "0311150G",
+    "name": "COLLEGE PRIVE SAINT THOMAS D AQUIN",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 138.9,
+    "year": "2024",
+    "lat": 43.5968058989296,
+    "lon": 1.4478400779131373
+  },
+  {
+    "uai": "0311150G",
+    "name": "COLLEGE PRIVE SAINT THOMAS D AQUIN",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 139.1,
+    "year": "2025",
+    "lat": 43.5968058989296,
+    "lon": 1.4478400779131373
+  },
+  {
+    "uai": "0311144A",
+    "name": "COLLEGE PRIVE SAINTE FAMILLE DES MINIMES",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 143.9,
+    "year": "2023",
+    "lat": 43.617516333115425,
+    "lon": 1.4351687238580355
+  },
+  {
+    "uai": "0311144A",
+    "name": "COLLEGE PRIVE SAINTE FAMILLE DES MINIMES",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 142.1,
+    "year": "2024",
+    "lat": 43.617516333115425,
+    "lon": 1.4351687238580355
+  },
+  {
+    "uai": "0311144A",
+    "name": "COLLEGE PRIVE SAINTE FAMILLE DES MINIMES",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 142.4,
+    "year": "2025",
+    "lat": 43.617516333115425,
+    "lon": 1.4351687238580355
+  },
+  {
+    "uai": "0311168B",
+    "name": "COLLEGE PRIVE SAINTE MARIE DE NEVERS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 119.9,
+    "year": "2023",
+    "lat": 43.6091384727887,
+    "lon": 1.4429201138280958
+  },
+  {
+    "uai": "0311168B",
+    "name": "COLLEGE PRIVE SAINTE MARIE DE NEVERS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 119.2,
+    "year": "2024",
+    "lat": 43.6091384727887,
+    "lon": 1.4429201138280958
+  },
+  {
+    "uai": "0311168B",
+    "name": "COLLEGE PRIVE SAINTE MARIE DE NEVERS",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 117.0,
+    "year": "2025",
+    "lat": 43.6091384727887,
+    "lon": 1.4429201138280958
+  },
+  {
+    "uai": "0311148E",
+    "name": "COLLEGE PRIVE SAINTE MARIE DES URSULINES",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 125.5,
+    "year": "2023",
+    "lat": 43.608706283850054,
+    "lon": 1.4594463098504673
+  },
+  {
+    "uai": "0311148E",
+    "name": "COLLEGE PRIVE SAINTE MARIE DES URSULINES",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 126.0,
+    "year": "2024",
+    "lat": 43.608706283850054,
+    "lon": 1.4594463098504673
+  },
+  {
+    "uai": "0311148E",
+    "name": "COLLEGE PRIVE SAINTE MARIE DES URSULINES",
+    "type": "college",
+    "sector": "Privé",
+    "ips": 128.6,
+    "year": "2025",
+    "lat": 43.608706283850054,
+    "lon": 1.4594463098504673
+  },
+  {
+    "uai": "0311265G",
+    "name": "COLLEGE ROSA PARKS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 77.6,
+    "year": "2023",
+    "lat": 43.64054087691382,
+    "lon": 1.4366705597466425
+  },
+  {
+    "uai": "0311265G",
+    "name": "COLLEGE ROSA PARKS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 76.3,
+    "year": "2024",
+    "lat": 43.64054087691382,
+    "lon": 1.4366705597466425
+  },
+  {
+    "uai": "0311265G",
+    "name": "COLLEGE ROSA PARKS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 76.8,
+    "year": "2025",
+    "lat": 43.64054087691382,
+    "lon": 1.4366705597466425
+  },
+  {
+    "uai": "0313079D",
+    "name": "COLLEGE SABINE WEISS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 97.8,
+    "year": "2024",
+    "lat": 43.57305090649989,
+    "lon": 1.3692690226180708
+  },
+  {
+    "uai": "0313079D",
+    "name": "COLLEGE SABINE WEISS",
+    "type": "college",
+    "sector": "Public",
+    "ips": 97.9,
+    "year": "2025",
+    "lat": 43.57305090649989,
+    "lon": 1.3692690226180708
+  },
+  {
+    "uai": "0313080E",
+    "name": "COLLEGE SAINT SIMON TOULOUSE",
+    "type": "college",
+    "sector": "Public",
+    "ips": 89.8,
+    "year": "2023",
+    "lat": 43.56026604507529,
+    "lon": 1.393022137841312
+  },
+  {
+    "uai": "0311630D",
+    "name": "COLLEGE STENDHAL",
+    "type": "college",
+    "sector": "Public",
+    "ips": 75.2,
+    "year": "2023",
+    "lat": 43.578453422181546,
+    "lon": 1.4110490351957552
+  },
+  {
+    "uai": "0311630D",
+    "name": "COLLEGE STENDHAL",
+    "type": "college",
+    "sector": "Public",
+    "ips": 62.6,
+    "year": "2024",
+    "lat": 43.578453422181546,
+    "lon": 1.4110490351957552
+  },
+  {
+    "uai": "0311630D",
+    "name": "COLLEGE STENDHAL",
+    "type": "college",
+    "sector": "Public",
+    "ips": 60.8,
+    "year": "2025",
+    "lat": 43.578453422181546,
+    "lon": 1.4110490351957552
+  },
+  {
+    "uai": "0311025W",
+    "name": "ECOLE ELEMENTAIRE D APPLICATION MAURICE BECANNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.3,
+    "year": "2022",
+    "lat": 43.582963080073455,
+    "lon": 1.4259495190795535
+  },
+  {
+    "uai": "0311025W",
+    "name": "ECOLE ELEMENTAIRE D APPLICATION MAURICE BECANNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.1,
+    "year": "2023",
+    "lat": 43.582963080073455,
+    "lon": 1.4259495190795535
+  },
+  {
+    "uai": "0311025W",
+    "name": "ECOLE ELEMENTAIRE D APPLICATION MAURICE BECANNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.1,
+    "year": "2024",
+    "lat": 43.582963080073455,
+    "lon": 1.4259495190795535
+  },
+  {
+    "uai": "0310160F",
+    "name": "ECOLE ELEMENTAIRE D APPLICATION RICARDIE 3",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.7,
+    "year": "2022",
+    "lat": 43.58128091546669,
+    "lon": 1.4498370497215034
+  },
+  {
+    "uai": "0310160F",
+    "name": "ECOLE ELEMENTAIRE D APPLICATION RICARDIE 3",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 122.0,
+    "year": "2023",
+    "lat": 43.58128091546669,
+    "lon": 1.4498370497215034
+  },
+  {
+    "uai": "0310160F",
+    "name": "ECOLE ELEMENTAIRE D APPLICATION RICARDIE 3",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.1,
+    "year": "2024",
+    "lat": 43.58128091546669,
+    "lon": 1.4498370497215034
+  },
+  {
+    "uai": "0312151V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ALFRED DE MUSSET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 96.1,
+    "year": "2022",
+    "lat": 43.6225554847077,
+    "lon": 1.430260514208045
+  },
+  {
+    "uai": "0312151V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ALFRED DE MUSSET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 92.1,
+    "year": "2023",
+    "lat": 43.6225554847077,
+    "lon": 1.430260514208045
+  },
+  {
+    "uai": "0312151V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ALFRED DE MUSSET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.9,
+    "year": "2024",
+    "lat": 43.6225554847077,
+    "lon": 1.430260514208045
+  },
+  {
+    "uai": "0312152W",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ANATOLE FRANCE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 114.2,
+    "year": "2022",
+    "lat": 43.58524264137566,
+    "lon": 1.4623899853580247
+  },
+  {
+    "uai": "0312152W",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ANATOLE FRANCE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 115.3,
+    "year": "2023",
+    "lat": 43.58524264137566,
+    "lon": 1.4623899853580247
+  },
+  {
+    "uai": "0312152W",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ANATOLE FRANCE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 116.7,
+    "year": "2024",
+    "lat": 43.58524264137566,
+    "lon": 1.4623899853580247
+  },
+  {
+    "uai": "0310993L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BAYARD MATABIAU",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 129.0,
+    "year": "2022",
+    "lat": 43.612017766029496,
+    "lon": 1.4490498043775477
+  },
+  {
+    "uai": "0310993L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BAYARD MATABIAU",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 129.4,
+    "year": "2023",
+    "lat": 43.612017766029496,
+    "lon": 1.4490498043775477
+  },
+  {
+    "uai": "0310993L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BAYARD MATABIAU",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 129.5,
+    "year": "2024",
+    "lat": 43.612017766029496,
+    "lon": 1.4490498043775477
+  },
+  {
+    "uai": "0310929S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BONHOURE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.0,
+    "year": "2022",
+    "lat": 43.60254602492596,
+    "lon": 1.4662395610881223
+  },
+  {
+    "uai": "0310929S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BONHOURE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.2,
+    "year": "2023",
+    "lat": 43.60254602492596,
+    "lon": 1.4662395610881223
+  },
+  {
+    "uai": "0310929S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BONHOURE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 119.2,
+    "year": "2024",
+    "lat": 43.60254602492596,
+    "lon": 1.4662395610881223
+  },
+  {
+    "uai": "0310992K",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BONNEFOY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 114.1,
+    "year": "2022",
+    "lat": 43.61663488915373,
+    "lon": 1.454510236106314
+  },
+  {
+    "uai": "0310992K",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BONNEFOY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 116.0,
+    "year": "2023",
+    "lat": 43.61663488915373,
+    "lon": 1.454510236106314
+  },
+  {
+    "uai": "0310992K",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BONNEFOY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 117.4,
+    "year": "2024",
+    "lat": 43.61663488915373,
+    "lon": 1.454510236106314
+  },
+  {
+    "uai": "0312942E",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BORDEROUGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.1,
+    "year": "2022",
+    "lat": 43.641378729924384,
+    "lon": 1.4546723209860122
+  },
+  {
+    "uai": "0312942E",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BORDEROUGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 92.9,
+    "year": "2023",
+    "lat": 43.641378729924384,
+    "lon": 1.4546723209860122
+  },
+  {
+    "uai": "0312942E",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BORDEROUGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 94.1,
+    "year": "2024",
+    "lat": 43.641378729924384,
+    "lon": 1.4546723209860122
+  },
+  {
+    "uai": "0312227C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BUFFON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 82.6,
+    "year": "2022",
+    "lat": 43.564719924499784,
+    "lon": 1.4118697154839732
+  },
+  {
+    "uai": "0312227C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BUFFON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 81.8,
+    "year": "2023",
+    "lat": 43.564719924499784,
+    "lon": 1.4118697154839732
+  },
+  {
+    "uai": "0312227C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE BUFFON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 84.4,
+    "year": "2024",
+    "lat": 43.564719924499784,
+    "lon": 1.4118697154839732
+  },
+  {
+    "uai": "0312226B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CALVINHAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.2,
+    "year": "2022",
+    "lat": 43.597759252767545,
+    "lon": 1.4548700464233564
+  },
+  {
+    "uai": "0312226B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CALVINHAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.6,
+    "year": "2023",
+    "lat": 43.597759252767545,
+    "lon": 1.4548700464233564
+  },
+  {
+    "uai": "0312226B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CALVINHAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.1,
+    "year": "2024",
+    "lat": 43.597759252767545,
+    "lon": 1.4548700464233564
+  },
+  {
+    "uai": "0312111B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CHATEAU D ANCELY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 98.7,
+    "year": "2022",
+    "lat": 43.61853482261093,
+    "lon": 1.3986400521216718
+  },
+  {
+    "uai": "0312111B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CHATEAU D ANCELY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 99.7,
+    "year": "2023",
+    "lat": 43.61853482261093,
+    "lon": 1.3986400521216718
+  },
+  {
+    "uai": "0312111B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CHATEAU D ANCELY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 99.6,
+    "year": "2024",
+    "lat": 43.61853482261093,
+    "lon": 1.3986400521216718
+  },
+  {
+    "uai": "0312598F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CHATEAU DE L HERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.7,
+    "year": "2022",
+    "lat": 43.60054742377937,
+    "lon": 1.4848495033643578
+  },
+  {
+    "uai": "0312598F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CHATEAU DE L HERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 107.7,
+    "year": "2023",
+    "lat": 43.60054742377937,
+    "lon": 1.4848495033643578
+  },
+  {
+    "uai": "0312598F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CHATEAU DE L HERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 111.0,
+    "year": "2024",
+    "lat": 43.60054742377937,
+    "lon": 1.4848495033643578
+  },
+  {
+    "uai": "0310917D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CLAUDE NOUGARO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.6,
+    "year": "2022",
+    "lat": 43.620372143705424,
+    "lon": 1.434249679643655
+  },
+  {
+    "uai": "0310917D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CLAUDE NOUGARO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.2,
+    "year": "2023",
+    "lat": 43.620372143705424,
+    "lon": 1.434249679643655
+  },
+  {
+    "uai": "0310917D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CLAUDE NOUGARO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 125.1,
+    "year": "2024",
+    "lat": 43.620372143705424,
+    "lon": 1.434249679643655
+  },
+  {
+    "uai": "0312347H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CLEMENT FALCUCCI",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 73.4,
+    "year": "2022",
+    "lat": 43.579352777790845,
+    "lon": 1.4089197033648213
+  },
+  {
+    "uai": "0312347H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CLEMENT FALCUCCI",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 73.2,
+    "year": "2023",
+    "lat": 43.579352777790845,
+    "lon": 1.4089197033648213
+  },
+  {
+    "uai": "0312347H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CLEMENT FALCUCCI",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 68.2,
+    "year": "2024",
+    "lat": 43.579352777790845,
+    "lon": 1.4089197033648213
+  },
+  {
+    "uai": "0312176X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE COURREGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.8,
+    "year": "2022",
+    "lat": 43.58307969068796,
+    "lon": 1.4762797096817522
+  },
+  {
+    "uai": "0312176X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE COURREGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.5,
+    "year": "2023",
+    "lat": 43.58307969068796,
+    "lon": 1.4762797096817522
+  },
+  {
+    "uai": "0312176X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE COURREGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 120.1,
+    "year": "2024",
+    "lat": 43.58307969068796,
+    "lon": 1.4762797096817522
+  },
+  {
+    "uai": "0310970L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CUVIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 102.1,
+    "year": "2022",
+    "lat": 43.638406865562665,
+    "lon": 1.4620200995206662
+  },
+  {
+    "uai": "0310970L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CUVIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 100.4,
+    "year": "2023",
+    "lat": 43.638406865562665,
+    "lon": 1.4620200995206662
+  },
+  {
+    "uai": "0310970L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE CUVIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 99.3,
+    "year": "2024",
+    "lat": 43.638406865562665,
+    "lon": 1.4620200995206662
+  },
+  {
+    "uai": "0311604A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE DANIEL FAUCHER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.7,
+    "year": "2022",
+    "lat": 43.57312182848635,
+    "lon": 1.4056798829482506
+  },
+  {
+    "uai": "0311604A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE DANIEL FAUCHER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 70.9,
+    "year": "2023",
+    "lat": 43.57312182848635,
+    "lon": 1.4056798829482506
+  },
+  {
+    "uai": "0311604A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE DANIEL FAUCHER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 69.4,
+    "year": "2024",
+    "lat": 43.57312182848635,
+    "lon": 1.4056798829482506
+  },
+  {
+    "uai": "0311693X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE DIDIER DAURAT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 73.8,
+    "year": "2022",
+    "lat": 43.57338221341522,
+    "lon": 1.402210592237039
+  },
+  {
+    "uai": "0311693X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE DIDIER DAURAT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 75.5,
+    "year": "2023",
+    "lat": 43.57338221341522,
+    "lon": 1.402210592237039
+  },
+  {
+    "uai": "0311693X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE DIDIER DAURAT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 75.7,
+    "year": "2024",
+    "lat": 43.57338221341522,
+    "lon": 1.402210592237039
+  },
+  {
+    "uai": "0312107X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ELSA TRIOLET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 78.9,
+    "year": "2022",
+    "lat": 43.572082903519906,
+    "lon": 1.39484006525137
+  },
+  {
+    "uai": "0312107X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ELSA TRIOLET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 79.1,
+    "year": "2023",
+    "lat": 43.572082903519906,
+    "lon": 1.39484006525137
+  },
+  {
+    "uai": "0312107X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ELSA TRIOLET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 75.7,
+    "year": "2024",
+    "lat": 43.572082903519906,
+    "lon": 1.39484006525137
+  },
+  {
+    "uai": "0312178Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ERNEST RENAN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 76.7,
+    "year": "2022",
+    "lat": 43.63639998478397,
+    "lon": 1.4417994307249484
+  },
+  {
+    "uai": "0312178Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ERNEST RENAN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.5,
+    "year": "2023",
+    "lat": 43.63639998478397,
+    "lon": 1.4417994307249484
+  },
+  {
+    "uai": "0312178Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ERNEST RENAN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.1,
+    "year": "2024",
+    "lat": 43.63639998478397,
+    "lon": 1.4417994307249484
+  },
+  {
+    "uai": "0312272B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ETIENNE BILLIERES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 90.7,
+    "year": "2022",
+    "lat": 43.58795968340923,
+    "lon": 1.42162032011623
+  },
+  {
+    "uai": "0312272B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ETIENNE BILLIERES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.7,
+    "year": "2023",
+    "lat": 43.58795968340923,
+    "lon": 1.42162032011623
+  },
+  {
+    "uai": "0312272B",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE ETIENNE BILLIERES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 88.6,
+    "year": "2024",
+    "lat": 43.58795968340923,
+    "lon": 1.42162032011623
+  },
+  {
+    "uai": "0311880A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FABRE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.9,
+    "year": "2022",
+    "lat": 43.59585881188597,
+    "lon": 1.4433498081655625
+  },
+  {
+    "uai": "0311880A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FABRE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 122.5,
+    "year": "2023",
+    "lat": 43.59585881188597,
+    "lon": 1.4433498081655625
+  },
+  {
+    "uai": "0311880A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FABRE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 125.0,
+    "year": "2024",
+    "lat": 43.59585881188597,
+    "lon": 1.4433498081655625
+  },
+  {
+    "uai": "0310916C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FALGUIERE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 131.2,
+    "year": "2022",
+    "lat": 43.60744514784374,
+    "lon": 1.430000212518502
+  },
+  {
+    "uai": "0310916C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FALGUIERE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 131.8,
+    "year": "2023",
+    "lat": 43.60744514784374,
+    "lon": 1.430000212518502
+  },
+  {
+    "uai": "0312143L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FERDINAND DE LESSEPS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 88.3,
+    "year": "2022",
+    "lat": 43.578996825343935,
+    "lon": 1.3852299951649816
+  },
+  {
+    "uai": "0312143L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FERDINAND DE LESSEPS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 85.5,
+    "year": "2023",
+    "lat": 43.578996825343935,
+    "lon": 1.3852299951649816
+  },
+  {
+    "uai": "0312143L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FERDINAND DE LESSEPS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 84.4,
+    "year": "2024",
+    "lat": 43.578996825343935,
+    "lon": 1.3852299951649816
+  },
+  {
+    "uai": "0312680V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FLEURANCE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.9,
+    "year": "2022",
+    "lat": 43.59890548285958,
+    "lon": 1.3699285672794668
+  },
+  {
+    "uai": "0312680V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FLEURANCE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 96.9,
+    "year": "2023",
+    "lat": 43.59890548285958,
+    "lon": 1.3699285672794668
+  },
+  {
+    "uai": "0312680V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FLEURANCE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 98.3,
+    "year": "2024",
+    "lat": 43.59890548285958,
+    "lon": 1.3699285672794668
+  },
+  {
+    "uai": "0311015K",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FONTAINE BAYONNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.9,
+    "year": "2022",
+    "lat": 43.60074520144751,
+    "lon": 1.4164303200900012
+  },
+  {
+    "uai": "0311015K",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FONTAINE BAYONNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 107.9,
+    "year": "2023",
+    "lat": 43.60074520144751,
+    "lon": 1.4164303200900012
+  },
+  {
+    "uai": "0311015K",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FONTAINE BAYONNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 108.5,
+    "year": "2024",
+    "lat": 43.60074520144751,
+    "lon": 1.4164303200900012
+  },
+  {
+    "uai": "0311645V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FRANCOISE HERITIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.1,
+    "year": "2022",
+    "lat": 43.57264613919868,
+    "lon": 1.4059505487462778
+  },
+  {
+    "uai": "0311645V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FRANCOISE HERITIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.8,
+    "year": "2023",
+    "lat": 43.57264613919868,
+    "lon": 1.4059505487462778
+  },
+  {
+    "uai": "0311645V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE FRANCOISE HERITIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 72.0,
+    "year": "2024",
+    "lat": 43.57264613919868,
+    "lon": 1.4059505487462778
+  },
+  {
+    "uai": "0312320D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GASTON DUPOUY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 111.0,
+    "year": "2022",
+    "lat": 43.58097489955699,
+    "lon": 1.3808180107519679
+  },
+  {
+    "uai": "0312320D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GASTON DUPOUY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 112.7,
+    "year": "2023",
+    "lat": 43.58097489955699,
+    "lon": 1.3808180107519679
+  },
+  {
+    "uai": "0312320D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GASTON DUPOUY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 114.7,
+    "year": "2024",
+    "lat": 43.58097489955699,
+    "lon": 1.3808180107519679
+  },
+  {
+    "uai": "0312334U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GEORGES BASTIDE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 70.2,
+    "year": "2022",
+    "lat": 43.56014502289212,
+    "lon": 1.3982910578442522
+  },
+  {
+    "uai": "0312334U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GEORGES BASTIDE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 68.8,
+    "year": "2023",
+    "lat": 43.56014502289212,
+    "lon": 1.3982910578442522
+  },
+  {
+    "uai": "0312334U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GEORGES BASTIDE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 69.1,
+    "year": "2024",
+    "lat": 43.56014502289212,
+    "lon": 1.3982910578442522
+  },
+  {
+    "uai": "0310987E",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GEORGES HYON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 73.0,
+    "year": "2022",
+    "lat": 43.57907804429154,
+    "lon": 1.410069897880824
+  },
+  {
+    "uai": "0310987E",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GEORGES HYON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.9,
+    "year": "2023",
+    "lat": 43.57907804429154,
+    "lon": 1.410069897880824
+  },
+  {
+    "uai": "0310987E",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GEORGES HYON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.3,
+    "year": "2024",
+    "lat": 43.57907804429154,
+    "lon": 1.410069897880824
+  },
+  {
+    "uai": "0310975S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GRAND SELVE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 96.2,
+    "year": "2022",
+    "lat": 43.648922356176655,
+    "lon": 1.4494345748045336
+  },
+  {
+    "uai": "0310975S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE GRAND SELVE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 96.1,
+    "year": "2023",
+    "lat": 43.648922356176655,
+    "lon": 1.4494345748045336
+  },
+  {
+    "uai": "0312153X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE HENRI GUILLAUMET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 101.9,
+    "year": "2022",
+    "lat": 43.5767042577117,
+    "lon": 1.4886798794377891
+  },
+  {
+    "uai": "0312153X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE HENRI GUILLAUMET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 98.6,
+    "year": "2023",
+    "lat": 43.5767042577117,
+    "lon": 1.4886798794377891
+  },
+  {
+    "uai": "0312153X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE HENRI GUILLAUMET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.7,
+    "year": "2024",
+    "lat": 43.5767042577117,
+    "lon": 1.4886798794377891
+  },
+  {
+    "uai": "0310928R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN CHAUBET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 125.5,
+    "year": "2022",
+    "lat": 43.60052500996814,
+    "lon": 1.467659476342685
+  },
+  {
+    "uai": "0310928R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN CHAUBET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 129.5,
+    "year": "2023",
+    "lat": 43.60052500996814,
+    "lon": 1.467659476342685
+  },
+  {
+    "uai": "0310928R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN CHAUBET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 133.8,
+    "year": "2024",
+    "lat": 43.60052500996814,
+    "lon": 1.467659476342685
+  },
+  {
+    "uai": "0312294A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN JAURES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 139.6,
+    "year": "2022",
+    "lat": 43.588780146001376,
+    "lon": 1.45136038181894
+  },
+  {
+    "uai": "0312294A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN JAURES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 140.3,
+    "year": "2023",
+    "lat": 43.588780146001376,
+    "lon": 1.45136038181894
+  },
+  {
+    "uai": "0312294A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN JAURES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 140.5,
+    "year": "2024",
+    "lat": 43.588780146001376,
+    "lon": 1.45136038181894
+  },
+  {
+    "uai": "0312154Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN MACE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 128.2,
+    "year": "2022",
+    "lat": 43.59576301091337,
+    "lon": 1.4786397897199677
+  },
+  {
+    "uai": "0312154Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN MACE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 126.0,
+    "year": "2023",
+    "lat": 43.59576301091337,
+    "lon": 1.4786397897199677
+  },
+  {
+    "uai": "0312154Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN MACE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 125.1,
+    "year": "2024",
+    "lat": 43.59576301091337,
+    "lon": 1.4786397897199677
+  },
+  {
+    "uai": "0312922H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN ZAY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.3,
+    "year": "2022",
+    "lat": 43.64381223620703,
+    "lon": 1.447282579035743
+  },
+  {
+    "uai": "0312922H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN ZAY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.8,
+    "year": "2023",
+    "lat": 43.64381223620703,
+    "lon": 1.447282579035743
+  },
+  {
+    "uai": "0312922H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JEAN ZAY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 88.6,
+    "year": "2024",
+    "lat": 43.64381223620703,
+    "lon": 1.447282579035743
+  },
+  {
+    "uai": "0312173U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JOLIMONT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.1,
+    "year": "2022",
+    "lat": 43.61351565802887,
+    "lon": 1.467790570963855
+  },
+  {
+    "uai": "0312173U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JOLIMONT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 94.6,
+    "year": "2023",
+    "lat": 43.61351565802887,
+    "lon": 1.467790570963855
+  },
+  {
+    "uai": "0312173U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JOLIMONT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.3,
+    "year": "2024",
+    "lat": 43.61351565802887,
+    "lon": 1.467790570963855
+  },
+  {
+    "uai": "0312110A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES FERRY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 90.4,
+    "year": "2022",
+    "lat": 43.63285479322702,
+    "lon": 1.4325805922248338
+  },
+  {
+    "uai": "0312110A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES FERRY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 89.7,
+    "year": "2023",
+    "lat": 43.63285479322702,
+    "lon": 1.4325805922248338
+  },
+  {
+    "uai": "0312110A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES FERRY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 89.6,
+    "year": "2024",
+    "lat": 43.63285479322702,
+    "lon": 1.4325805922248338
+  },
+  {
+    "uai": "0312892A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES GERAUD SALIEGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 85.2,
+    "year": "2022",
+    "lat": 43.65322561521429,
+    "lon": 1.4345211762942287
+  },
+  {
+    "uai": "0312892A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES GERAUD SALIEGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 86.0,
+    "year": "2023",
+    "lat": 43.65322561521429,
+    "lon": 1.4345211762942287
+  },
+  {
+    "uai": "0312892A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES GERAUD SALIEGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 84.8,
+    "year": "2024",
+    "lat": 43.65322561521429,
+    "lon": 1.4345211762942287
+  },
+  {
+    "uai": "0312273C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES JULIEN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 131.3,
+    "year": "2022",
+    "lat": 43.57402341440476,
+    "lon": 1.45377730861442
+  },
+  {
+    "uai": "0312273C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES JULIEN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 131.1,
+    "year": "2023",
+    "lat": 43.57402341440476,
+    "lon": 1.45377730861442
+  },
+  {
+    "uai": "0312273C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE JULES JULIEN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 132.2,
+    "year": "2024",
+    "lat": 43.57402341440476,
+    "lon": 1.45377730861442
+  },
+  {
+    "uai": "0312156A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA JUNCASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 108.4,
+    "year": "2022",
+    "lat": 43.61735205961893,
+    "lon": 1.471109394069272
+  },
+  {
+    "uai": "0312156A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA JUNCASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 108.0,
+    "year": "2023",
+    "lat": 43.61735205961893,
+    "lon": 1.471109394069272
+  },
+  {
+    "uai": "0312156A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA JUNCASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 110.0,
+    "year": "2024",
+    "lat": 43.61735205961893,
+    "lon": 1.471109394069272
+  },
+  {
+    "uai": "0312673M",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA MAOURINE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.9,
+    "year": "2022",
+    "lat": 43.62999989830424,
+    "lon": 1.4491916501071864
+  },
+  {
+    "uai": "0312673M",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA MAOURINE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 103.7,
+    "year": "2023",
+    "lat": 43.62999989830424,
+    "lon": 1.4491916501071864
+  },
+  {
+    "uai": "0312673M",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA MAOURINE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 101.1,
+    "year": "2024",
+    "lat": 43.62999989830424,
+    "lon": 1.4491916501071864
+  },
+  {
+    "uai": "0311745D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA TERRASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 119.3,
+    "year": "2022",
+    "lat": 43.5837667349571,
+    "lon": 1.4853803995745845
+  },
+  {
+    "uai": "0311745D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA TERRASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 118.6,
+    "year": "2023",
+    "lat": 43.5837667349571,
+    "lon": 1.4853803995745845
+  },
+  {
+    "uai": "0311745D",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LA TERRASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 118.1,
+    "year": "2024",
+    "lat": 43.5837667349571,
+    "lon": 1.4853803995745845
+  },
+  {
+    "uai": "0312292Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LAKANAL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 143.9,
+    "year": "2022",
+    "lat": 43.60255367485231,
+    "lon": 1.439100045120136
+  },
+  {
+    "uai": "0312292Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LAKANAL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 144.8,
+    "year": "2023",
+    "lat": 43.60255367485231,
+    "lon": 1.439100045120136
+  },
+  {
+    "uai": "0312292Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LAKANAL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 142.6,
+    "year": "2024",
+    "lat": 43.60255367485231,
+    "lon": 1.439100045120136
+  },
+  {
+    "uai": "0310921H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LALANDE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 86.1,
+    "year": "2022",
+    "lat": 43.64784089450695,
+    "lon": 1.4320097541085763
+  },
+  {
+    "uai": "0310921H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LALANDE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 86.1,
+    "year": "2023",
+    "lat": 43.64784089450695,
+    "lon": 1.4320097541085763
+  },
+  {
+    "uai": "0310921H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LALANDE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 86.7,
+    "year": "2024",
+    "lat": 43.64784089450695,
+    "lon": 1.4320097541085763
+  },
+  {
+    "uai": "0311089R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LAPUJADE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 101.0,
+    "year": "2022",
+    "lat": 43.62836973597338,
+    "lon": 1.460880588911495
+  },
+  {
+    "uai": "0311089R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LAPUJADE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 103.2,
+    "year": "2023",
+    "lat": 43.62836973597338,
+    "lon": 1.460880588911495
+  },
+  {
+    "uai": "0311089R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LAPUJADE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 99.9,
+    "year": "2024",
+    "lat": 43.62836973597338,
+    "lon": 1.460880588911495
+  },
+  {
+    "uai": "0312293Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LARDENNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 110.9,
+    "year": "2022",
+    "lat": 43.588724401948205,
+    "lon": 1.37810950987054
+  },
+  {
+    "uai": "0312293Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LARDENNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 113.6,
+    "year": "2023",
+    "lat": 43.588724401948205,
+    "lon": 1.37810950987054
+  },
+  {
+    "uai": "0312293Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LARDENNE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 112.5,
+    "year": "2024",
+    "lat": 43.588724401948205,
+    "lon": 1.37810950987054
+  },
+  {
+    "uai": "0311641R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LE PASTEL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 136.0,
+    "year": "2022",
+    "lat": 43.54532713138142,
+    "lon": 1.45353049682074
+  },
+  {
+    "uai": "0311641R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LE PASTEL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 134.6,
+    "year": "2023",
+    "lat": 43.54532713138142,
+    "lon": 1.45353049682074
+  },
+  {
+    "uai": "0311641R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LE PASTEL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 133.4,
+    "year": "2024",
+    "lat": 43.54532713138142,
+    "lon": 1.45353049682074
+  },
+  {
+    "uai": "0310960A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LEO LAGRANGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 80.2,
+    "year": "2022",
+    "lat": 43.5768676810672,
+    "lon": 1.438529751290051
+  },
+  {
+    "uai": "0310960A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LEO LAGRANGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 76.5,
+    "year": "2023",
+    "lat": 43.5768676810672,
+    "lon": 1.438529751290051
+  },
+  {
+    "uai": "0310960A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LEO LAGRANGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.6,
+    "year": "2024",
+    "lat": 43.5768676810672,
+    "lon": 1.438529751290051
+  },
+  {
+    "uai": "0311961N",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LEONCE BOURLIAGUET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 81.8,
+    "year": "2022",
+    "lat": 43.577519912284814,
+    "lon": 1.3959097925190411
+  },
+  {
+    "uai": "0311961N",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LEONCE BOURLIAGUET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 80.2,
+    "year": "2023",
+    "lat": 43.577519912284814,
+    "lon": 1.3959097925190411
+  },
+  {
+    "uai": "0311961N",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LEONCE BOURLIAGUET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 81.1,
+    "year": "2024",
+    "lat": 43.577519912284814,
+    "lon": 1.3959097925190411
+  },
+  {
+    "uai": "0311601X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES GAIS PINSONS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.9,
+    "year": "2022",
+    "lat": 43.603718322147174,
+    "lon": 1.4091406113612275
+  },
+  {
+    "uai": "0311601X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES GAIS PINSONS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 109.5,
+    "year": "2023",
+    "lat": 43.603718322147174,
+    "lon": 1.4091406113612275
+  },
+  {
+    "uai": "0311601X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES GAIS PINSONS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 114.6,
+    "year": "2024",
+    "lat": 43.603718322147174,
+    "lon": 1.4091406113612275
+  },
+  {
+    "uai": "0311024V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES OUSTALOUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 105.2,
+    "year": "2022",
+    "lat": 43.574761055890356,
+    "lon": 1.4242694616074525
+  },
+  {
+    "uai": "0312679U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES TIBAOUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 102.5,
+    "year": "2022",
+    "lat": 43.550641703332715,
+    "lon": 1.385039979781423
+  },
+  {
+    "uai": "0312679U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES TIBAOUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 99.2,
+    "year": "2023",
+    "lat": 43.550641703332715,
+    "lon": 1.385039979781423
+  },
+  {
+    "uai": "0312679U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES TIBAOUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 96.0,
+    "year": "2024",
+    "lat": 43.550641703332715,
+    "lon": 1.385039979781423
+  },
+  {
+    "uai": "0312028L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES VERGERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 79.7,
+    "year": "2022",
+    "lat": 43.580839681341445,
+    "lon": 1.3987694942690791
+  },
+  {
+    "uai": "0312028L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES VERGERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 79.9,
+    "year": "2023",
+    "lat": 43.580839681341445,
+    "lon": 1.3987694942690791
+  },
+  {
+    "uai": "0312028L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LES VERGERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 77.5,
+    "year": "2024",
+    "lat": 43.580839681341445,
+    "lon": 1.3987694942690791
+  },
+  {
+    "uai": "0311021S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LESPINASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.4,
+    "year": "2022",
+    "lat": 43.59739404460308,
+    "lon": 1.4346401803799333
+  },
+  {
+    "uai": "0311021S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LESPINASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 126.6,
+    "year": "2023",
+    "lat": 43.59739404460308,
+    "lon": 1.4346401803799333
+  },
+  {
+    "uai": "0311021S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LESPINASSE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.4,
+    "year": "2024",
+    "lat": 43.59739404460308,
+    "lon": 1.4346401803799333
+  },
+  {
+    "uai": "0312155Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LITTRE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 98.6,
+    "year": "2022",
+    "lat": 43.60805136348245,
+    "lon": 1.3777798500180434
+  },
+  {
+    "uai": "0312155Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LITTRE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.7,
+    "year": "2023",
+    "lat": 43.60805136348245,
+    "lon": 1.3777798500180434
+  },
+  {
+    "uai": "0312155Z",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LITTRE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.7,
+    "year": "2024",
+    "lat": 43.60805136348245,
+    "lon": 1.3777798500180434
+  },
+  {
+    "uai": "0312750W",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LUCIE AUBRAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.4,
+    "year": "2022",
+    "lat": 43.62961840637077,
+    "lon": 1.4348199165828988
+  },
+  {
+    "uai": "0312750W",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LUCIE AUBRAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 95.1,
+    "year": "2023",
+    "lat": 43.62961840637077,
+    "lon": 1.4348199165828988
+  },
+  {
+    "uai": "0312750W",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE LUCIE AUBRAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 98.5,
+    "year": "2024",
+    "lat": 43.62961840637077,
+    "lon": 1.4348199165828988
+  },
+  {
+    "uai": "0311016L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARCEL PAGNOL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 76.7,
+    "year": "2022",
+    "lat": 43.5967959065167,
+    "lon": 1.401169791648437
+  },
+  {
+    "uai": "0311016L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARCEL PAGNOL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.9,
+    "year": "2023",
+    "lat": 43.5967959065167,
+    "lon": 1.401169791648437
+  },
+  {
+    "uai": "0311016L",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARCEL PAGNOL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.7,
+    "year": "2024",
+    "lat": 43.5967959065167,
+    "lon": 1.401169791648437
+  },
+  {
+    "uai": "0310934X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARENGO PERIOLE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 115.8,
+    "year": "2022",
+    "lat": 43.61756060528841,
+    "lon": 1.4605103902723255
+  },
+  {
+    "uai": "0310934X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARENGO PERIOLE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 116.7,
+    "year": "2023",
+    "lat": 43.61756060528841,
+    "lon": 1.4605103902723255
+  },
+  {
+    "uai": "0310934X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARENGO PERIOLE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 118.4,
+    "year": "2024",
+    "lat": 43.61756060528841,
+    "lon": 1.4605103902723255
+  },
+  {
+    "uai": "0312427V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARIE ET PIERRE CURIE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 107.7,
+    "year": "2022",
+    "lat": 43.62110411611458,
+    "lon": 1.443229540153597
+  },
+  {
+    "uai": "0312427V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARIE ET PIERRE CURIE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.9,
+    "year": "2023",
+    "lat": 43.62110411611458,
+    "lon": 1.443229540153597
+  },
+  {
+    "uai": "0312427V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MARIE ET PIERRE CURIE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 105.2,
+    "year": "2024",
+    "lat": 43.62110411611458,
+    "lon": 1.443229540153597
+  },
+  {
+    "uai": "0312324H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MAURICE JACQUIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 77.9,
+    "year": "2022",
+    "lat": 43.57524042077213,
+    "lon": 1.4184299293405807
+  },
+  {
+    "uai": "0312324H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MAURICE JACQUIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 78.1,
+    "year": "2023",
+    "lat": 43.57524042077213,
+    "lon": 1.4184299293405807
+  },
+  {
+    "uai": "0312324H",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MAURICE JACQUIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 75.5,
+    "year": "2024",
+    "lat": 43.57524042077213,
+    "lon": 1.4184299293405807
+  },
+  {
+    "uai": "0312077P",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MICHELET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 138.6,
+    "year": "2022",
+    "lat": 43.60301697949828,
+    "lon": 1.4558405341117195
+  },
+  {
+    "uai": "0312077P",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MICHELET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 139.7,
+    "year": "2023",
+    "lat": 43.60301697949828,
+    "lon": 1.4558405341117195
+  },
+  {
+    "uai": "0312077P",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MICHELET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 143.1,
+    "year": "2024",
+    "lat": 43.60301697949828,
+    "lon": 1.4558405341117195
+  },
+  {
+    "uai": "0312276F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MICHOUN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 92.4,
+    "year": "2022",
+    "lat": 43.62678867341459,
+    "lon": 1.467770471575621
+  },
+  {
+    "uai": "0312276F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MICHOUN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.3,
+    "year": "2023",
+    "lat": 43.62678867341459,
+    "lon": 1.467770471575621
+  },
+  {
+    "uai": "0312276F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MICHOUN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.8,
+    "year": "2024",
+    "lat": 43.62678867341459,
+    "lon": 1.467770471575621
+  },
+  {
+    "uai": "0312078R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MOLIERE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.6,
+    "year": "2022",
+    "lat": 43.59339282820351,
+    "lon": 1.4310780717936866
+  },
+  {
+    "uai": "0312078R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MOLIERE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.2,
+    "year": "2023",
+    "lat": 43.59339282820351,
+    "lon": 1.4310780717936866
+  },
+  {
+    "uai": "0312078R",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MOLIERE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.9,
+    "year": "2024",
+    "lat": 43.59339282820351,
+    "lon": 1.4310780717936866
+  },
+  {
+    "uai": "0311569M",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 119.0,
+    "year": "2022",
+    "lat": 43.60896001218364,
+    "lon": 1.4579198247109437
+  },
+  {
+    "uai": "0311569M",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.0,
+    "year": "2023",
+    "lat": 43.60896001218364,
+    "lon": 1.4579198247109437
+  },
+  {
+    "uai": "0311569M",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONGE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 117.9,
+    "year": "2024",
+    "lat": 43.60896001218364,
+    "lon": 1.4579198247109437
+  },
+  {
+    "uai": "0311923X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONTAUDRAN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 86.7,
+    "year": "2022",
+    "lat": 43.5741697884381,
+    "lon": 1.484460220617808
+  },
+  {
+    "uai": "0311923X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONTAUDRAN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 88.8,
+    "year": "2023",
+    "lat": 43.5741697884381,
+    "lon": 1.484460220617808
+  },
+  {
+    "uai": "0311923X",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONTAUDRAN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 87.7,
+    "year": "2024",
+    "lat": 43.5741697884381,
+    "lon": 1.484460220617808
+  },
+  {
+    "uai": "0310952S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE NORD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 117.9,
+    "year": "2022",
+    "lat": 43.61086096474927,
+    "lon": 1.441099725269297
+  },
+  {
+    "uai": "0310952S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE NORD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 122.2,
+    "year": "2023",
+    "lat": 43.61086096474927,
+    "lon": 1.441099725269297
+  },
+  {
+    "uai": "0310952S",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE NORD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 127.3,
+    "year": "2024",
+    "lat": 43.61086096474927,
+    "lon": 1.441099725269297
+  },
+  {
+    "uai": "0312542V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAPUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.0,
+    "year": "2022",
+    "lat": 43.57544742821883,
+    "lon": 1.4128800453432464
+  },
+  {
+    "uai": "0312542V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAPUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 75.5,
+    "year": "2023",
+    "lat": 43.57544742821883,
+    "lon": 1.4128800453432464
+  },
+  {
+    "uai": "0312542V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAPUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.8,
+    "year": "2024",
+    "lat": 43.57544742821883,
+    "lon": 1.4128800453432464
+  },
+  {
+    "uai": "0312197V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PATTE D OIE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 120.3,
+    "year": "2022",
+    "lat": 43.595478151809225,
+    "lon": 1.4257399415604461
+  },
+  {
+    "uai": "0312197V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PATTE D OIE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 118.5,
+    "year": "2023",
+    "lat": 43.595478151809225,
+    "lon": 1.4257399415604461
+  },
+  {
+    "uai": "0312197V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PATTE D OIE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 118.1,
+    "year": "2024",
+    "lat": 43.595478151809225,
+    "lon": 1.4257399415604461
+  },
+  {
+    "uai": "0312402T",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAUL BERT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 126.5,
+    "year": "2022",
+    "lat": 43.5596516159286,
+    "lon": 1.3782699446492854
+  },
+  {
+    "uai": "0312402T",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAUL BERT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.9,
+    "year": "2023",
+    "lat": 43.5596516159286,
+    "lon": 1.3782699446492854
+  },
+  {
+    "uai": "0312402T",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAUL BERT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 124.4,
+    "year": "2024",
+    "lat": 43.5596516159286,
+    "lon": 1.3782699446492854
+  },
+  {
+    "uai": "0311305A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAUL DOTTIN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.2,
+    "year": "2022",
+    "lat": 43.56058921643322,
+    "lon": 1.3996696177473373
+  },
+  {
+    "uai": "0311305A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAUL DOTTIN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.8,
+    "year": "2023",
+    "lat": 43.56058921643322,
+    "lon": 1.3996696177473373
+  },
+  {
+    "uai": "0311305A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PAUL DOTTIN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 70.6,
+    "year": "2024",
+    "lat": 43.56058921643322,
+    "lon": 1.3996696177473373
+  },
+  {
+    "uai": "0311782U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PEIRE GODOLIN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 103.5,
+    "year": "2022",
+    "lat": 43.597125991611016,
+    "lon": 1.4151594229766762
+  },
+  {
+    "uai": "0311782U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE PEIRE GODOLIN",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 103.2,
+    "year": "2023",
+    "lat": 43.597125991611016,
+    "lon": 1.4151594229766762
+  },
+  {
+    "uai": "0312177Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE RANGUEIL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.1,
+    "year": "2022",
+    "lat": 43.575192072072284,
+    "lon": 1.4640901028061053
+  },
+  {
+    "uai": "0312177Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE RANGUEIL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 102.7,
+    "year": "2023",
+    "lat": 43.575192072072284,
+    "lon": 1.4640901028061053
+  },
+  {
+    "uai": "0312177Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE RANGUEIL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 107.6,
+    "year": "2024",
+    "lat": 43.575192072072284,
+    "lon": 1.4640901028061053
+  },
+  {
+    "uai": "0310988F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE RONSARD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 75.3,
+    "year": "2022",
+    "lat": 43.58442389638942,
+    "lon": 1.407199411581614
+  },
+  {
+    "uai": "0310988F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE RONSARD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 72.9,
+    "year": "2023",
+    "lat": 43.58442389638942,
+    "lon": 1.407199411581614
+  },
+  {
+    "uai": "0310988F",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE RONSARD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 73.1,
+    "year": "2024",
+    "lat": 43.58442389638942,
+    "lon": 1.407199411581614
+  },
+  {
+    "uai": "0311006A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SAUZELONG",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 102.1,
+    "year": "2022",
+    "lat": 43.58054337420966,
+    "lon": 1.4623995125939244
+  },
+  {
+    "uai": "0311006A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SAUZELONG",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 104.6,
+    "year": "2023",
+    "lat": 43.58054337420966,
+    "lon": 1.4623995125939244
+  },
+  {
+    "uai": "0311006A",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SAUZELONG",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.0,
+    "year": "2024",
+    "lat": 43.58054337420966,
+    "lon": 1.4623995125939244
+  },
+  {
+    "uai": "0312323G",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SIMONE VEIL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 65.7,
+    "year": "2022",
+    "lat": 43.56840659270936,
+    "lon": 1.4031956422090626
+  },
+  {
+    "uai": "0312323G",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SIMONE VEIL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 64.9,
+    "year": "2023",
+    "lat": 43.56840659270936,
+    "lon": 1.4031956422090626
+  },
+  {
+    "uai": "0312323G",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SIMONE VEIL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 65.7,
+    "year": "2024",
+    "lat": 43.56840659270936,
+    "lon": 1.4031956422090626
+  },
+  {
+    "uai": "0312174V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SOUPETARD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 78.6,
+    "year": "2022",
+    "lat": 43.6067630085609,
+    "lon": 1.4781994742065838
+  },
+  {
+    "uai": "0312174V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SOUPETARD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 79.8,
+    "year": "2023",
+    "lat": 43.6067630085609,
+    "lon": 1.4781994742065838
+  },
+  {
+    "uai": "0312174V",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SOUPETARD",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 82.3,
+    "year": "2024",
+    "lat": 43.6067630085609,
+    "lon": 1.4781994742065838
+  },
+  {
+    "uai": "0312411C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SYLVAIN DAURIAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 74.5,
+    "year": "2022",
+    "lat": 43.57795840194438,
+    "lon": 1.41400020832733
+  },
+  {
+    "uai": "0312411C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SYLVAIN DAURIAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 76.1,
+    "year": "2023",
+    "lat": 43.57795840194438,
+    "lon": 1.41400020832733
+  },
+  {
+    "uai": "0312411C",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE SYLVAIN DAURIAC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 71.9,
+    "year": "2024",
+    "lat": 43.57795840194438,
+    "lon": 1.41400020832733
+  },
+  {
+    "uai": "0312196U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE VICTOR HUGO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 76.7,
+    "year": "2022",
+    "lat": 43.56601393235032,
+    "lon": 1.402539424081433
+  },
+  {
+    "uai": "0312196U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE VICTOR HUGO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 78.0,
+    "year": "2023",
+    "lat": 43.56601393235032,
+    "lon": 1.402539424081433
+  },
+  {
+    "uai": "0312196U",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE VICTOR HUGO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 76.8,
+    "year": "2024",
+    "lat": 43.56601393235032,
+    "lon": 1.402539424081433
+  },
+  {
+    "uai": "0312108Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE VIOLLET LE DUC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 111.8,
+    "year": "2022",
+    "lat": 43.58135021339709,
+    "lon": 1.392269630019443
+  },
+  {
+    "uai": "0312108Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE VIOLLET LE DUC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 117.8,
+    "year": "2023",
+    "lat": 43.58135021339709,
+    "lon": 1.392269630019443
+  },
+  {
+    "uai": "0312108Y",
+    "name": "ECOLE ELEMENTAIRE PUBLIQUE VIOLLET LE DUC",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 116.5,
+    "year": "2024",
+    "lat": 43.58135021339709,
+    "lon": 1.392269630019443
+  },
+  {
+    "uai": "0311024V",
+    "name": "ECOLE PRIAMIRE PUBLIQUE LES OUSTALOUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 109.1,
+    "year": "2023",
+    "lat": 43.574761055890356,
+    "lon": 1.4242694616074525
+  },
+  {
+    "uai": "0310162H",
+    "name": "ECOLE PRIMAIRE D APPLICATION BENEZET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 125.4,
+    "year": "2022",
+    "lat": 43.588239444342975,
+    "lon": 1.4287502112161503
+  },
+  {
+    "uai": "0310162H",
+    "name": "ECOLE PRIMAIRE D APPLICATION BENEZET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 128.7,
+    "year": "2023",
+    "lat": 43.588239444342975,
+    "lon": 1.4287502112161503
+  },
+  {
+    "uai": "0310162H",
+    "name": "ECOLE PRIMAIRE D APPLICATION BENEZET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 127.8,
+    "year": "2024",
+    "lat": 43.588239444342975,
+    "lon": 1.4287502112161503
+  },
+  {
+    "uai": "0313046T",
+    "name": "ECOLE PRIMAIRE FENELON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": null,
+    "year": "2023",
+    "lat": 43.64951810287924,
+    "lon": 1.4531602242534822
+  },
+  {
+    "uai": "0313046T",
+    "name": "ECOLE PRIMAIRE FENELON",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": null,
+    "year": "2024",
+    "lat": 43.64951810287924,
+    "lon": 1.4531602242534822
+  },
+  {
+    "uai": "0312486J",
+    "name": "ECOLE PRIMAIRE PRIVEE CALANDRETA COTE PAVEE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.3,
+    "year": "2022",
+    "lat": 43.58954028635,
+    "lon": 1.4794299968159446
+  },
+  {
+    "uai": "0312486J",
+    "name": "ECOLE PRIMAIRE PRIVEE CALANDRETA COTE PAVEE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.6,
+    "year": "2023",
+    "lat": 43.58954028635,
+    "lon": 1.4794299968159446
+  },
+  {
+    "uai": "0312486J",
+    "name": "ECOLE PRIMAIRE PRIVEE CALANDRETA COTE PAVEE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.9,
+    "year": "2024",
+    "lat": 43.58954028635,
+    "lon": 1.4794299968159446
+  },
+  {
+    "uai": "0311476L",
+    "name": "ECOLE PRIMAIRE PRIVEE EMILIE DE RODAT",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 139.0,
+    "year": "2022",
+    "lat": 43.59165662139586,
+    "lon": 1.385250159042449
+  },
+  {
+    "uai": "0311476L",
+    "name": "ECOLE PRIMAIRE PRIVEE EMILIE DE RODAT",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 140.5,
+    "year": "2023",
+    "lat": 43.59165662139586,
+    "lon": 1.385250159042449
+  },
+  {
+    "uai": "0311476L",
+    "name": "ECOLE PRIMAIRE PRIVEE EMILIE DE RODAT",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.9,
+    "year": "2024",
+    "lat": 43.59165662139586,
+    "lon": 1.385250159042449
+  },
+  {
+    "uai": "0312485H",
+    "name": "ECOLE PRIMAIRE PRIVEE ESCOLA CALENTRETA DE GARONETA",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 139.0,
+    "year": "2022",
+    "lat": 43.597819253654805,
+    "lon": 1.4414305187569254
+  },
+  {
+    "uai": "0312485H",
+    "name": "ECOLE PRIMAIRE PRIVEE ESCOLA CALENTRETA DE GARONETA",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.4,
+    "year": "2023",
+    "lat": 43.597819253654805,
+    "lon": 1.4414305187569254
+  },
+  {
+    "uai": "0312485H",
+    "name": "ECOLE PRIMAIRE PRIVEE ESCOLA CALENTRETA DE GARONETA",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 146.3,
+    "year": "2024",
+    "lat": 43.597819253654805,
+    "lon": 1.4414305187569254
+  },
+  {
+    "uai": "0312113D",
+    "name": "ECOLE PRIMAIRE PRIVEE GAN RACHI",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 129.5,
+    "year": "2022",
+    "lat": 43.622890483868105,
+    "lon": 1.4235603881739718
+  },
+  {
+    "uai": "0312113D",
+    "name": "ECOLE PRIMAIRE PRIVEE GAN RACHI",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 131.1,
+    "year": "2023",
+    "lat": 43.622890483868105,
+    "lon": 1.4235603881739718
+  },
+  {
+    "uai": "0312113D",
+    "name": "ECOLE PRIMAIRE PRIVEE GAN RACHI",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 127.9,
+    "year": "2024",
+    "lat": 43.622890483868105,
+    "lon": 1.4235603881739718
+  },
+  {
+    "uai": "0311724F",
+    "name": "ECOLE PRIMAIRE PRIVEE GRAND ROND SAINT ETIENNE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 139.9,
+    "year": "2022",
+    "lat": 43.59838710354798,
+    "lon": 1.4537101889740376
+  },
+  {
+    "uai": "0311724F",
+    "name": "ECOLE PRIMAIRE PRIVEE GRAND ROND SAINT ETIENNE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.4,
+    "year": "2023",
+    "lat": 43.59838710354798,
+    "lon": 1.4537101889740376
+  },
+  {
+    "uai": "0311724F",
+    "name": "ECOLE PRIMAIRE PRIVEE GRAND ROND SAINT ETIENNE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 144.4,
+    "year": "2024",
+    "lat": 43.59838710354798,
+    "lon": 1.4537101889740376
+  },
+  {
+    "uai": "0311477M",
+    "name": "ECOLE PRIMAIRE PRIVEE IMMACULEE CONCEPTION",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 133.1,
+    "year": "2022",
+    "lat": 43.61392369319927,
+    "lon": 1.4430602467208538
+  },
+  {
+    "uai": "0311477M",
+    "name": "ECOLE PRIMAIRE PRIVEE IMMACULEE CONCEPTION",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 134.7,
+    "year": "2023",
+    "lat": 43.61392369319927,
+    "lon": 1.4430602467208538
+  },
+  {
+    "uai": "0311477M",
+    "name": "ECOLE PRIMAIRE PRIVEE IMMACULEE CONCEPTION",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 138.4,
+    "year": "2024",
+    "lat": 43.61392369319927,
+    "lon": 1.4430602467208538
+  },
+  {
+    "uai": "0311488Z",
+    "name": "ECOLE PRIMAIRE PRIVEE LA PRAIRIE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 139.8,
+    "year": "2022",
+    "lat": 43.57295193141969,
+    "lon": 1.456709932792622
+  },
+  {
+    "uai": "0311488Z",
+    "name": "ECOLE PRIMAIRE PRIVEE LA PRAIRIE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 140.8,
+    "year": "2023",
+    "lat": 43.57295193141969,
+    "lon": 1.456709932792622
+  },
+  {
+    "uai": "0311488Z",
+    "name": "ECOLE PRIMAIRE PRIVEE LA PRAIRIE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 138.8,
+    "year": "2024",
+    "lat": 43.57295193141969,
+    "lon": 1.456709932792622
+  },
+  {
+    "uai": "0311474J",
+    "name": "ECOLE PRIMAIRE PRIVEE LE CAOUSOU",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 143.4,
+    "year": "2022",
+    "lat": 43.601044442858644,
+    "lon": 1.4610501326342162
+  },
+  {
+    "uai": "0311474J",
+    "name": "ECOLE PRIMAIRE PRIVEE LE CAOUSOU",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 145.6,
+    "year": "2023",
+    "lat": 43.601044442858644,
+    "lon": 1.4610501326342162
+  },
+  {
+    "uai": "0311474J",
+    "name": "ECOLE PRIMAIRE PRIVEE LE CAOUSOU",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 148.5,
+    "year": "2024",
+    "lat": 43.601044442858644,
+    "lon": 1.4610501326342162
+  },
+  {
+    "uai": "0311479P",
+    "name": "ECOLE PRIMAIRE PRIVEE NOTRE DAME",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 132.8,
+    "year": "2022",
+    "lat": 43.59067983955326,
+    "lon": 1.4475105192474165
+  },
+  {
+    "uai": "0311479P",
+    "name": "ECOLE PRIMAIRE PRIVEE NOTRE DAME",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 135.4,
+    "year": "2023",
+    "lat": 43.59067983955326,
+    "lon": 1.4475105192474165
+  },
+  {
+    "uai": "0311479P",
+    "name": "ECOLE PRIMAIRE PRIVEE NOTRE DAME",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 138.0,
+    "year": "2024",
+    "lat": 43.59067983955326,
+    "lon": 1.4475105192474165
+  },
+  {
+    "uai": "0311422C",
+    "name": "ECOLE PRIMAIRE PRIVEE NOTRE DAME DES ANGES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 133.6,
+    "year": "2022",
+    "lat": 43.54760498835964,
+    "lon": 1.4556305522448925
+  },
+  {
+    "uai": "0311422C",
+    "name": "ECOLE PRIMAIRE PRIVEE NOTRE DAME DES ANGES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 135.3,
+    "year": "2023",
+    "lat": 43.54760498835964,
+    "lon": 1.4556305522448925
+  },
+  {
+    "uai": "0311422C",
+    "name": "ECOLE PRIMAIRE PRIVEE NOTRE DAME DES ANGES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 136.3,
+    "year": "2024",
+    "lat": 43.54760498835964,
+    "lon": 1.4556305522448925
+  },
+  {
+    "uai": "0311480R",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT AUBIN",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 136.2,
+    "year": "2022",
+    "lat": 43.60387014310152,
+    "lon": 1.454070164873211
+  },
+  {
+    "uai": "0311480R",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT AUBIN",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 136.0,
+    "year": "2023",
+    "lat": 43.60387014310152,
+    "lon": 1.454070164873211
+  },
+  {
+    "uai": "0311480R",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT AUBIN",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 137.9,
+    "year": "2024",
+    "lat": 43.60387014310152,
+    "lon": 1.454070164873211
+  },
+  {
+    "uai": "0311485W",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT EXUPERE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 127.3,
+    "year": "2022",
+    "lat": 43.58802210685649,
+    "lon": 1.446549859760799
+  },
+  {
+    "uai": "0311485W",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT EXUPERE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 122.8,
+    "year": "2023",
+    "lat": 43.58802210685649,
+    "lon": 1.446549859760799
+  },
+  {
+    "uai": "0311485W",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT EXUPERE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 125.3,
+    "year": "2024",
+    "lat": 43.58802210685649,
+    "lon": 1.446549859760799
+  },
+  {
+    "uai": "0311491C",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT JOSEPH LA SALLE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 142.4,
+    "year": "2022",
+    "lat": 43.593292101689045,
+    "lon": 1.4740410642717956
+  },
+  {
+    "uai": "0311491C",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT JOSEPH LA SALLE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 145.4,
+    "year": "2023",
+    "lat": 43.593292101689045,
+    "lon": 1.4740410642717956
+  },
+  {
+    "uai": "0311491C",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT JOSEPH LA SALLE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 149.2,
+    "year": "2024",
+    "lat": 43.593292101689045,
+    "lon": 1.4740410642717956
+  },
+  {
+    "uai": "0311499L",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT NICOLAS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 124.8,
+    "year": "2022",
+    "lat": 43.59923437585658,
+    "lon": 1.4341999010560533
+  },
+  {
+    "uai": "0311499L",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT NICOLAS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 126.6,
+    "year": "2023",
+    "lat": 43.59923437585658,
+    "lon": 1.4341999010560533
+  },
+  {
+    "uai": "0311499L",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT NICOLAS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 130.6,
+    "year": "2024",
+    "lat": 43.59923437585658,
+    "lon": 1.4341999010560533
+  },
+  {
+    "uai": "0311500M",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT STANISLAS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 140.9,
+    "year": "2022",
+    "lat": 43.594125773929214,
+    "lon": 1.4465096817555143
+  },
+  {
+    "uai": "0311500M",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT STANISLAS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 141.5,
+    "year": "2023",
+    "lat": 43.594125773929214,
+    "lon": 1.4465096817555143
+  },
+  {
+    "uai": "0311500M",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT STANISLAS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 144.2,
+    "year": "2024",
+    "lat": 43.594125773929214,
+    "lon": 1.4465096817555143
+  },
+  {
+    "uai": "0311503R",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT THOMAS D AQUIN",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 135.4,
+    "year": "2022",
+    "lat": 43.59671213232963,
+    "lon": 1.4474500842578608
+  },
+  {
+    "uai": "0311503R",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT THOMAS D AQUIN",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 135.3,
+    "year": "2023",
+    "lat": 43.59671213232963,
+    "lon": 1.4474500842578608
+  },
+  {
+    "uai": "0311503R",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINT THOMAS D AQUIN",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 135.2,
+    "year": "2024",
+    "lat": 43.59671213232963,
+    "lon": 1.4474500842578608
+  },
+  {
+    "uai": "0311478N",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE FAMILLE DES MINIMES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 132.3,
+    "year": "2022",
+    "lat": 43.61753081413011,
+    "lon": 1.4350494118292372
+  },
+  {
+    "uai": "0311478N",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE FAMILLE DES MINIMES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 136.9,
+    "year": "2023",
+    "lat": 43.61753081413011,
+    "lon": 1.4350494118292372
+  },
+  {
+    "uai": "0311478N",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE FAMILLE DES MINIMES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 138.1,
+    "year": "2024",
+    "lat": 43.61753081413011,
+    "lon": 1.4350494118292372
+  },
+  {
+    "uai": "0311487Y",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE FOY",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 127.9,
+    "year": "2022",
+    "lat": 43.61909339998677,
+    "lon": 1.4543102087631736
+  },
+  {
+    "uai": "0311487Y",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE FOY",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 132.5,
+    "year": "2023",
+    "lat": 43.61909339998677,
+    "lon": 1.4543102087631736
+  },
+  {
+    "uai": "0311487Y",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE FOY",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 133.8,
+    "year": "2024",
+    "lat": 43.61909339998677,
+    "lon": 1.4543102087631736
+  },
+  {
+    "uai": "0311489A",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE GERMAINE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 127.5,
+    "year": "2022",
+    "lat": 43.64261995595885,
+    "lon": 1.4574098393552621
+  },
+  {
+    "uai": "0311489A",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE GERMAINE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 129.7,
+    "year": "2023",
+    "lat": 43.64261995595885,
+    "lon": 1.4574098393552621
+  },
+  {
+    "uai": "0311489A",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE GERMAINE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 130.1,
+    "year": "2024",
+    "lat": 43.64261995595885,
+    "lon": 1.4574098393552621
+  },
+  {
+    "uai": "0311495G",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE MARIE DE NEVERS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 121.9,
+    "year": "2022",
+    "lat": 43.609331609774856,
+    "lon": 1.4432096440041036
+  },
+  {
+    "uai": "0311495G",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE MARIE DE NEVERS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 125.5,
+    "year": "2023",
+    "lat": 43.609331609774856,
+    "lon": 1.4432096440041036
+  },
+  {
+    "uai": "0311495G",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE MARIE DE NEVERS",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 125.9,
+    "year": "2024",
+    "lat": 43.609331609774856,
+    "lon": 1.4432096440041036
+  },
+  {
+    "uai": "0311497J",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE MARIE DES URSULINES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 118.6,
+    "year": "2022",
+    "lat": 43.60870543691201,
+    "lon": 1.459450048155047
+  },
+  {
+    "uai": "0311497J",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE MARIE DES URSULINES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 120.6,
+    "year": "2023",
+    "lat": 43.60870543691201,
+    "lon": 1.459450048155047
+  },
+  {
+    "uai": "0311497J",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE MARIE DES URSULINES",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 121.3,
+    "year": "2024",
+    "lat": 43.60870543691201,
+    "lon": 1.459450048155047
+  },
+  {
+    "uai": "0311502P",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE THERESE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 138.3,
+    "year": "2022",
+    "lat": 43.59064330920064,
+    "lon": 1.472546506355007
+  },
+  {
+    "uai": "0311502P",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE THERESE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 140.0,
+    "year": "2023",
+    "lat": 43.59064330920064,
+    "lon": 1.472546506355007
+  },
+  {
+    "uai": "0311502P",
+    "name": "ECOLE PRIMAIRE PRIVEE SAINTE THERESE",
+    "type": "elementaire",
+    "sector": "Privé",
+    "ips": 145.4,
+    "year": "2024",
+    "lat": 43.59064330920064,
+    "lon": 1.472546506355007
+  },
+  {
+    "uai": "0311782U",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ADA LOVELACE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.1,
+    "year": "2024",
+    "lat": 43.597125991611016,
+    "lon": 1.4151594229766762
+  },
+  {
+    "uai": "0311008C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ALEXANDRE FOURTANIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 133.6,
+    "year": "2022",
+    "lat": 43.6028327401688,
+    "lon": 1.4499804506558804
+  },
+  {
+    "uai": "0311008C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ALEXANDRE FOURTANIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 134.4,
+    "year": "2023",
+    "lat": 43.6028327401688,
+    "lon": 1.4499804506558804
+  },
+  {
+    "uai": "0311008C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ALEXANDRE FOURTANIER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 134.3,
+    "year": "2024",
+    "lat": 43.6028327401688,
+    "lon": 1.4499804506558804
+  },
+  {
+    "uai": "0312088B",
+    "name": "ECOLE PRIMAIRE PUBLIQUE AMIDONNIERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 120.1,
+    "year": "2022",
+    "lat": 43.60929369282505,
+    "lon": 1.421370231531258
+  },
+  {
+    "uai": "0312088B",
+    "name": "ECOLE PRIMAIRE PUBLIQUE AMIDONNIERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 120.5,
+    "year": "2023",
+    "lat": 43.60929369282505,
+    "lon": 1.421370231531258
+  },
+  {
+    "uai": "0312088B",
+    "name": "ECOLE PRIMAIRE PUBLIQUE AMIDONNIERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 123.6,
+    "year": "2024",
+    "lat": 43.60929369282505,
+    "lon": 1.421370231531258
+  },
+  {
+    "uai": "0311010E",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ARMAND LEYGUE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 130.4,
+    "year": "2022",
+    "lat": 43.5968093684137,
+    "lon": 1.4649949024101128
+  },
+  {
+    "uai": "0311010E",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ARMAND LEYGUE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 130.0,
+    "year": "2023",
+    "lat": 43.5968093684137,
+    "lon": 1.4649949024101128
+  },
+  {
+    "uai": "0311010E",
+    "name": "ECOLE PRIMAIRE PUBLIQUE ARMAND LEYGUE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 130.6,
+    "year": "2024",
+    "lat": 43.5968093684137,
+    "lon": 1.4649949024101128
+  },
+  {
+    "uai": "0310161G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE CALAS DUPONT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 119.1,
+    "year": "2022",
+    "lat": 43.589142807932035,
+    "lon": 1.4455005646511274
+  },
+  {
+    "uai": "0310161G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE CALAS DUPONT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 119.6,
+    "year": "2023",
+    "lat": 43.589142807932035,
+    "lon": 1.4455005646511274
+  },
+  {
+    "uai": "0310161G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE CALAS DUPONT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 117.3,
+    "year": "2024",
+    "lat": 43.589142807932035,
+    "lon": 1.4455005646511274
+  },
+  {
+    "uai": "0313018M",
+    "name": "ECOLE PRIMAIRE PUBLIQUE CANTO LAOUZETTO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": null,
+    "year": "2022",
+    "lat": 43.55987045373459,
+    "lon": 1.3881909166897084
+  },
+  {
+    "uai": "0313018M",
+    "name": "ECOLE PRIMAIRE PUBLIQUE CANTO LAOUZETTO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": null,
+    "year": "2023",
+    "lat": 43.55987045373459,
+    "lon": 1.3881909166897084
+  },
+  {
+    "uai": "0313018M",
+    "name": "ECOLE PRIMAIRE PUBLIQUE CANTO LAOUZETTO",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 87.2,
+    "year": "2024",
+    "lat": 43.55987045373459,
+    "lon": 1.3881909166897084
+  },
+  {
+    "uai": "0312852G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE DES PONTS JUMEAUX",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 100.1,
+    "year": "2022",
+    "lat": 43.6147882497205,
+    "lon": 1.421890375737284
+  },
+  {
+    "uai": "0312852G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE DES PONTS JUMEAUX",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 105.0,
+    "year": "2023",
+    "lat": 43.6147882497205,
+    "lon": 1.421890375737284
+  },
+  {
+    "uai": "0312852G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE DES PONTS JUMEAUX",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 106.2,
+    "year": "2024",
+    "lat": 43.6147882497205,
+    "lon": 1.421890375737284
+  },
+  {
+    "uai": "0312977T",
+    "name": "ECOLE PRIMAIRE PUBLIQUE DORTIS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 88.4,
+    "year": "2022",
+    "lat": 43.6669884007469,
+    "lon": 1.4354197491489133
+  },
+  {
+    "uai": "0312977T",
+    "name": "ECOLE PRIMAIRE PUBLIQUE DORTIS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 89.5,
+    "year": "2023",
+    "lat": 43.6669884007469,
+    "lon": 1.4354197491489133
+  },
+  {
+    "uai": "0313131K",
+    "name": "ECOLE PRIMAIRE PUBLIQUE EMILIE DU CHATELET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": null,
+    "year": "2024",
+    "lat": 43.59099986523695,
+    "lon": 1.3681014903089366
+  },
+  {
+    "uai": "0310916C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE FALGUIERE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 129.7,
+    "year": "2024",
+    "lat": 43.60744514784374,
+    "lon": 1.430000212518502
+  },
+  {
+    "uai": "0312921G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GENEVIEVE DE GAULLE ANTHONIOZ",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 92.4,
+    "year": "2022",
+    "lat": 43.600507097619634,
+    "lon": 1.4061176505136046
+  },
+  {
+    "uai": "0312921G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GENEVIEVE DE GAULLE ANTHONIOZ",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.3,
+    "year": "2023",
+    "lat": 43.600507097619634,
+    "lon": 1.4061176505136046
+  },
+  {
+    "uai": "0312921G",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GENEVIEVE DE GAULLE ANTHONIOZ",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 92.5,
+    "year": "2024",
+    "lat": 43.600507097619634,
+    "lon": 1.4061176505136046
+  },
+  {
+    "uai": "0312975R",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GEORGES MAILHOS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 89.4,
+    "year": "2022",
+    "lat": 43.56287570701777,
+    "lon": 1.504629229891012
+  },
+  {
+    "uai": "0312975R",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GEORGES MAILHOS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.5,
+    "year": "2023",
+    "lat": 43.56287570701777,
+    "lon": 1.504629229891012
+  },
+  {
+    "uai": "0312975R",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GEORGES MAILHOS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 93.1,
+    "year": "2024",
+    "lat": 43.56287570701777,
+    "lon": 1.504629229891012
+  },
+  {
+    "uai": "0312943F",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GERMAINE TILLION",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 86.9,
+    "year": "2022",
+    "lat": 43.584304661071585,
+    "lon": 1.3917188963576546
+  },
+  {
+    "uai": "0312943F",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GERMAINE TILLION",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 89.9,
+    "year": "2023",
+    "lat": 43.584304661071585,
+    "lon": 1.3917188963576546
+  },
+  {
+    "uai": "0312943F",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GERMAINE TILLION",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.4,
+    "year": "2024",
+    "lat": 43.584304661071585,
+    "lon": 1.3917188963576546
+  },
+  {
+    "uai": "0310975S",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GRAND SELVE",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 92.2,
+    "year": "2024",
+    "lat": 43.648922356176655,
+    "lon": 1.4494345748045336
+  },
+  {
+    "uai": "0312870B",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GUILHERMY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 109.7,
+    "year": "2022",
+    "lat": 43.56728428376914,
+    "lon": 1.372159383262392
+  },
+  {
+    "uai": "0312870B",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GUILHERMY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 108.6,
+    "year": "2023",
+    "lat": 43.56728428376914,
+    "lon": 1.372159383262392
+  },
+  {
+    "uai": "0312870B",
+    "name": "ECOLE PRIMAIRE PUBLIQUE GUILHERMY",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 109.1,
+    "year": "2024",
+    "lat": 43.56728428376914,
+    "lon": 1.372159383262392
+  },
+  {
+    "uai": "0312769S",
+    "name": "ECOLE PRIMAIRE PUBLIQUE JEAN PIERRE VERNANT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 126.6,
+    "year": "2022",
+    "lat": 43.55028201674248,
+    "lon": 1.457769543098067
+  },
+  {
+    "uai": "0312769S",
+    "name": "ECOLE PRIMAIRE PUBLIQUE JEAN PIERRE VERNANT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 125.3,
+    "year": "2023",
+    "lat": 43.55028201674248,
+    "lon": 1.457769543098067
+  },
+  {
+    "uai": "0312769S",
+    "name": "ECOLE PRIMAIRE PUBLIQUE JEAN PIERRE VERNANT",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 129.8,
+    "year": "2024",
+    "lat": 43.55028201674248,
+    "lon": 1.457769543098067
+  },
+  {
+    "uai": "0312977T",
+    "name": "ECOLE PRIMAIRE PUBLIQUE JOSEPHINE BAKER",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 90.1,
+    "year": "2024",
+    "lat": 43.6669884007469,
+    "lon": 1.4354197491489133
+  },
+  {
+    "uai": "0311024V",
+    "name": "ECOLE PRIMAIRE PUBLIQUE LES OUSTALOUS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 109.0,
+    "year": "2024",
+    "lat": 43.574761055890356,
+    "lon": 1.4242694616074525
+  },
+  {
+    "uai": "0312871C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE NIBOUL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 90.5,
+    "year": "2022",
+    "lat": 43.6400257262731,
+    "lon": 1.4500320483205769
+  },
+  {
+    "uai": "0312871C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE NIBOUL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.7,
+    "year": "2023",
+    "lat": 43.6400257262731,
+    "lon": 1.4500320483205769
+  },
+  {
+    "uai": "0312871C",
+    "name": "ECOLE PRIMAIRE PUBLIQUE NIBOUL",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 89.7,
+    "year": "2024",
+    "lat": 43.6400257262731,
+    "lon": 1.4500320483205769
+  },
+  {
+    "uai": "0312722R",
+    "name": "ECOLE PRIMAIRE PUBLIQUE OLYMPE DE GOUGES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 91.5,
+    "year": "2022",
+    "lat": 43.654516093000474,
+    "lon": 1.4396497623937492
+  },
+  {
+    "uai": "0312722R",
+    "name": "ECOLE PRIMAIRE PUBLIQUE OLYMPE DE GOUGES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 90.5,
+    "year": "2023",
+    "lat": 43.654516093000474,
+    "lon": 1.4396497623937492
+  },
+  {
+    "uai": "0312722R",
+    "name": "ECOLE PRIMAIRE PUBLIQUE OLYMPE DE GOUGES",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 87.0,
+    "year": "2024",
+    "lat": 43.654516093000474,
+    "lon": 1.4396497623937492
+  },
+  {
+    "uai": "0312080T",
+    "name": "ECOLE PRIMAIRE PUBLIQUE SEPT DENIERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 118.6,
+    "year": "2022",
+    "lat": 43.61665646112352,
+    "lon": 1.4088003602598822
+  },
+  {
+    "uai": "0312080T",
+    "name": "ECOLE PRIMAIRE PUBLIQUE SEPT DENIERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 121.3,
+    "year": "2023",
+    "lat": 43.61665646112352,
+    "lon": 1.4088003602598822
+  },
+  {
+    "uai": "0312080T",
+    "name": "ECOLE PRIMAIRE PUBLIQUE SEPT DENIERS",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 120.9,
+    "year": "2024",
+    "lat": 43.61665646112352,
+    "lon": 1.4088003602598822
+  },
+  {
+    "uai": "0310950P",
+    "name": "ECOLE PRIMAIRE PUBLIQUE SERMET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 133.4,
+    "year": "2022",
+    "lat": 43.607123791921296,
+    "lon": 1.4418106119963854
+  },
+  {
+    "uai": "0310950P",
+    "name": "ECOLE PRIMAIRE PUBLIQUE SERMET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 134.0,
+    "year": "2023",
+    "lat": 43.607123791921296,
+    "lon": 1.4418106119963854
+  },
+  {
+    "uai": "0310950P",
+    "name": "ECOLE PRIMAIRE PUBLIQUE SERMET",
+    "type": "elementaire",
+    "sector": "Public",
+    "ips": 135.6,
+    "year": "2024",
+    "lat": 43.607123791921296,
+    "lon": 1.4418106119963854
+  },
+  {
+    "uai": "0312579K",
+    "name": "ECOLE DE PRODUCTION PRIVE DYNAMECA",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 118.9,
+    "year": "2023",
+    "lat": 43.59843794548081,
+    "lon": 1.4152098674852227
+  },
+  {
+    "uai": "0312579K",
+    "name": "ECOLE DE PRODUCTION PRIVE DYNAMECA",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 109.3,
+    "year": "2024",
+    "lat": 43.59843794548081,
+    "lon": 1.4152098674852227
+  },
+  {
+    "uai": "0312579K",
+    "name": "ECOLE DE PRODUCTION PRIVE DYNAMECA",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 100.6,
+    "year": "2025",
+    "lat": 43.59843794548081,
+    "lon": 1.4152098674852227
+  },
+  {
+    "uai": "0312267W",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE DES ARENES",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 117.2,
+    "year": "2023",
+    "lat": 43.592246255804255,
+    "lon": 1.4186001279568254
+  },
+  {
+    "uai": "0312267W",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE DES ARENES",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 116.7,
+    "year": "2024",
+    "lat": 43.592246255804255,
+    "lon": 1.4186001279568254
+  },
+  {
+    "uai": "0312267W",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE DES ARENES",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 116.9,
+    "year": "2025",
+    "lat": 43.592246255804255,
+    "lon": 1.4186001279568254
+  },
+  {
+    "uai": "0311323V",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE JOSEPHINE BAKER",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 101.0,
+    "year": "2023",
+    "lat": 43.584518442901285,
+    "lon": 1.3975365460346079
+  },
+  {
+    "uai": "0311323V",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE JOSEPHINE BAKER",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 101.2,
+    "year": "2024",
+    "lat": 43.584518442901285,
+    "lon": 1.3975365460346079
+  },
+  {
+    "uai": "0311323V",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE JOSEPHINE BAKER",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 105.6,
+    "year": "2025",
+    "lat": 43.584518442901285,
+    "lon": 1.3975365460346079
+  },
+  {
+    "uai": "0310039Z",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE MARCELIN BERTHELOT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 113.6,
+    "year": "2023",
+    "lat": 43.5873697239962,
+    "lon": 1.4431603652647103
+  },
+  {
+    "uai": "0310039Z",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE MARCELIN BERTHELOT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 116.9,
+    "year": "2024",
+    "lat": 43.5873697239962,
+    "lon": 1.4431603652647103
+  },
+  {
+    "uai": "0310039Z",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE MARCELIN BERTHELOT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 116.3,
+    "year": "2025",
+    "lat": 43.5873697239962,
+    "lon": 1.4431603652647103
+  },
+  {
+    "uai": "0310047H",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE OZENNE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 126.4,
+    "year": "2023",
+    "lat": 43.60964697502873,
+    "lon": 1.4417296932885342
+  },
+  {
+    "uai": "0310047H",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE OZENNE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 126.6,
+    "year": "2024",
+    "lat": 43.60964697502873,
+    "lon": 1.4417296932885342
+  },
+  {
+    "uai": "0310047H",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE OZENNE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 125.9,
+    "year": "2025",
+    "lat": 43.60964697502873,
+    "lon": 1.4417296932885342
+  },
+  {
+    "uai": "0311133N",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE LE CAOUSOU",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 151.3,
+    "year": "2023",
+    "lat": 43.59989376136917,
+    "lon": 1.4608197081090182
+  },
+  {
+    "uai": "0311133N",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE LE CAOUSOU",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 152.2,
+    "year": "2024",
+    "lat": 43.59989376136917,
+    "lon": 1.4608197081090182
+  },
+  {
+    "uai": "0311133N",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE LE CAOUSOU",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 152.7,
+    "year": "2025",
+    "lat": 43.59989376136917,
+    "lon": 1.4608197081090182
+  },
+  {
+    "uai": "0311145B",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINT JOSEPH LA SALLE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 147.0,
+    "year": "2023",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311145B",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINT JOSEPH LA SALLE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 148.4,
+    "year": "2024",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311145B",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINT JOSEPH LA SALLE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 147.7,
+    "year": "2025",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311147D",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINTE MARIE DE NEVERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 135.7,
+    "year": "2023",
+    "lat": 43.60727282133117,
+    "lon": 1.4434178459200382
+  },
+  {
+    "uai": "0311147D",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINTE MARIE DE NEVERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 136.0,
+    "year": "2024",
+    "lat": 43.60727282133117,
+    "lon": 1.4434178459200382
+  },
+  {
+    "uai": "0311147D",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINTE MARIE DE NEVERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 137.5,
+    "year": "2025",
+    "lat": 43.60727282133117,
+    "lon": 1.4434178459200382
+  },
+  {
+    "uai": "0311146C",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINTE MARIE DES CHAMPS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 142.6,
+    "year": "2023",
+    "lat": 43.590758355912854,
+    "lon": 1.4697229849204894
+  },
+  {
+    "uai": "0311146C",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINTE MARIE DES CHAMPS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 144.7,
+    "year": "2024",
+    "lat": 43.590758355912854,
+    "lon": 1.4697229849204894
+  },
+  {
+    "uai": "0311146C",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE PRIVE SAINTE MARIE DES CHAMPS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 145.9,
+    "year": "2025",
+    "lat": 43.590758355912854,
+    "lon": 1.4697229849204894
+  },
+  {
+    "uai": "0311902Z",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE STEPHANE HESSEL",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 112.3,
+    "year": "2023",
+    "lat": 43.61613609499977,
+    "lon": 1.4758401040015245
+  },
+  {
+    "uai": "0311902Z",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE STEPHANE HESSEL",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 113.5,
+    "year": "2024",
+    "lat": 43.61613609499977,
+    "lon": 1.4758401040015245
+  },
+  {
+    "uai": "0311902Z",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE STEPHANE HESSEL",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 113.5,
+    "year": "2025",
+    "lat": 43.61613609499977,
+    "lon": 1.4758401040015245
+  },
+  {
+    "uai": "0311586F",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE TOULOUSE LAUTREC",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 109.4,
+    "year": "2023",
+    "lat": 43.62681912852784,
+    "lon": 1.4421204429885308
+  },
+  {
+    "uai": "0311586F",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE TOULOUSE LAUTREC",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 112.2,
+    "year": "2024",
+    "lat": 43.62681912852784,
+    "lon": 1.4421204429885308
+  },
+  {
+    "uai": "0311586F",
+    "name": "LYCEE GENERAL ET TECHNOLOGIQUE TOULOUSE LAUTREC",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 113.0,
+    "year": "2025",
+    "lat": 43.62681912852784,
+    "lon": 1.4421204429885308
+  },
+  {
+    "uai": "0310036W",
+    "name": "LYCEE GENERAL PIERRE DE FERMAT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 141.8,
+    "year": "2023",
+    "lat": 43.6032751508944,
+    "lon": 1.4398952901892104
+  },
+  {
+    "uai": "0310036W",
+    "name": "LYCEE GENERAL PIERRE DE FERMAT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 141.6,
+    "year": "2024",
+    "lat": 43.6032751508944,
+    "lon": 1.4398952901892104
+  },
+  {
+    "uai": "0310036W",
+    "name": "LYCEE GENERAL PIERRE DE FERMAT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 142.6,
+    "year": "2025",
+    "lat": 43.6032751508944,
+    "lon": 1.4398952901892104
+  },
+  {
+    "uai": "0312356T",
+    "name": "LYCEE GENERAL PRIVE OHR TORAH LEDER INSTITIT",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 126.8,
+    "year": "2023",
+    "lat": 43.622133414092765,
+    "lon": 1.4617305213802314
+  },
+  {
+    "uai": "0312356T",
+    "name": "LYCEE GENERAL PRIVE OHR TORAH LEDER INSTITIT",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 129.0,
+    "year": "2024",
+    "lat": 43.622133414092765,
+    "lon": 1.4617305213802314
+  },
+  {
+    "uai": "0312356T",
+    "name": "LYCEE GENERAL PRIVE OHR TORAH LEDER INSTITIT",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 125.5,
+    "year": "2025",
+    "lat": 43.622133414092765,
+    "lon": 1.4617305213802314
+  },
+  {
+    "uai": "0310041B",
+    "name": "LYCEE GENERAL SAINT SERNIN",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 139.3,
+    "year": "2023",
+    "lat": 43.608689274370356,
+    "lon": 1.440150577277135
+  },
+  {
+    "uai": "0310041B",
+    "name": "LYCEE GENERAL SAINT SERNIN",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 139.2,
+    "year": "2024",
+    "lat": 43.608689274370356,
+    "lon": 1.440150577277135
+  },
+  {
+    "uai": "0310041B",
+    "name": "LYCEE GENERAL SAINT SERNIN",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 140.3,
+    "year": "2025",
+    "lat": 43.608689274370356,
+    "lon": 1.440150577277135
+  },
+  {
+    "uai": "0310038Y",
+    "name": "LYCEE POLYVALENT BELLEVUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 127.7,
+    "year": "2023",
+    "lat": 43.55902482847178,
+    "lon": 1.4597497411324514
+  },
+  {
+    "uai": "0310038Y",
+    "name": "LYCEE POLYVALENT BELLEVUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 127.4,
+    "year": "2024",
+    "lat": 43.55902482847178,
+    "lon": 1.4597497411324514
+  },
+  {
+    "uai": "0310038Y",
+    "name": "LYCEE POLYVALENT BELLEVUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 127.0,
+    "year": "2025",
+    "lat": 43.55902482847178,
+    "lon": 1.4597497411324514
+  },
+  {
+    "uai": "0310044E",
+    "name": "LYCEE POLYVALENT DEODAT DE SEVERAC LYCEE DES METIERS DE L INGENIERIE ET DE L INDUSTRIE DU FUTUR",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 105.9,
+    "year": "2023",
+    "lat": 43.58914042072771,
+    "lon": 1.4264598048930772
+  },
+  {
+    "uai": "0310044E",
+    "name": "LYCEE POLYVALENT DEODAT DE SEVERAC LYCEE DES METIERS DE L INGENIERIE ET DE L INDUSTRIE DU FUTUR",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 107.6,
+    "year": "2024",
+    "lat": 43.58914042072771,
+    "lon": 1.4264598048930772
+  },
+  {
+    "uai": "0310044E",
+    "name": "LYCEE POLYVALENT DEODAT DE SEVERAC LYCEE DES METIERS DE L INGENIERIE ET DE L INDUSTRIE DU FUTUR",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 108.2,
+    "year": "2025",
+    "lat": 43.58914042072771,
+    "lon": 1.4264598048930772
+  },
+  {
+    "uai": "0310046G",
+    "name": "LYCEE POLYVALENT HOTELIER LYCEE DES METIERS DE L HOTELLERIE ET DU TOURISME D OCCITANIE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 119.0,
+    "year": "2023",
+    "lat": 43.597950788104605,
+    "lon": 1.4048599589933615
+  },
+  {
+    "uai": "0310046G",
+    "name": "LYCEE POLYVALENT HOTELIER LYCEE DES METIERS DE L HOTELLERIE ET DU TOURISME D OCCITANIE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 119.6,
+    "year": "2024",
+    "lat": 43.597950788104605,
+    "lon": 1.4048599589933615
+  },
+  {
+    "uai": "0310046G",
+    "name": "LYCEE POLYVALENT HOTELIER LYCEE DES METIERS DE L HOTELLERIE ET DU TOURISME D OCCITANIE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 117.3,
+    "year": "2025",
+    "lat": 43.597950788104605,
+    "lon": 1.4048599589933615
+  },
+  {
+    "uai": "0312759F",
+    "name": "LYCEE POLYVALENT JOSEPH GALLIENI LYCEE DES METIERS DE L AUTOMOBILE DU TRANSPORT ET DE LA LOGISTIQUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 83.5,
+    "year": "2023",
+    "lat": 43.57340769104061,
+    "lon": 1.4261397489726
+  },
+  {
+    "uai": "0312759F",
+    "name": "LYCEE POLYVALENT JOSEPH GALLIENI LYCEE DES METIERS DE L AUTOMOBILE DU TRANSPORT ET DE LA LOGISTIQUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 85.3,
+    "year": "2024",
+    "lat": 43.57340769104061,
+    "lon": 1.4261397489726
+  },
+  {
+    "uai": "0312759F",
+    "name": "LYCEE POLYVALENT JOSEPH GALLIENI LYCEE DES METIERS DE L AUTOMOBILE DU TRANSPORT ET DE LA LOGISTIQUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 85.6,
+    "year": "2025",
+    "lat": 43.57340769104061,
+    "lon": 1.4261397489726
+  },
+  {
+    "uai": "0311134P",
+    "name": "LYCEE POLYVALENT PRIVE EMILIE DE RODAT",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 144.9,
+    "year": "2023",
+    "lat": 43.595859912662654,
+    "lon": 1.4206068091565942
+  },
+  {
+    "uai": "0311134P",
+    "name": "LYCEE POLYVALENT PRIVE EMILIE DE RODAT",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 144.6,
+    "year": "2024",
+    "lat": 43.595859912662654,
+    "lon": 1.4206068091565942
+  },
+  {
+    "uai": "0311134P",
+    "name": "LYCEE POLYVALENT PRIVE EMILIE DE RODAT",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 146.0,
+    "year": "2025",
+    "lat": 43.595859912662654,
+    "lon": 1.4206068091565942
+  },
+  {
+    "uai": "0311138U",
+    "name": "LYCEE POLYVALENT PRIVE LES MARISTES TOULOUSE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 131.5,
+    "year": "2023",
+    "lat": 43.57599329420358,
+    "lon": 1.4710623029725036
+  },
+  {
+    "uai": "0311138U",
+    "name": "LYCEE POLYVALENT PRIVE LES MARISTES TOULOUSE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 129.7,
+    "year": "2024",
+    "lat": 43.57599329420358,
+    "lon": 1.4710623029725036
+  },
+  {
+    "uai": "0311138U",
+    "name": "LYCEE POLYVALENT PRIVE LES MARISTES TOULOUSE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 131.3,
+    "year": "2025",
+    "lat": 43.57599329420358,
+    "lon": 1.4710623029725036
+  },
+  {
+    "uai": "0310040A",
+    "name": "LYCEE POLYVALENT RAYMOND NAVES",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 108.8,
+    "year": "2023",
+    "lat": 43.63826281869856,
+    "lon": 1.4627798494426274
+  },
+  {
+    "uai": "0310040A",
+    "name": "LYCEE POLYVALENT RAYMOND NAVES",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 110.3,
+    "year": "2024",
+    "lat": 43.63826281869856,
+    "lon": 1.4627798494426274
+  },
+  {
+    "uai": "0310040A",
+    "name": "LYCEE POLYVALENT RAYMOND NAVES",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 111.2,
+    "year": "2025",
+    "lat": 43.63826281869856,
+    "lon": 1.4627798494426274
+  },
+  {
+    "uai": "0310056T",
+    "name": "LYCEE PROFESSIONNEL GABRIEL PERI LYCEE DES METIERS DE LA VENTE ET DE LA MODE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 98.7,
+    "year": "2023",
+    "lat": 43.60589539108379,
+    "lon": 1.4549196693636997
+  },
+  {
+    "uai": "0310056T",
+    "name": "LYCEE PROFESSIONNEL GABRIEL PERI LYCEE DES METIERS DE LA VENTE ET DE LA MODE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 97.3,
+    "year": "2024",
+    "lat": 43.60589539108379,
+    "lon": 1.4549196693636997
+  },
+  {
+    "uai": "0310056T",
+    "name": "LYCEE PROFESSIONNEL GABRIEL PERI LYCEE DES METIERS DE LA VENTE ET DE LA MODE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 96.7,
+    "year": "2025",
+    "lat": 43.60589539108379,
+    "lon": 1.4549196693636997
+  },
+  {
+    "uai": "0311324W",
+    "name": "LYCEE PROFESSIONNEL GISELE HALIMI",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 83.4,
+    "year": "2023",
+    "lat": 43.584518442901285,
+    "lon": 1.3975365460346079
+  },
+  {
+    "uai": "0311324W",
+    "name": "LYCEE PROFESSIONNEL GISELE HALIMI",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 85.0,
+    "year": "2024",
+    "lat": 43.584518442901285,
+    "lon": 1.3975365460346079
+  },
+  {
+    "uai": "0311324W",
+    "name": "LYCEE PROFESSIONNEL GISELE HALIMI",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 85.7,
+    "year": "2025",
+    "lat": 43.584518442901285,
+    "lon": 1.3975365460346079
+  },
+  {
+    "uai": "0310051M",
+    "name": "LYCEE PROFESSIONNEL GUYNEMER",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 86.1,
+    "year": "2023",
+    "lat": 43.58739011438754,
+    "lon": 1.4520800642177174
+  },
+  {
+    "uai": "0310051M",
+    "name": "LYCEE PROFESSIONNEL GUYNEMER",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 90.0,
+    "year": "2024",
+    "lat": 43.58739011438754,
+    "lon": 1.4520800642177174
+  },
+  {
+    "uai": "0310051M",
+    "name": "LYCEE PROFESSIONNEL GUYNEMER",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 91.8,
+    "year": "2025",
+    "lat": 43.58739011438754,
+    "lon": 1.4520800642177174
+  },
+  {
+    "uai": "0310057U",
+    "name": "LYCEE PROFESSIONNEL HELENE BOUCHER LYCEE DES METIERS DES SOINS A LA PERSONNE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 88.7,
+    "year": "2023",
+    "lat": 43.61352927717047,
+    "lon": 1.4339001274649656
+  },
+  {
+    "uai": "0310057U",
+    "name": "LYCEE PROFESSIONNEL HELENE BOUCHER LYCEE DES METIERS DES SOINS A LA PERSONNE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 91.0,
+    "year": "2024",
+    "lat": 43.61352927717047,
+    "lon": 1.4339001274649656
+  },
+  {
+    "uai": "0310057U",
+    "name": "LYCEE PROFESSIONNEL HELENE BOUCHER LYCEE DES METIERS DES SOINS A LA PERSONNE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 91.6,
+    "year": "2025",
+    "lat": 43.61352927717047,
+    "lon": 1.4339001274649656
+  },
+  {
+    "uai": "0311200L",
+    "name": "LYCEE PROFESSIONNEL PRIVE AIRBUS TOULOUSE LYCEE DES METIERS DE L AERONAUTIQUE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 110.9,
+    "year": "2023",
+    "lat": 43.609423066973775,
+    "lon": 1.355995573352923
+  },
+  {
+    "uai": "0311200L",
+    "name": "LYCEE PROFESSIONNEL PRIVE AIRBUS TOULOUSE LYCEE DES METIERS DE L AERONAUTIQUE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 115.2,
+    "year": "2024",
+    "lat": 43.609423066973775,
+    "lon": 1.355995573352923
+  },
+  {
+    "uai": "0311200L",
+    "name": "LYCEE PROFESSIONNEL PRIVE AIRBUS TOULOUSE LYCEE DES METIERS DE L AERONAUTIQUE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 119.6,
+    "year": "2025",
+    "lat": 43.609423066973775,
+    "lon": 1.355995573352923
+  },
+  {
+    "uai": "0312064A",
+    "name": "LYCEE PROFESSIONNEL PRIVE INSTITUT MYRIAM LYCEE DES METIERS DE LA MODE DE LA RELATION CLIENT ET DES SERVICES",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 105.3,
+    "year": "2024",
+    "lat": 43.597996922654225,
+    "lon": 1.4470500241899382
+  },
+  {
+    "uai": "0312064A",
+    "name": "LYCEE PROFESSIONNEL PRIVE INSTITUT MYRIAM LYCEE DES METIERS DE LA MODE DE LA RELATION CLIENT ET DES SERVICES",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 105.3,
+    "year": "2025",
+    "lat": 43.597996922654225,
+    "lon": 1.4470500241899382
+  },
+  {
+    "uai": "0312062Y",
+    "name": "LYCEE PROFESSIONNEL PRIVE ISSEC PIGIER LYCEE DES METIERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 107.4,
+    "year": "2023",
+    "lat": 43.64365426005997,
+    "lon": 1.453120139470985
+  },
+  {
+    "uai": "0312062Y",
+    "name": "LYCEE PROFESSIONNEL PRIVE ISSEC PIGIER LYCEE DES METIERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 110.1,
+    "year": "2024",
+    "lat": 43.64365426005997,
+    "lon": 1.453120139470985
+  },
+  {
+    "uai": "0312062Y",
+    "name": "LYCEE PROFESSIONNEL PRIVE ISSEC PIGIER LYCEE DES METIERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 111.0,
+    "year": "2025",
+    "lat": 43.64365426005997,
+    "lon": 1.453120139470985
+  },
+  {
+    "uai": "0311190A",
+    "name": "LYCEE PROFESSIONNEL PRIVE JASMIN COIFFURE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 108.6,
+    "year": "2023",
+    "lat": 43.597181090545504,
+    "lon": 1.4351004384289805
+  },
+  {
+    "uai": "0311190A",
+    "name": "LYCEE PROFESSIONNEL PRIVE JASMIN COIFFURE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 106.5,
+    "year": "2024",
+    "lat": 43.597181090545504,
+    "lon": 1.4351004384289805
+  },
+  {
+    "uai": "0311190A",
+    "name": "LYCEE PROFESSIONNEL PRIVE JASMIN COIFFURE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 114.0,
+    "year": "2025",
+    "lat": 43.597181090545504,
+    "lon": 1.4351004384289805
+  },
+  {
+    "uai": "0311971Z",
+    "name": "LYCEE PROFESSIONNEL PRIVE LES POTIERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 118.4,
+    "year": "2023",
+    "lat": 43.5931421951866,
+    "lon": 1.4478351687628026
+  },
+  {
+    "uai": "0311971Z",
+    "name": "LYCEE PROFESSIONNEL PRIVE LES POTIERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 123.2,
+    "year": "2024",
+    "lat": 43.5931421951866,
+    "lon": 1.4478351687628026
+  },
+  {
+    "uai": "0311971Z",
+    "name": "LYCEE PROFESSIONNEL PRIVE LES POTIERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 119.5,
+    "year": "2025",
+    "lat": 43.5931421951866,
+    "lon": 1.4478351687628026
+  },
+  {
+    "uai": "0312064A",
+    "name": "LYCEE PROFESSIONNEL PRIVE MYRIAM LYCEE DES METIERS DE LA MODE DE LA RELATION CLIENT ET DES SERVICES",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 104.6,
+    "year": "2023",
+    "lat": 43.597996922654225,
+    "lon": 1.4470500241899382
+  },
+  {
+    "uai": "0312065B",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINT JOSEPH LA SALLE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 121.7,
+    "year": "2023",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0312065B",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINT JOSEPH LA SALLE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 116.5,
+    "year": "2024",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0312065B",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINT JOSEPH LA SALLE",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 118.4,
+    "year": "2025",
+    "lat": 43.5932877602121,
+    "lon": 1.4740523233705745
+  },
+  {
+    "uai": "0311970Y",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINTE MARIE DE NEVERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 113.2,
+    "year": "2023",
+    "lat": 43.60727282133117,
+    "lon": 1.4434178459200382
+  },
+  {
+    "uai": "0311970Y",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINTE MARIE DE NEVERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 113.0,
+    "year": "2024",
+    "lat": 43.60727282133117,
+    "lon": 1.4434178459200382
+  },
+  {
+    "uai": "0311970Y",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINTE MARIE DE NEVERS",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 114.2,
+    "year": "2025",
+    "lat": 43.60727282133117,
+    "lon": 1.4434178459200382
+  },
+  {
+    "uai": "0311219G",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINTE MARIE SAINT SERNIN",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 120.9,
+    "year": "2023",
+    "lat": 43.607076882565444,
+    "lon": 1.4342905248253977
+  },
+  {
+    "uai": "0311219G",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINTE MARIE SAINT SERNIN",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 123.5,
+    "year": "2024",
+    "lat": 43.607076882565444,
+    "lon": 1.4342905248253977
+  },
+  {
+    "uai": "0311219G",
+    "name": "LYCEE PROFESSIONNEL PRIVE SAINTE MARIE SAINT SERNIN",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 128.6,
+    "year": "2025",
+    "lat": 43.607076882565444,
+    "lon": 1.4342905248253977
+  },
+  {
+    "uai": "0310054R",
+    "name": "LYCEE PROFESSIONNEL RENEE BONNET",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 94.4,
+    "year": "2023",
+    "lat": 43.55588558657076,
+    "lon": 1.4681194455528364
+  },
+  {
+    "uai": "0310054R",
+    "name": "LYCEE PROFESSIONNEL RENEE BONNET",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 95.4,
+    "year": "2024",
+    "lat": 43.55588558657076,
+    "lon": 1.4681194455528364
+  },
+  {
+    "uai": "0310054R",
+    "name": "LYCEE PROFESSIONNEL RENEE BONNET",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 94.8,
+    "year": "2025",
+    "lat": 43.55588558657076,
+    "lon": 1.4681194455528364
+  },
+  {
+    "uai": "0310052N",
+    "name": "LYCEE PROFESSIONNEL ROLAND GARROS LYCEE DES METIERS DE LA MAINTENANCE MECANIQUE ET DE LA PRODUCTIQUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 86.5,
+    "year": "2023",
+    "lat": 43.629556204098996,
+    "lon": 1.4286998177797523
+  },
+  {
+    "uai": "0310052N",
+    "name": "LYCEE PROFESSIONNEL ROLAND GARROS LYCEE DES METIERS DE LA MAINTENANCE MECANIQUE ET DE LA PRODUCTIQUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 86.2,
+    "year": "2024",
+    "lat": 43.629556204098996,
+    "lon": 1.4286998177797523
+  },
+  {
+    "uai": "0310052N",
+    "name": "LYCEE PROFESSIONNEL ROLAND GARROS LYCEE DES METIERS DE LA MAINTENANCE MECANIQUE ET DE LA PRODUCTIQUE",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 84.4,
+    "year": "2025",
+    "lat": 43.629556204098996,
+    "lon": 1.4286998177797523
+  },
+  {
+    "uai": "0310091F",
+    "name": "LYCEE PROFESSIONNEL STEPHANE HESSEL",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 95.2,
+    "year": "2023",
+    "lat": 43.61595809445452,
+    "lon": 1.4773300011267958
+  },
+  {
+    "uai": "0310091F",
+    "name": "LYCEE PROFESSIONNEL STEPHANE HESSEL",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 95.0,
+    "year": "2024",
+    "lat": 43.61595809445452,
+    "lon": 1.4773300011267958
+  },
+  {
+    "uai": "0310091F",
+    "name": "LYCEE PROFESSIONNEL STEPHANE HESSEL",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 94.1,
+    "year": "2025",
+    "lat": 43.61595809445452,
+    "lon": 1.4773300011267958
+  },
+  {
+    "uai": "0310053P",
+    "name": "LYCEE PROFESSIONNEL URBAIN VITRY LYCEE DES METIERS DU BATIMENT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 86.8,
+    "year": "2023",
+    "lat": 43.6393360744222,
+    "lon": 1.4405101949642907
+  },
+  {
+    "uai": "0310053P",
+    "name": "LYCEE PROFESSIONNEL URBAIN VITRY LYCEE DES METIERS DU BATIMENT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 85.7,
+    "year": "2024",
+    "lat": 43.6393360744222,
+    "lon": 1.4405101949642907
+  },
+  {
+    "uai": "0310053P",
+    "name": "LYCEE PROFESSIONNEL URBAIN VITRY LYCEE DES METIERS DU BATIMENT",
+    "type": "lycee",
+    "sector": "Public",
+    "ips": 86.5,
+    "year": "2025",
+    "lat": 43.6393360744222,
+    "lon": 1.4405101949642907
+  },
+  {
+    "uai": "0311186W",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE BILLIERES",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 114.8,
+    "year": "2024",
+    "lat": 43.614519282214786,
+    "lon": 1.4428595223402172
+  },
+  {
+    "uai": "0311186W",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE BILLIERES",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 113.7,
+    "year": "2025",
+    "lat": 43.614519282214786,
+    "lon": 1.4428595223402172
+  },
+  {
+    "uai": "0311201M",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE INSTITUT MYRIAM",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 109.7,
+    "year": "2024",
+    "lat": 43.59794472882339,
+    "lon": 1.4470501985105557
+  },
+  {
+    "uai": "0311201M",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE INSTITUT MYRIAM",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 117.9,
+    "year": "2025",
+    "lat": 43.59794472882339,
+    "lon": 1.4470501985105557
+  },
+  {
+    "uai": "0311213A",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE ISSEC PIGIER",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 108.0,
+    "year": "2024",
+    "lat": 43.64353630567835,
+    "lon": 1.4529894801544514
+  },
+  {
+    "uai": "0311213A",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE ISSEC PIGIER",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 107.6,
+    "year": "2025",
+    "lat": 43.64353630567835,
+    "lon": 1.4529894801544514
+  },
+  {
+    "uai": "0311177L",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE SOCIAL ET TECHNIQUE LIMAYRAC",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 118.3,
+    "year": "2024",
+    "lat": 43.5938472218478,
+    "lon": 1.470639836575185
+  },
+  {
+    "uai": "0311177L",
+    "name": "LYCEE TECHNOLOGIQUE PRIVE SOCIAL ET TECHNIQUE LIMAYRAC",
+    "type": "lycee",
+    "sector": "Privé",
+    "ips": 99.5,
+    "year": "2025",
+    "lat": 43.5938472218478,
+    "lon": 1.470639836575185
+  },
+  {
+    "uai": "0312004K",
+    "name": "Ecole maternelle d'application Maurice Bécanne",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.581867721665674,
+    "lon": 1.4263744660792073
+  },
+  {
+    "uai": "0310203C",
+    "name": "Ecole maternelle d'application Ricardie 1",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.582717646966636,
+    "lon": 1.4496794002034374
+  },
+  {
+    "uai": "0312812N",
+    "name": "Ecole maternelle privée hors contrat Ma première page",
+    "type": "maternelle",
+    "sector": "Privé",
+    "ips": null,
+    "year": "",
+    "lat": 43.61732814412423,
+    "lon": 1.472160451562033
+  },
+  {
+    "uai": "0310236N",
+    "name": "Ecole maternelle publique  Soupetard",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.607348155382645,
+    "lon": 1.4774420997983246
+  },
+  {
+    "uai": "0310221X",
+    "name": "Ecole maternelle publique Alfred de Musset",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.622652973477386,
+    "lon": 1.4307793937154019
+  },
+  {
+    "uai": "0312573D",
+    "name": "Ecole maternelle publique Amouroux",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.629578108429385,
+    "lon": 1.4675497459504223
+  },
+  {
+    "uai": "0310211L",
+    "name": "Ecole maternelle publique Anatole France",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58564295421495,
+    "lon": 1.4627605709822555
+  },
+  {
+    "uai": "0310206F",
+    "name": "Ecole maternelle publique Armand Duportal",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59895412708802,
+    "lon": 1.4318658892176586
+  },
+  {
+    "uai": "0310225B",
+    "name": "Ecole maternelle publique Bonnefoy",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.61646075964713,
+    "lon": 1.4542894862102378
+  },
+  {
+    "uai": "0310205E",
+    "name": "Ecole maternelle publique Buffon",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.56384658916459,
+    "lon": 1.412949518943722
+  },
+  {
+    "uai": "0311550S",
+    "name": "Ecole maternelle publique Camille Claudel",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.56525573095224,
+    "lon": 1.398110105799096
+  },
+  {
+    "uai": "0311259A",
+    "name": "Ecole maternelle publique Château d'Ancely",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.61815082535193,
+    "lon": 1.3986594437981594
+  },
+  {
+    "uai": "0310195U",
+    "name": "Ecole maternelle publique Château de l'hers",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.60083612236261,
+    "lon": 1.4843205372814965
+  },
+  {
+    "uai": "0310245Y",
+    "name": "Ecole maternelle publique Claude Nougaro",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.61931016790815,
+    "lon": 1.43606000148756
+  },
+  {
+    "uai": "0310193S",
+    "name": "Ecole maternelle publique Clément Falcucci",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57954759777744,
+    "lon": 1.4085194103991454
+  },
+  {
+    "uai": "0310196V",
+    "name": "Ecole maternelle publique Courrège",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58284808368171,
+    "lon": 1.476320521306298
+  },
+  {
+    "uai": "0310226C",
+    "name": "Ecole maternelle publique Cuvier",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.63716864460474,
+    "lon": 1.46291946514001
+  },
+  {
+    "uai": "0311616N",
+    "name": "Ecole maternelle publique Daniel Faucher",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57278099587277,
+    "lon": 1.4048996569580408
+  },
+  {
+    "uai": "0311662N",
+    "name": "Ecole maternelle publique Didier Daurat",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57338221341522,
+    "lon": 1.402210592237039
+  },
+  {
+    "uai": "0312112C",
+    "name": "Ecole maternelle publique Elsa Triolet",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5720608341286,
+    "lon": 1.3941995277645496
+  },
+  {
+    "uai": "0310227D",
+    "name": "Ecole maternelle publique Ernest Renan",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.6364919643643,
+    "lon": 1.4433198168134527
+  },
+  {
+    "uai": "0310208H",
+    "name": "Ecole maternelle publique Etienne Billières",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5893337006571,
+    "lon": 1.4190703945907333
+  },
+  {
+    "uai": "0310197W",
+    "name": "Ecole maternelle publique Fabre",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59687780299015,
+    "lon": 1.4431797631176806
+  },
+  {
+    "uai": "0312124R",
+    "name": "Ecole maternelle publique Ferdinand de Lesseps",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57872620544203,
+    "lon": 1.3842794763034243
+  },
+  {
+    "uai": "0312682X",
+    "name": "Ecole maternelle publique Fleurance",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.601092998142526,
+    "lon": 1.3697301961468251
+  },
+  {
+    "uai": "0310207G",
+    "name": "Ecole maternelle publique Fontaine Casselardit",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.60422465617133,
+    "lon": 1.4092405078879917
+  },
+  {
+    "uai": "0311910H",
+    "name": "Ecole maternelle publique Françoise Dolto",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58659575763903,
+    "lon": 1.479560010337146
+  },
+  {
+    "uai": "0312318B",
+    "name": "Ecole maternelle publique Gaston Dupouy",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58127521548839,
+    "lon": 1.3806795532968883
+  },
+  {
+    "uai": "0311301W",
+    "name": "Ecole maternelle publique Georges Bastide",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.56070162449583,
+    "lon": 1.3976505904727765
+  },
+  {
+    "uai": "0310194T",
+    "name": "Ecole maternelle publique Georges Hyon",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57928600977149,
+    "lon": 1.4093993841499235
+  },
+  {
+    "uai": "0310198X",
+    "name": "Ecole maternelle publique Henri Guillaumet",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57722140112628,
+    "lon": 1.487429668396192
+  },
+  {
+    "uai": "0310199Y",
+    "name": "Ecole maternelle publique Jean Chaubet",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59998520085184,
+    "lon": 1.467670177700606
+  },
+  {
+    "uai": "0310185H",
+    "name": "Ecole maternelle publique Jean Dieuzaide",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.64505527742913,
+    "lon": 1.4197497853995928
+  },
+  {
+    "uai": "0311622V",
+    "name": "Ecole maternelle publique Jean Galia",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.56847228262698,
+    "lon": 1.4034401113497217
+  },
+  {
+    "uai": "0310188L",
+    "name": "Ecole maternelle publique Jean Jaurès",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58853505482809,
+    "lon": 1.4517805169539733
+  },
+  {
+    "uai": "0310189M",
+    "name": "Ecole maternelle publique Jean Macé",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59517965975304,
+    "lon": 1.4786899262451
+  },
+  {
+    "uai": "0310215R",
+    "name": "Ecole maternelle publique Jean Monnet",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.64666990053572,
+    "lon": 1.4316885654325708
+  },
+  {
+    "uai": "0312792S",
+    "name": "Ecole maternelle publique Jean Zay",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.64120377966383,
+    "lon": 1.4475093592492014
+  },
+  {
+    "uai": "0310228E",
+    "name": "Ecole maternelle publique Jolimont",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.613468625699845,
+    "lon": 1.4685399540536495
+  },
+  {
+    "uai": "0310187K",
+    "name": "Ecole maternelle publique Jules Ferry",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.633143193755714,
+    "lon": 1.4323595916261356
+  },
+  {
+    "uai": "0310190N",
+    "name": "Ecole maternelle publique Jules Julien",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.574482987089354,
+    "lon": 1.4540100103545859
+  },
+  {
+    "uai": "0312963C",
+    "name": "Ecole maternelle publique Jules-Géraud SALIEGE",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.654874890405274,
+    "lon": 1.43387000786061
+  },
+  {
+    "uai": "0310229F",
+    "name": "Ecole maternelle publique La Juncasse",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.61722002777432,
+    "lon": 1.471319776250805
+  },
+  {
+    "uai": "0311743B",
+    "name": "Ecole maternelle publique La gloire",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.60760797835913,
+    "lon": 1.4686505761670239
+  },
+  {
+    "uai": "0310230G",
+    "name": "Ecole maternelle publique Lakanal",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.60168211008662,
+    "lon": 1.4413899818898142
+  },
+  {
+    "uai": "0310210K",
+    "name": "Ecole maternelle publique Lamartine",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59594728506944,
+    "lon": 1.4340394714780502
+  },
+  {
+    "uai": "0311250R",
+    "name": "Ecole maternelle publique Lapujade",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.628704915162835,
+    "lon": 1.460717963516438
+  },
+  {
+    "uai": "0310237P",
+    "name": "Ecole maternelle publique Lardenne",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5892129157061,
+    "lon": 1.3782195158137964
+  },
+  {
+    "uai": "0311124D",
+    "name": "Ecole maternelle publique Les pinhous",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.560917067232126,
+    "lon": 1.3979799426900497
+  },
+  {
+    "uai": "0312032R",
+    "name": "Ecole maternelle publique Les vergers",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58125667838563,
+    "lon": 1.3981203177955928
+  },
+  {
+    "uai": "0311304Z",
+    "name": "Ecole maternelle publique Louise Michel",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.581836680089424,
+    "lon": 1.4150802365557689
+  },
+  {
+    "uai": "0310200Z",
+    "name": "Ecole maternelle publique Léo Lagrange",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57712867927698,
+    "lon": 1.4372798539271774
+  },
+  {
+    "uai": "0311960M",
+    "name": "Ecole maternelle publique Léonce Bourliaguet",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57734563843797,
+    "lon": 1.3958700997901572
+  },
+  {
+    "uai": "0310209J",
+    "name": "Ecole maternelle publique Marcel Pagnol",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59589803911745,
+    "lon": 1.401800319635185
+  },
+  {
+    "uai": "0310234L",
+    "name": "Ecole maternelle publique Marengo-périole",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.61698925623638,
+    "lon": 1.4608998115763314
+  },
+  {
+    "uai": "0313235Y",
+    "name": "Ecole maternelle publique Marie Marvingt",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5794748139416,
+    "lon": 1.4394095287371045
+  },
+  {
+    "uai": "0310218U",
+    "name": "Ecole maternelle publique Marie et Pierre Curie",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.620724276049636,
+    "lon": 1.443979404188148
+  },
+  {
+    "uai": "0310216S",
+    "name": "Ecole maternelle publique Matabiau",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.611190036743594,
+    "lon": 1.4481197167257938
+  },
+  {
+    "uai": "0311395Y",
+    "name": "Ecole maternelle publique Maurice Jacquier",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.575550863266585,
+    "lon": 1.4184894555953098
+  },
+  {
+    "uai": "0310217T",
+    "name": "Ecole maternelle publique Merly",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.60928234715667,
+    "lon": 1.4424096467368466
+  },
+  {
+    "uai": "0310231H",
+    "name": "Ecole maternelle publique Michelet",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.60416107451439,
+    "lon": 1.45510012486434
+  },
+  {
+    "uai": "0312229E",
+    "name": "Ecole maternelle publique Michoun",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.626398044022515,
+    "lon": 1.467320036931459
+  },
+  {
+    "uai": "0310239S",
+    "name": "Ecole maternelle publique Molière",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.59355662395611,
+    "lon": 1.431639451833336
+  },
+  {
+    "uai": "0310219V",
+    "name": "Ecole maternelle publique Négreneys",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.62145524135285,
+    "lon": 1.4386599818591366
+  },
+  {
+    "uai": "0310240T",
+    "name": "Ecole maternelle publique Papus",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57537676272288,
+    "lon": 1.4137100979809056
+  },
+  {
+    "uai": "0310241U",
+    "name": "Ecole maternelle publique Patte d'oie",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.594898675469985,
+    "lon": 1.426180553258851
+  },
+  {
+    "uai": "0310242V",
+    "name": "Ecole maternelle publique Paul Bert",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5596516159286,
+    "lon": 1.3782699446492854
+  },
+  {
+    "uai": "0311697B",
+    "name": "Ecole maternelle publique Pech-David",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.571148900997585,
+    "lon": 1.4490326059036538
+  },
+  {
+    "uai": "0311783V",
+    "name": "Ecole maternelle publique Polygone",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.598178746528056,
+    "lon": 1.416504865592793
+  },
+  {
+    "uai": "0310202B",
+    "name": "Ecole maternelle publique Rangueil",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57484518684686,
+    "lon": 1.4645697441541188
+  },
+  {
+    "uai": "0312624J",
+    "name": "Ecole maternelle publique Reille",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.609763289907505,
+    "lon": 1.459479852206654
+  },
+  {
+    "uai": "0311742A",
+    "name": "Ecole maternelle publique Ronsard",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.584130632918736,
+    "lon": 1.4069005249184605
+  },
+  {
+    "uai": "0310235M",
+    "name": "Ecole maternelle publique Sarrat",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5993570595473,
+    "lon": 1.4550895428201838
+  },
+  {
+    "uai": "0310204D",
+    "name": "Ecole maternelle publique Sauzelong",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57901406475601,
+    "lon": 1.4619304745975041
+  },
+  {
+    "uai": "0311661M",
+    "name": "Ecole maternelle publique Simone Veil",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.56840659270936,
+    "lon": 1.4031956422090626
+  },
+  {
+    "uai": "0311123C",
+    "name": "Ecole maternelle publique Sylvain Dauriac",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.5780448817893,
+    "lon": 1.4133900230221328
+  },
+  {
+    "uai": "0311695Z",
+    "name": "Ecole maternelle publique Tabar",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.57064715067767,
+    "lon": 1.413799948115106
+  },
+  {
+    "uai": "0311613K",
+    "name": "Ecole maternelle publique Victor Hugo",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.56520246208308,
+    "lon": 1.4032303074298005
+  },
+  {
+    "uai": "0312100P",
+    "name": "Ecole maternelle publique Viollet le Duc",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58115466532162,
+    "lon": 1.392069608471454
+  },
+  {
+    "uai": "0311744C",
+    "name": "Ecole maternelle publique la Terrasse",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.58348926096182,
+    "lon": 1.4859398560736286
+  },
+  {
+    "uai": "0312232H",
+    "name": "Ecole maternelle publique le Béarnais",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.604637438655544,
+    "lon": 1.4442101172776904
+  },
+  {
+    "uai": "0312595C",
+    "name": "Ecole maternelle publique le pastel",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.54532713138142,
+    "lon": 1.45353049682074
+  },
+  {
+    "uai": "0312681W",
+    "name": "Ecole maternelle publique les Tibaous",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.55029726098677,
+    "lon": 1.3843295671733236
+  },
+  {
+    "uai": "0310220W",
+    "name": "Ecole maternelle publique petit gragnague",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.61239148229109,
+    "lon": 1.4152603705622895
+  },
+  {
+    "uai": "0312708A",
+    "name": "école maternelle publique Borderouge",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.64162779390806,
+    "lon": 1.454909737206173
+  },
+  {
+    "uai": "0312941D",
+    "name": "école maternelle publique Lucie Aubrac",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.62940233014141,
+    "lon": 1.4338767588660057
+  },
+  {
+    "uai": "0312674N",
+    "name": "école maternelle publique le Maourine",
+    "type": "maternelle",
+    "sector": "Public",
+    "ips": null,
+    "year": "",
+    "lat": 43.62989813841451,
+    "lon": 1.4486195145544296
+  }
 ]
