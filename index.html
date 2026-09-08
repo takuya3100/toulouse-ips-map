@@ -146,33 +146,108 @@ select{
   margin-top:8px;
 }
 
+
+/* 5色のIPSカラーバー */
+
+.range-wrap::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:14px;
+  height:6px;
+  border-radius:3px;
+
+  background:
+   linear-gradient(
+     to right,
+     #E84A5F 0%,
+     #E84A5F 26.36%,
+     #F58A2A 26.36%,
+     #F58A2A 40%,
+     #F6C445 40%,
+     #F6C445 53.64%,
+     #8CCB5E 53.64%,
+     #8CCB5E 67.27%,
+     #238B57 67.27%,
+     #238B57 100%
+   );
+}
+
+
+/* スライダー本体 */
+
 .range-wrap input[type="range"]{
   position:absolute;
   left:0;
-  top:8px;
+  top:0;
   width:100%;
+  height:36px;
+
   pointer-events:none;
+
   appearance:none;
+  -webkit-appearance:none;
+
   background:transparent;
 }
 
+
+/* Chrome / Safari */
+
+.range-wrap input[type="range"]::-webkit-slider-runnable-track{
+  height:6px;
+  background:transparent;
+}
+
+
+/* Firefox */
+
+.range-wrap input[type="range"]::-moz-range-track{
+  height:6px;
+  background:transparent;
+}
+
+
+/* つまみ */
+
 .range-wrap input[type="range"]::-webkit-slider-thumb{
   appearance:none;
-  width:17px;
-  height:17px;
+  -webkit-appearance:none;
+
+  width:18px;
+  height:18px;
+
+  margin-top:-6px;
+
   border-radius:50%;
-  background:#555;
+
+  background:white;
+
+  border:2px solid #555;
+
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+
   cursor:pointer;
+
   pointer-events:auto;
 }
 
+
 .range-wrap input[type="range"]::-moz-range-thumb{
-  width:17px;
-  height:17px;
+  width:18px;
+  height:18px;
+
   border-radius:50%;
-  background:#555;
-  border:0;
+
+  background:white;
+
+  border:2px solid #555;
+
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+
   cursor:pointer;
+
   pointer-events:auto;
 }
 
