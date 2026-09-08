@@ -15,24 +15,31 @@ DATASETS = {
 OUT = Path(__file__).resolve().parents[1] / "data" / "schools.json"
 
 
-def get(dataset, where):
+def get(dataset, refine=None):
     all_results = []
     offset = 0
     limit = 100
 
     while True:
-        params = urllib.parse.urlencode({
-            "where": where,
+        params = {
             "limit": limit,
             "offset": offset
-        })
+        }
 
-        url = BASE + dataset + "/records?" + params
+        if refine:
+            params["refine"] = refine
+
+        query = urllib.parse.urlencode(params)
+
+        url = BASE + dataset + "/records?" + query
+
         print(f"GET {url}")
 
         req = urllib.request.Request(
             url,
-            headers={"User-Agent": "toulouse-ips-map/1.0"}
+            headers={
+                "User-Agent": "toulouse-ips-map/1.0"
+            }
         )
 
         with urllib.request.urlopen(req, timeout=60) as r:
@@ -90,7 +97,6 @@ def school_year(value):
 
     text = str(value).strip()
 
-    # 2025-2026 → 2025
     if len(text) >= 4 and text[:4].isdigit():
         return text[:4]
 
@@ -106,40 +112,36 @@ def normalize_sector(value):
     return "Public"
 
 
-def infer_type(directory_row):
-    # Maternelle uniquement
+def infer_type(row):
+
     if (
-        truthy(directory_row.get("Ecole_maternelle"))
-        and not truthy(directory_row.get("Ecole_elementaire"))
+        truthy(row.get("ecole_maternelle"))
+        and not truthy(row.get("ecole_elementaire"))
     ):
         return "maternelle"
 
-    # École élémentaire
-    if truthy(directory_row.get("Ecole_elementaire")):
+    if truthy(row.get("ecole_elementaire")):
         return "elementaire"
 
-    # Collège
     type_etab = str(
-        directory_row.get("Type_etablissement") or ""
+        row.get("type_etablissement") or ""
     ).strip().lower()
 
     if "coll" in type_etab:
         return "college"
 
-    # Lycée
     if any(
-        truthy(directory_row.get(key))
+        truthy(row.get(key))
         for key in (
-            "Voie_generale",
-            "Voie_technologique",
-            "Voie_professionnelle"
+            "voie_generale",
+            "voie_technologique",
+            "voie_professionnelle"
         )
     ):
         return "lycee"
 
-    # Fallback
     nature = str(
-        directory_row.get("libelle_nature") or ""
+        row.get("libelle_nature") or ""
     ).lower()
 
     if "collège" in nature or "college" in nature:
@@ -158,6 +160,7 @@ def infer_type(directory_row):
 
 
 def get_ips(row, kind):
+
     if kind == "elementaire":
         return to_float(
             first(row, "ips")
@@ -189,42 +192,37 @@ def main():
 
     print("Fetching Toulouse school directory...")
 
-    # ★ ここが重要
-    # 公式データの項目名は nom_commune ではなく Nom_commune
+    # 現在の公式APIでは nom_commune は小文字
     directory_rows = get(
         DATASETS["directory"],
-        'Nom_commune="TOULOUSE"'
+        "nom_commune:TOULOUSE"
     )
 
     print(
         f"Directory records: {len(directory_rows)}"
     )
 
-    # UAIをキーに学校情報を保存
     directory = {}
 
     for row in directory_rows:
 
         uai = first(
             row,
-            "Identifiant_de_l_etablissement",
-            "UAI",
+            "identifiant_de_l_etablissement",
             "uai"
         )
 
         lat = to_float(
             first(
                 row,
-                "latitude",
-                "Latitude"
+                "latitude"
             )
         )
 
         lon = to_float(
             first(
                 row,
-                "longitude",
-                "Longitude"
+                "longitude"
             )
         )
 
@@ -236,16 +234,13 @@ def main():
 
             "name": first(
                 row,
-                "Nom_etablissement",
                 "nom_etablissement"
             ) or "",
 
             "sector": normalize_sector(
                 first(
                     row,
-                    "Statut_public_prive",
-                    "secteur",
-                    "Secteur"
+                    "statut_public_prive"
                 )
             ),
 
@@ -257,23 +252,22 @@ def main():
 
     records = []
 
-    # IPSデータ
     sources = [
         (
             "elementaire",
-            'nom_de_la_commune="TOULOUSE"'
+            "nom_de_la_commune:TOULOUSE"
         ),
         (
             "college",
-            'nom_de_la_commune="TOULOUSE"'
+            "nom_de_la_commune:TOULOUSE"
         ),
         (
             "lycee",
-            'nom_de_la_commune="TOULOUSE"'
+            "nom_de_la_commune:TOULOUSE"
         )
     ]
 
-    for kind, where in sources:
+    for kind, refine in sources:
 
         print(
             f"Fetching {kind} IPS data..."
@@ -281,7 +275,7 @@ def main():
 
         rows = get(
             DATASETS[kind],
-            where
+            refine
         )
 
         print(
@@ -292,8 +286,7 @@ def main():
 
             uai = first(
                 row,
-                "uai",
-                "UAI"
+                "uai"
             )
 
             if not uai:
@@ -315,8 +308,7 @@ def main():
                 first(
                     row,
                     "rentree_scolaire",
-                    "rentree scolaire",
-                    "annee"
+                    "rentree scolaire"
                 )
             )
 
@@ -326,15 +318,13 @@ def main():
             name = first(
                 row,
                 "nom_de_l_etablissement",
-                "nom_de_l_etablissment",
-                "Nom_etablissement"
+                "nom_de_l_etablissment"
             ) or school["name"]
 
             sector = normalize_sector(
                 first(
                     row,
-                    "secteur",
-                    "Secteur"
+                    "secteur"
                 ) or school["sector"]
             )
 
@@ -350,7 +340,6 @@ def main():
             })
 
     # Maternelle
-    # 公式IPSデータには含まれないためIPSはnull
     for uai, school in directory.items():
 
         if school["type"] != "maternelle":
@@ -384,7 +373,6 @@ def main():
         unique.values()
     )
 
-    # 並び順を安定させる
     records.sort(
         key=lambda x: (
             x["type"],
@@ -396,11 +384,9 @@ def main():
 
     if not records:
         raise RuntimeError(
-            "No Toulouse school records were produced. "
-            "Check the official API field names or dataset availability."
+            "No Toulouse school records were produced."
         )
 
-    # JSONを書き出す
     OUT.parent.mkdir(
         parents=True,
         exist_ok=True
