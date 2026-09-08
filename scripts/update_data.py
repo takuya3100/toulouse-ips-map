@@ -95,12 +95,7 @@ def school_year(value):
     if value in (None, ""):
         return ""
 
-    text = str(value).strip()
-
-    if len(text) >= 4 and text[:4].isdigit():
-        return text[:4]
-
-    return text
+    return str(value).strip()
 
 
 def normalize_sector(value):
