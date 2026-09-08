@@ -195,7 +195,7 @@ def main():
     # 現在の公式APIでは nom_commune は小文字
     directory_rows = get(
         DATASETS["directory"],
-        "nom_commune:TOULOUSE"
+        "nom_commune:Toulouse"
     )
 
     print(
