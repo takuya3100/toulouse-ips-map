@@ -1,19 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>トゥールーズ学校IPSマップ</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
 <style>
-  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;color:#222;background:#fff}
-  header{padding:18px 20px 12px;border-bottom:1px solid #eee}.title{font-size:24px;font-weight:700;margin:0 0 7px}.desc{font-size:13px;line-height:1.7;max-width:900px;color:#555}
-  .wrap{display:grid;grid-template-columns:310px 1fr;height:calc(100vh - 104px)}
-  aside{padding:16px;border-right:1px solid #eee;overflow:auto;background:#fafafa}.section{margin-bottom:18px}.label{font-size:13px;font-weight:700;margin-bottom:8px}.checks{display:grid;gap:7px}.checks label{font-size:13px;display:flex;align-items:center;gap:7px;cursor:pointer}
-  select,input[type=number]{width:100%;height:36px;border:1px solid #ccc;border-radius:7px;background:#fff;padding:0 9px;font-size:13px}
-  .range-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.range-wrap{position:relative;height:28px}.range-wrap input[type=range]{position:absolute;left:0;top:0;width:100%;pointer-events:none;background:none}.range-wrap input[type=range]::-webkit-slider-thumb{pointer-events:auto}.range-wrap input[type=range]::-moz-range-thumb{pointer-events:auto}
-  .legend{display:grid;gap:6px;font-size:12px}.legend-row{display:flex;align-items:center;gap:8px}.swatch{width:18px;height:12px;border-radius:3px;border:1px solid #aaa}.shape{font-size:17px;line-height:1;width:18px;text-align:center}
-  .note{font-size:11px;color:#777;line-height:1.6;margin-top:12px}.year-info{
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    YuGothic,
+    Meiryo,
+    sans-serif;
+  color:#333;
+  background:#f7f7f7;
+}
+
+header{
+  background:white;
+  padding:18px 20px 14px;
+  border-bottom:1px solid #ddd;
+}
+
+header h1{
+  margin:0 0 6px;
+  font-size:22px;
+  line-height:1.4;
+}
+
+header p{
+  margin:0;
+  font-size:13px;
+  line-height:1.7;
+  color:#666;
+}
+
+.container{
+  display:flex;
+  height:calc(100vh - 101px);
+  min-height:600px;
+}
+
+.sidebar{
+  width:330px;
+  background:#fafafa;
+  border-right:1px solid #ddd;
+  overflow-y:auto;
+  padding:16px;
+}
+
+.section{
+  margin-bottom:18px;
+}
+
+.label{
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+select{
+  width:100%;
+  padding:8px 10px;
+  font-size:13px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  background:white;
+}
+
+.year-info{
   font-size:11px;
   line-height:1.7;
   color:#666;
@@ -23,122 +92,1276 @@
   border:1px solid #eee;
   border-radius:7px;
 }
+
 .year-info strong{
   color:#333;
-}.status{font-size:12px;color:#666;margin-bottom:12px}.error{color:#a33;background:#fff4f4;border:1px solid #eccaca;padding:9px;border-radius:7px;font-size:12px;line-height:1.5;display:none}
-  #map{width:100%;height:100%}.popup-title{font-weight:700;font-size:14px;margin-bottom:5px}.popup-line{font-size:12px;line-height:1.7}.leaflet-popup-content{margin:11px 13px}.leaflet-control-attribution{font-size:9px}
-  @media(max-width:800px){.wrap{grid-template-columns:1fr;height:auto}.aside{order:2}aside{border-right:0;border-bottom:1px solid #eee}#map{height:62vh}.title{font-size:21px}}
-</style>
-</head>
-<body>
-<header>
-  <h1 class="title">トゥールーズ学校IPSマップ</h1>
-  <div class="desc">IPSとは、学校に通う子どもたちの家庭の社会的・経済的背景を表す指標です。数値が高いほど、平均的に社会的に恵まれた家庭の割合が高いことを示します。</div>
-</header>
-<div class="wrap">
-<aside>
-  <div class="section">
-  <div class="label">年度</div>
-  <select id="year"><option>読み込み中…</option></select>
-  <div id="yearInfo" class="year-info"></div>
-</div>
-  <div class="section"><div class="label">学校種</div><div class="checks">
-    <label><input type="checkbox" class="type" value="maternelle" checked> 幼稚園（maternelle）</label>
-    <label><input type="checkbox" class="type" value="elementaire" checked> 小学校（élémentaire）</label>
-    <label><input type="checkbox" class="type" value="college" checked> 中学校（collège）</label>
-    <label><input type="checkbox" class="type" value="lycee" checked> 高校（lycée）</label>
-  </div></div>
-  <div class="section"><div class="label">設置者</div><div class="checks">
-    <label><input type="checkbox" id="public" checked> ● 公立</label>
-    <label><input type="checkbox" id="private" checked> ■ 私立</label>
-  </div></div>
-  <div class="section"><div class="label">IPS範囲</div>
-    <div class="range-wrap"><input id="rMin" type="range" min="0" max="180" value="0"><input id="rMax" type="range" min="0" max="180" value="180"></div>
-    <div class="range-row"><input id="nMin" type="number" min="0" max="180" value="0"><input id="nMax" type="number" min="0" max="180" value="180"></div>
-  </div>
-  <div class="section"><div class="label">凡例</div><div class="legend">
-    <div class="legend-row"><span class="swatch" style="background:#d73027"></span> ≤79</div>
-    <div class="legend-row"><span class="swatch" style="background:#fc8d59"></span> 80–94</div>
-    <div class="legend-row"><span class="swatch" style="background:#fee08b"></span> 95–109</div>
-    <div class="legend-row"><span class="swatch" style="background:#91cf60"></span> 110–124</div>
-    <div class="legend-row"><span class="swatch" style="background:#1a9850"></span> ≥125</div>
-    <div class="legend-row"><span class="shape">●</span> 公立</div>
-    <div class="legend-row"><span class="shape">■</span> 私立</div>
-    <div class="legend-row"><span class="swatch" style="background:#aaa"></span> IPSなし（幼稚園など）</div>
-  </div></div>
-  <div id="status" class="status">データを読み込んでいます…</div>
-  <div id="error" class="error"></div>
-  <div class="note">※ IPSの色分けは地図上で比較しやすくするための表示区分です。IPSは学校の教育の質や治安を直接示す指標ではありません。</div>
-</aside>
-<div id="map"></div>
-</div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const SAMPLE = [
- {uai:'SAMPLE-MAT-1',name:'École maternelle Exemple',type:'maternelle',sector:'Public',ips:null,year:'2025',lat:43.6045,lon:1.4442},
- {uai:'SAMPLE-ELEM-1',name:'École élémentaire Exemple',type:'elementaire',sector:'Public',ips:88,year:'2025',lat:43.611,lon:1.455},
- {uai:'SAMPLE-ELEM-2',name:'École élémentaire Exemple Privée',type:'elementaire',sector:'Privé',ips:128,year:'2025',lat:43.598,lon:1.432},
- {uai:'SAMPLE-COL-1',name:'Collège Exemple',type:'college',sector:'Public',ips:104,year:'2025',lat:43.616,lon:1.461},
- {uai:'SAMPLE-LYC-1',name:'Lycée Exemple',type:'lycee',sector:'Public',ips:119,year:'2025',lat:43.590,lon:1.449}
-];
-const map=L.map('map').setView([43.6047,1.4442],12);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors'}).addTo(map);
-let markers=[];let schools=[];
-const $=id=>document.getElementById(id);
-function color(ips){if(ips==null||Number.isNaN(Number(ips)))return '#aaa';ips=Number(ips);if(ips<=79)return '#d73027';if(ips<=94)return '#fc8d59';if(ips<=109)return '#fee08b';if(ips<=124)return '#91cf60';return '#1a9850'}
-function normSector(s){s=String(s||'').toLowerCase();return s.includes('priv')?'Privé':'Public'}
-function normalize(raw){return raw.map(x=>({uai:x.uai||x.UAI||'',name:x.name||x.nom_de_l_etablissement||x.Nom_etablissement||'',type:x.type||'elementaire',sector:normSector(x.sector||x.secteur),ips:x.ips===''||x.ips==null?null:Number(x.ips),year:String(x.year||x.rentree_scolaire||''),lat:Number(x.lat??x.latitude),lon:Number(x.lon??x.longitude)})).filter(x=>x.name&&Number.isFinite(x.lat)&&Number.isFinite(x.lon))}
-function popup(s){return `<div class="popup-title">${escapeHtml(s.name)}</div><div class="popup-line">IPS：${s.ips==null?'—':s.ips}</div><div class="popup-line">設置者：${s.sector==='Privé'?'私立':'公立'}</div><div class="popup-line">学校種：${labelType(s.type)}</div><div class="popup-line">年度：${escapeHtml(s.year||'—')}</div>`}
-function labelType(t){return ({maternelle:'幼稚園（maternelle）',elementaire:'小学校（élémentaire）',college:'中学校（collège）',lycee:'高校（lycée）'})[t]||t}
-function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-function render(){markers.forEach(m=>map.removeLayer(m));markers=[];const year=$('year').value;const types=[...document.querySelectorAll('.type:checked')].map(x=>x.value);const min=Number($('nMin').value),max=Number($('nMax').value);const pub=$('public').checked,pri=$('private').checked;
- schools.filter(s=>{if(year!=='all'&&s.type!=='maternelle'&&s.year!==year)return false;if(!types.includes(s.type))return false;if(s.sector==='Public'&&!pub)return false;if(s.sector==='Privé'&&!pri)return false;if(s.ips!=null&&(s.ips<min||s.ips>max))return false;return true}).forEach(s=>{const isPriv=s.sector==='Privé';const marker=L.marker([s.lat,s.lon],{icon:L.divIcon({className:'',html:`<div style="width:15px;height:15px;background:${color(s.ips)};border:2px solid white;box-shadow:0 0 2px #555;${isPriv?'border-radius:2px;':'border-radius:50%;'}"></div>`,iconSize:[15,15],iconAnchor:[7.5,7.5]})}).addTo(map).bindPopup(popup(s));markers.push(marker)});
- $('status').textContent=`表示中：${markers.length}校 / データ：${schools.length}校`};
-updateYearInfo();
- }
-function syncFromRange(){let a=Number($('rMin').value),b=Number($('rMax').value);if(a>b)[a,b]=[b,a];$('nMin').value=a;$('nMax').value=b;render()}
-function syncFromNumber(){let a=Math.max(0,Math.min(180,Number($('nMin').value||0))),b=Math.max(0,Math.min(180,Number($('nMax').value||180)));if(a>b)[a,b]=[b,a];$('rMin').value=a;$('rMax').value=b;$('nMin').value=a;$('nMax').value=b;render()}
-$('rMin').addEventListener('input',syncFromRange);$('rMax').addEventListener('input',syncFromRange);$('nMin').addEventListener('change',syncFromNumber);$('nMax').addEventListener('change',syncFromNumber);$('year').addEventListener('change',render);$('public').addEventListener('change',render);$('private').addEventListener('change',render);document.querySelectorAll('.type').forEach(x=>x.addEventListener('change',render));
-async function loadData(){try{const r=await fetch('data/schools.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();if(!Array.isArray(d)||!d.length)throw new Error('JSONに学校データがありません');schools=normalize(d);if(!schools.length)throw new Error('利用できる学校データがありません');setYears();render()}catch(e){schools=SAMPLE;setYears();render();$('error').style.display='block';$('error').textContent='data/schools.jsonを読み込めなかったため、現在は動作確認用サンプルデータを表示しています。GitHub Pagesでは同じフォルダのJSONを読み込みます。';console.warn(e)}}
-function setYears(){const years=[...new Set(schools.map(s=>s.year).filter(Boolean))].sort((a,b)=>b.localeCompare(a));$('year').innerHTML='<option value="all">すべて</option>'+years.map(y=>`<option value="${escapeHtml(y)}">${escapeHtml(y)}</option>`).join('');if(years.length)$('year').value=years[0]}
-function updateYearInfo(){
-  const selected = $('year').value;
+}
 
-  if(selected === 'all'){
-    $('yearInfo').innerHTML =
-      '年度を選択すると、学校種ごとのIPSデータ状況を表示します。';
-    return;
+.check-row{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin:7px 0;
+  font-size:13px;
+}
+
+.check-row input{
+  margin:0;
+}
+
+.range-wrap{
+  position:relative;
+  height:36px;
+  margin-top:8px;
+}
+
+.range-wrap input[type="range"]{
+  position:absolute;
+  left:0;
+  top:8px;
+  width:100%;
+  pointer-events:none;
+  appearance:none;
+  background:transparent;
+}
+
+.range-wrap input[type="range"]::-webkit-slider-thumb{
+  appearance:none;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#555;
+  cursor:pointer;
+  pointer-events:auto;
+}
+
+.range-wrap input[type="range"]::-moz-range-thumb{
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#555;
+  border:0;
+  cursor:pointer;
+  pointer-events:auto;
+}
+
+.number-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.number-row input{
+  width:100%;
+  padding:7px 8px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:13px;
+}
+
+.number-row span{
+  color:#777;
+  font-size:12px;
+}
+
+.legend{
+  font-size:12px;
+  line-height:1.8;
+}
+
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:3px 0;
+}
+
+.legend-color{
+  width:15px;
+  height:15px;
+  border:1px solid #aaa;
+}
+
+.shape-circle{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  border:1px solid #777;
+  background:#ddd;
+}
+
+.shape-square{
+  width:14px;
+  height:14px;
+  border-radius:2px;
+  border:1px solid #777;
+  background:#ddd;
+}
+
+.note{
+  font-size:11px;
+  line-height:1.7;
+  color:#777;
+  padding:10px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:7px;
+}
+
+.status{
+  font-size:11px;
+  color:#777;
+  margin-top:12px;
+}
+
+.error{
+  display:none;
+  margin-top:10px;
+  padding:10px;
+  background:#fff0f0;
+  border:1px solid #e0aaaa;
+  color:#9a3333;
+  border-radius:7px;
+  font-size:11px;
+  line-height:1.6;
+}
+
+#map{
+  flex:1;
+  min-width:0;
+}
+
+.popup-title{
+  font-weight:bold;
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+.popup-row{
+  font-size:12px;
+  line-height:1.7;
+}
+
+@media(max-width:800px){
+
+  header h1{
+    font-size:19px;
   }
 
-  const types = [
-    ['elementaire','小学校（élémentaire）'],
-    ['college','中学校（collège）'],
-    ['lycee','高校（lycée）']
-  ];
+  .container{
+    display:block;
+    height:auto;
+  }
 
-  const lines = types.map(([type,label])=>{
-    const hasData = schools.some(
-      s => s.type === type && s.year === selected
+  .sidebar{
+    width:100%;
+    border-right:0;
+    border-bottom:1px solid #ddd;
+    max-height:none;
+  }
+
+  #map{
+    width:100%;
+    height:65vh;
+    min-height:450px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>トゥールーズ学校IPSマップ</h1>
+  <p>
+    IPSとは、学校に通う子どもたちの家庭の社会的・経済的背景を表す指標です。
+    数値が高いほど、平均的に社会的に恵まれた家庭の割合が高いことを示します。
+  </p>
+</header>
+
+<div class="container">
+
+  <aside class="sidebar">
+
+    <!-- 年度 -->
+    <div class="section">
+      <div class="label">年度</div>
+
+      <select id="year">
+        <option value="all">読み込み中…</option>
+      </select>
+
+      <div id="yearInfo" class="year-info">
+        データを読み込んでいます。
+      </div>
+    </div>
+
+    <!-- 学校種 -->
+    <div class="section">
+      <div class="label">学校種</div>
+
+      <label class="check-row">
+        <input
+          type="checkbox"
+          class="type"
+          value="maternelle"
+          checked
+        >
+        幼稚園（maternelle）
+      </label>
+
+      <label class="check-row">
+        <input
+          type="checkbox"
+          class="type"
+          value="elementaire"
+          checked
+        >
+        小学校（élémentaire）
+      </label>
+
+      <label class="check-row">
+        <input
+          type="checkbox"
+          class="type"
+          value="college"
+          checked
+        >
+        中学校（collège）
+      </label>
+
+      <label class="check-row">
+        <input
+          type="checkbox"
+          class="type"
+          value="lycee"
+          checked
+        >
+        高校（lycée）
+      </label>
+    </div>
+
+    <!-- 公立・私立 -->
+    <div class="section">
+      <div class="label">設置者</div>
+
+      <label class="check-row">
+        <input type="checkbox" id="public" checked>
+        ● 公立
+      </label>
+
+      <label class="check-row">
+        <input type="checkbox" id="private" checked>
+        ■ 私立
+      </label>
+    </div>
+
+    <!-- IPS -->
+    <div class="section">
+      <div class="label">IPS</div>
+
+      <div class="range-wrap">
+        <input
+          type="range"
+          id="rMin"
+          min="50"
+          max="160"
+          value="50"
+        >
+
+        <input
+          type="range"
+          id="rMax"
+          min="50"
+          max="160"
+          value="160"
+        >
+      </div>
+
+      <div class="number-row">
+        <input
+          type="number"
+          id="nMin"
+          min="50"
+          max="160"
+          value="50"
+        >
+
+        <span>〜</span>
+
+        <input
+          type="number"
+          id="nMax"
+          min="50"
+          max="160"
+          value="160"
+        >
+      </div>
+    </div>
+
+    <!-- 凡例 -->
+    <div class="section">
+      <div class="label">IPSの目安</div>
+
+      <div class="legend">
+
+        <div class="legend-item">
+          <span
+            class="legend-color"
+            style="background:#e5e5e5"
+          ></span>
+          79以下
+        </div>
+
+        <div class="legend-item">
+          <span
+            class="legend-color"
+            style="background:#c8c8c8"
+          ></span>
+          80〜94
+        </div>
+
+        <div class="legend-item">
+          <span
+            class="legend-color"
+            style="background:#9f9f9f"
+          ></span>
+          95〜109
+        </div>
+
+        <div class="legend-item">
+          <span
+            class="legend-color"
+            style="background:#6f6f6f"
+          ></span>
+          110〜124
+        </div>
+
+        <div class="legend-item">
+          <span
+            class="legend-color"
+            style="background:#333"
+          ></span>
+          125以上
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 設置者凡例 -->
+    <div class="section">
+      <div class="label">マーカー</div>
+
+      <div class="legend">
+
+        <div class="legend-item">
+          <span class="shape-circle"></span>
+          公立
+        </div>
+
+        <div class="legend-item">
+          <span class="shape-square"></span>
+          私立
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 注意書き -->
+    <div class="section">
+      <div class="note">
+        IPSは学校の教育の質や安全性を直接示す指標ではありません。
+        学校に通う子どもたちの社会的・経済的背景を平均的に示す指標です。
+        特に数ポイント程度の差は、過度に比較しないことをおすすめします。
+      </div>
+    </div>
+
+    <div id="status" class="status">
+      データを読み込んでいます…
+    </div>
+
+    <div id="error" class="error"></div>
+
+  </aside>
+
+  <div id="map"></div>
+
+</div>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script>
+
+const $ = id => document.getElementById(id);
+
+let schools = [];
+let markers = [];
+
+
+/* --------------------------------
+   サンプルデータ
+-------------------------------- */
+
+const SAMPLE = [
+  {
+    uai:"SAMPLE001",
+    name:"サンプル小学校",
+    type:"elementaire",
+    sector:"Public",
+    ips:100,
+    year:"2024-2025",
+    lat:43.6047,
+    lon:1.4442
+  },
+  {
+    uai:"SAMPLE002",
+    name:"サンプル中学校",
+    type:"college",
+    sector:"Public",
+    ips:110,
+    year:"2025-2026",
+    lat:43.6100,
+    lon:1.4500
+  },
+  {
+    uai:"SAMPLE003",
+    name:"サンプル高校",
+    type:"lycee",
+    sector:"Privé",
+    ips:125,
+    year:"2025-2026",
+    lat:43.6000,
+    lon:1.4350
+  },
+  {
+    uai:"SAMPLE004",
+    name:"サンプル幼稚園",
+    type:"maternelle",
+    sector:"Public",
+    ips:null,
+    year:"",
+    lat:43.5980,
+    lon:1.4480
+  }
+];
+
+
+/* --------------------------------
+   地図
+-------------------------------- */
+
+const map = L.map("map");
+
+map.setView(
+  [43.6047, 1.4442],
+  12
+);
+
+L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    maxZoom:19,
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }
+).addTo(map);
+
+
+/* --------------------------------
+   HTMLエスケープ
+-------------------------------- */
+
+function escapeHtml(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* --------------------------------
+   設置者表記を統一
+-------------------------------- */
+
+function normSector(value){
+
+  const text =
+    String(value || "")
+      .trim()
+      .toLowerCase();
+
+  if(text.includes("priv")){
+    return "Privé";
+  }
+
+  return "Public";
+}
+
+
+/* --------------------------------
+   データ正規化
+-------------------------------- */
+
+function normalize(raw){
+
+  return raw
+    .map(x => ({
+
+      uai:
+        x.uai ||
+        x.UAI ||
+        "",
+
+      name:
+        x.name ||
+        x.nom_de_l_etablissement ||
+        x.Nom_etablissement ||
+        "",
+
+      type:
+        x.type ||
+        "elementaire",
+
+      sector:
+        normSector(
+          x.sector ||
+          x.secteur
+        ),
+
+      ips:
+        x.ips === "" ||
+        x.ips == null
+          ? null
+          : Number(x.ips),
+
+      year:
+        String(
+          x.year ||
+          x.rentree_scolaire ||
+          ""
+        ),
+
+      lat:
+        Number(
+          x.lat ??
+          x.latitude
+        ),
+
+      lon:
+        Number(
+          x.lon ??
+          x.longitude
+        )
+
+    }))
+    .filter(x =>
+      x.name &&
+      Number.isFinite(x.lat) &&
+      Number.isFinite(x.lon)
     );
 
-    if(hasData){
-      return `・${label}：IPSあり`;
+}
+
+
+/* --------------------------------
+   IPSカラー
+-------------------------------- */
+
+function color(ips){
+
+  if(ips == null){
+    return "#bdbdbd";
+  }
+
+  if(ips <= 79){
+    return "#e5e5e5";
+  }
+
+  if(ips <= 94){
+    return "#c8c8c8";
+  }
+
+  if(ips <= 109){
+    return "#9f9f9f";
+  }
+
+  if(ips <= 124){
+    return "#6f6f6f";
+  }
+
+  return "#333333";
+
+}
+
+
+/* --------------------------------
+   ポップアップ
+-------------------------------- */
+
+function popup(s){
+
+  const typeLabel = {
+
+    maternelle:
+      "幼稚園（maternelle）",
+
+    elementaire:
+      "小学校（élémentaire）",
+
+    college:
+      "中学校（collège）",
+
+    lycee:
+      "高校（lycée）"
+
+  }[s.type] || s.type;
+
+
+  const ipsText =
+    s.ips == null
+      ? "—"
+      : s.ips;
+
+
+  const yearText =
+    s.year || "—";
+
+
+  return `
+
+    <div class="popup-title">
+      ${escapeHtml(s.name)}
+    </div>
+
+    <div class="popup-row">
+      <strong>学校種：</strong>
+      ${escapeHtml(typeLabel)}
+    </div>
+
+    <div class="popup-row">
+      <strong>設置者：</strong>
+      ${escapeHtml(s.sector)}
+    </div>
+
+    <div class="popup-row">
+      <strong>IPS：</strong>
+      ${escapeHtml(ipsText)}
+    </div>
+
+    <div class="popup-row">
+      <strong>年度：</strong>
+      ${escapeHtml(yearText)}
+    </div>
+
+  `;
+
+}
+
+
+/* --------------------------------
+   年度情報
+-------------------------------- */
+
+function updateYearInfo(){
+
+  const selected =
+    $("year").value;
+
+
+  if(selected === "all"){
+
+    $("yearInfo").innerHTML =
+      "年度を選択すると、学校種ごとのIPSデータ状況を表示します。";
+
+    return;
+
+  }
+
+
+  const types = [
+
+    [
+      "elementaire",
+      "小学校（élémentaire）"
+    ],
+
+    [
+      "college",
+      "中学校（collège）"
+    ],
+
+    [
+      "lycee",
+      "高校（lycée）"
+    ]
+
+  ];
+
+
+  const lines =
+    types.map(
+      ([type,label]) => {
+
+        const hasData =
+          schools.some(
+            s =>
+              s.type === type &&
+              s.year === selected
+          );
+
+
+        if(hasData){
+
+          return `・${label}：IPSあり`;
+
+        }
+
+
+        const latest =
+          [
+            ...new Set(
+              schools
+                .filter(
+                  s =>
+                    s.type === type &&
+                    s.year
+                )
+                .map(s => s.year)
+            )
+          ]
+          .sort(
+            (a,b) =>
+              b.localeCompare(a)
+          )[0];
+
+
+        return (
+          `・${label}：IPSデータなし` +
+          (
+            latest
+              ? `（最新掲載年度：${latest}）`
+              : ""
+          )
+        );
+
+      }
+    );
+
+
+  $("yearInfo").innerHTML =
+    `<strong>${escapeHtml(selected)}年度</strong><br>` +
+    lines.join("<br>") +
+    "<br>・幼稚園（maternelle）：表示（IPSなし）";
+
+}
+
+
+/* --------------------------------
+   年度セレクト
+-------------------------------- */
+
+function setYears(){
+
+  const years =
+    [
+      ...new Set(
+        schools
+          .map(s => s.year)
+          .filter(Boolean)
+      )
+    ]
+    .sort(
+      (a,b) =>
+        b.localeCompare(a)
+    );
+
+
+  $("year").innerHTML =
+    '<option value="all">すべて</option>' +
+    years
+      .map(
+        y =>
+          `<option value="${escapeHtml(y)}">${escapeHtml(y)}</option>`
+      )
+      .join("");
+
+
+  if(years.length){
+
+    $("year").value =
+      years[0];
+
+  }
+
+}
+
+
+/* --------------------------------
+   マップ描画
+-------------------------------- */
+
+function render(){
+
+  markers.forEach(
+    m =>
+      map.removeLayer(m)
+  );
+
+  markers = [];
+
+
+  const year =
+    $("year").value;
+
+
+  const types =
+    [
+      ...document.querySelectorAll(
+        ".type:checked"
+      )
+    ]
+    .map(
+      x => x.value
+    );
+
+
+  const min =
+    Number(
+      $("nMin").value
+    );
+
+
+  const max =
+    Number(
+      $("nMax").value
+    );
+
+
+  const pub =
+    $("public").checked;
+
+
+  const pri =
+    $("private").checked;
+
+
+  schools
+    .filter(s => {
+
+      /*
+       * 幼稚園は年度を持たないため、
+       * 年度を指定しても表示する。
+       */
+      if(
+        year !== "all" &&
+        s.type !== "maternelle" &&
+        s.year !== year
+      ){
+        return false;
+      }
+
+
+      if(
+        !types.includes(s.type)
+      ){
+        return false;
+      }
+
+
+      if(
+        s.sector === "Public" &&
+        !pub
+      ){
+        return false;
+      }
+
+
+      if(
+        s.sector === "Privé" &&
+        !pri
+      ){
+        return false;
+      }
+
+
+      /*
+       * IPSがある学校だけ範囲フィルターを適用。
+       * 幼稚園などIPSなしはそのまま表示。
+       */
+      if(
+        s.ips != null &&
+        (
+          s.ips < min ||
+          s.ips > max
+        )
+      ){
+        return false;
+      }
+
+
+      return true;
+
+    })
+    .forEach(s => {
+
+      const isPriv =
+        s.sector === "Privé";
+
+
+      const marker =
+        L.marker(
+          [
+            s.lat,
+            s.lon
+          ],
+          {
+            icon:
+              L.divIcon({
+
+                className:"",
+
+                html:
+                  `
+                  <div
+                    style="
+                      width:15px;
+                      height:15px;
+                      background:${color(s.ips)};
+                      border:2px solid white;
+                      box-shadow:0 0 2px #555;
+                      ${
+                        isPriv
+                          ? "border-radius:2px;"
+                          : "border-radius:50%;"
+                      }
+                    "
+                  ></div>
+                  `,
+
+                iconSize:
+                  [15,15],
+
+                iconAnchor:
+                  [7.5,7.5]
+
+              })
+
+          }
+        )
+        .addTo(map)
+        .bindPopup(
+          popup(s)
+        );
+
+
+      markers.push(marker);
+
+    });
+
+
+  $("status").textContent =
+    `表示中：${markers.length}校 / データ：${schools.length}校`;
+
+
+  /*
+   * 年度情報も学校表示のたびに更新
+   */
+  updateYearInfo();
+
+}
+
+
+/* --------------------------------
+   スライダー → 数値
+-------------------------------- */
+
+function syncFromRange(){
+
+  let min =
+    Number(
+      $("rMin").value
+    );
+
+  let max =
+    Number(
+      $("rMax").value
+    );
+
+
+  if(min > max){
+
+    if(
+      document.activeElement ===
+      $("rMin")
+    ){
+
+      min = max;
+
+    }else{
+
+      max = min;
+
     }
 
-    const latest = [...new Set(
-      schools
-        .filter(s => s.type === type && s.year)
-        .map(s => s.year)
-    )].sort((a,b)=>b.localeCompare(a))[0];
+  }
 
-    return `・${label}：IPSデータなし${latest ? `（最新：${latest}）` : ''}`;
-  });
 
-  $('yearInfo').innerHTML =
-    `<strong>${escapeHtml(selected)}年度</strong><br>` +
-    lines.join('<br>') +
-    '<br>・幼稚園（maternelle）：表示（IPSなし）';
+  $("nMin").value = min;
+  $("nMax").value = max;
+
+
+  render();
+
 }
+
+
+/* --------------------------------
+   数値 → スライダー
+-------------------------------- */
+
+function syncFromNumber(){
+
+  let min =
+    Number(
+      $("nMin").value
+    );
+
+  let max =
+    Number(
+      $("nMax").value
+    );
+
+
+  if(!Number.isFinite(min)){
+    min = 50;
+  }
+
+  if(!Number.isFinite(max)){
+    max = 160;
+  }
+
+
+  min =
+    Math.max(
+      50,
+      Math.min(
+        160,
+        min
+      )
+    );
+
+
+  max =
+    Math.max(
+      50,
+      Math.min(
+        160,
+        max
+      )
+    );
+
+
+  if(min > max){
+
+    if(
+      document.activeElement ===
+      $("nMin")
+    ){
+
+      min = max;
+
+    }else{
+
+      max = min;
+
+    }
+
+  }
+
+
+  $("nMin").value = min;
+  $("nMax").value = max;
+
+  $("rMin").value = min;
+  $("rMax").value = max;
+
+
+  render();
+
+}
+
+
+/* --------------------------------
+   イベント
+-------------------------------- */
+
+$("rMin")
+  .addEventListener(
+    "input",
+    syncFromRange
+  );
+
+
+$("rMax")
+  .addEventListener(
+    "input",
+    syncFromRange
+  );
+
+
+$("nMin")
+  .addEventListener(
+    "change",
+    syncFromNumber
+  );
+
+
+$("nMax")
+  .addEventListener(
+    "change",
+    syncFromNumber
+  );
+
+
+$("year")
+  .addEventListener(
+    "change",
+    render
+  );
+
+
+$("public")
+  .addEventListener(
+    "change",
+    render
+  );
+
+
+$("private")
+  .addEventListener(
+    "change",
+    render
+  );
+
+
+document
+  .querySelectorAll(".type")
+  .forEach(
+    x =>
+      x.addEventListener(
+        "change",
+        render
+      )
+  );
+
+
+/* --------------------------------
+   JSON読み込み
+-------------------------------- */
+
+async function loadData(){
+
+  try{
+
+    const r =
+      await fetch(
+        "data/schools.json",
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!r.ok){
+
+      throw new Error(
+        "HTTP " + r.status
+      );
+
+    }
+
+
+    const d =
+      await r.json();
+
+
+    if(
+      !Array.isArray(d) ||
+      !d.length
+    ){
+
+      throw new Error(
+        "JSONに学校データがありません"
+      );
+
+    }
+
+
+    schools =
+      normalize(d);
+
+
+    if(!schools.length){
+
+      throw new Error(
+        "利用できる学校データがありません"
+      );
+
+    }
+
+
+    setYears();
+
+    render();
+
+
+  }catch(e){
+
+    console.error(
+      "schools.jsonの読み込みに失敗しました：",
+      e
+    );
+
+
+    /*
+     * JSONが読めなかった場合は、
+     * サンプルデータを表示して
+     * ページ自体が完全に壊れないようにする。
+     */
+    schools =
+      SAMPLE;
+
+
+    setYears();
+
+    render();
+
+
+    $("error").style.display =
+      "block";
+
+
+    $("error").textContent =
+      "data/schools.jsonを読み込めなかったため、現在は動作確認用サンプルデータを表示しています。GitHub Pagesではindex.htmlとdata/schools.jsonが同じサイト内にあることを確認してください。";
+
+  }
+
+}
+
+
+/* --------------------------------
+   起動
+-------------------------------- */
+
 loadData();
+
 </script>
-</body></html>
+
+</body>
+</html>
