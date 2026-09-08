@@ -95,6 +95,7 @@ function render(){markers.forEach(m=>map.removeLayer(m));markers=[];const year=$
  schools.filter(s=>{if(year!=='all'&&s.type!=='maternelle'&&s.year!==year)return false;if(!types.includes(s.type))return false;if(s.sector==='Public'&&!pub)return false;if(s.sector==='Privé'&&!pri)return false;if(s.ips!=null&&(s.ips<min||s.ips>max))return false;return true}).forEach(s=>{const isPriv=s.sector==='Privé';const marker=L.marker([s.lat,s.lon],{icon:L.divIcon({className:'',html:`<div style="width:15px;height:15px;background:${color(s.ips)};border:2px solid white;box-shadow:0 0 2px #555;${isPriv?'border-radius:2px;':'border-radius:50%;'}"></div>`,iconSize:[15,15],iconAnchor:[7.5,7.5]})}).addTo(map).bindPopup(popup(s));markers.push(marker)});
  $('status').textContent=`表示中：${markers.length}校 / データ：${schools.length}校`};
 updateYearInfo();
+ }
 function syncFromRange(){let a=Number($('rMin').value),b=Number($('rMax').value);if(a>b)[a,b]=[b,a];$('nMin').value=a;$('nMax').value=b;render()}
 function syncFromNumber(){let a=Math.max(0,Math.min(180,Number($('nMin').value||0))),b=Math.max(0,Math.min(180,Number($('nMax').value||180)));if(a>b)[a,b]=[b,a];$('rMin').value=a;$('rMax').value=b;$('nMin').value=a;$('nMax').value=b;render()}
 $('rMin').addEventListener('input',syncFromRange);$('rMax').addEventListener('input',syncFromRange);$('nMin').addEventListener('change',syncFromNumber);$('nMax').addEventListener('change',syncFromNumber);$('year').addEventListener('change',render);$('public').addEventListener('change',render);$('private').addEventListener('change',render);document.querySelectorAll('.type').forEach(x=>x.addEventListener('change',render));
@@ -137,6 +138,7 @@ function updateYearInfo(){
     `<strong>${escapeHtml(selected)}年度</strong><br>` +
     lines.join('<br>') +
     '<br>・幼稚園（maternelle）：表示（IPSなし）';
-}loadData();
+}
+loadData();
 </script>
 </body></html>
