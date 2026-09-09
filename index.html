@@ -1837,6 +1837,32 @@ $("private")
   );
 
 
+/* 学校種：すべて選択 */
+
+$("allTypes")
+  .addEventListener(
+    "change",
+    function(){
+
+      const checked =
+        $("allTypes").checked;
+
+      document
+        .querySelectorAll(".type")
+        .forEach(
+          x => {
+            x.checked = checked;
+          }
+        );
+
+      render();
+
+    }
+  );
+
+
+/* 学校種：個別変更 */
+
 document
   .querySelectorAll(".type")
   .forEach(
@@ -1845,7 +1871,22 @@ document
 
       x.addEventListener(
         "change",
-        render
+        function(){
+
+          const types =
+            document.querySelectorAll(".type");
+
+          const checkedCount =
+            document.querySelectorAll(
+              ".type:checked"
+            ).length;
+
+          $("allTypes").checked =
+            checkedCount === types.length;
+
+          render();
+
+        }
       )
 
   );
