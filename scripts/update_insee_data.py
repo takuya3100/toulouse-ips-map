@@ -304,50 +304,75 @@ def read_income():
     return out
 
 def load_geometry():
-    raw = download(IRIS_GEO_URL)
-    obj = json.loads(raw.decode("utf-8"))
+    # Use the Opendatasoft records API rather than the GeoJSON export endpoint.
+    # The export endpoint can return an empty result for a valid `where`
+    # expression depending on the current dataset export configuration.
+    # The records API exposes geo_shape directly and supports pagination.
+    import urllib.parse
 
-    # The Opendatasoft dataset is an annual IRIS reference and its export
-    # already returns the current geometry for the filtered commune.
-    # The "year" property is a date field (for example 2024-01-01), and
-    # depending on the export format it may not be present in the GeoJSON
-    # properties. Therefore we deliberately do not reject features based on
-    # the year field here.
+    base = (
+        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/"
+        "georef-france-iris/records"
+    )
+
     features = []
+    offset = 0
+    limit = 100
 
-    for feature in obj.get("features", []):
-        p = feature.get("properties") or {}
+    while True:
+        params = {
+            "where": f'com_code="{TOULOUSE}"',
+            "limit": str(limit),
+            "offset": str(offset),
+        }
+        url = base + "?" + urllib.parse.urlencode(params)
+        raw = download(url)
+        obj = json.loads(raw.decode("utf-8"))
 
-        com = str(
-            p.get("com_code")
-            or p.get("com_current_code")
-            or p.get("com_arm_code")
-            or ""
-        ).strip()
+        results = obj.get("results") or []
+        if not results:
+            break
 
-        iris = str(p.get("iris_code") or "").strip()
+        for record in results:
+            p = record.get("fields") if isinstance(record.get("fields"), dict) else record
 
-        if com != TOULOUSE or not iris.startswith(TOULOUSE):
-            continue
+            com = str(p.get("com_code") or "").strip()
+            iris = str(p.get("iris_code") or "").strip()
 
-        geometry = feature.get("geometry")
-        if not geometry:
-            continue
+            if com != TOULOUSE or not iris.startswith(TOULOUSE):
+                continue
 
-        features.append({
-            "type": "Feature",
-            "geometry": geometry,
-            "properties": {
-                "iris": iris,
-                "name": p.get("iris_name") or iris,
-                "commune": p.get("com_name") or "Toulouse",
-            },
-        })
+            geo = p.get("geo_shape")
+            if not geo:
+                continue
+
+            # Opendatasoft normally returns geo_shape as a GeoJSON geometry
+            # object. Handle a wrapped {"geometry": ...} form as well.
+            if isinstance(geo, dict) and isinstance(geo.get("geometry"), dict):
+                geometry = geo["geometry"]
+            else:
+                geometry = geo
+
+            if not isinstance(geometry, dict) or not geometry.get("type"):
+                continue
+
+            features.append({
+                "type": "Feature",
+                "geometry": geometry,
+                "properties": {
+                    "iris": iris,
+                    "name": p.get("iris_name") or iris,
+                    "commune": p.get("com_name") or "Toulouse",
+                },
+            })
+
+        if len(results) < limit:
+            break
+        offset += limit
 
     if not features:
         raise RuntimeError(
-            "Toulouse IRIS geometry was not found. "
-            "The geometry export returned no features for commune 31555."
+            "Toulouse IRIS geometry was not found via the Opendatasoft records API."
         )
 
     return features
