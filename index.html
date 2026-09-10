@@ -23,7 +23,8 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
 .status{font-size:11px;color:#777;margin-top:12px}
 .error{display:none;margin-top:10px;padding:10px;background:#fff0f0;border:1px solid #e0aaaa;color:#9a3333;border-radius:7px;font-size:11px;line-height:1.6}
 .legend{font-size:11px;line-height:1.8}.legend-item{display:flex;align-items:center;gap:8px;margin:4px 0}.legend-color{width:18px;height:12px;border-radius:3px;flex-shrink:0}
-#map{flex:1;min-width:0}
+#map{flex:1;min-width:0;min-height:520px}
+.leaflet-container{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,sans-serif}
 .popup-title{font-weight:bold;font-size:14px;margin-bottom:7px}.popup-row{font-size:12px;line-height:1.7}
 .metric-desc{font-size:11px;color:#666;line-height:1.6;margin-top:7px}
 .legend-card{background:#fff;border:1px solid #eee;border-radius:8px;padding:11px 12px}
@@ -61,7 +62,7 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
  .tab{flex:0 0 auto;font-size:13px;padding:10px 12px}
  .container{display:block;height:auto}
  .sidebar{width:100%;box-sizing:border-box;border-right:0;border-bottom:1px solid #ddd;max-height:none}
- #map{width:100%;height:62vh;min-height:430px}
+ #map{width:100%;height:62vh;min-height:430px;display:block}
  .leaflet-control{font-size:12px}
  .section{padding:11px 12px}
  .popup-main-value{font-size:20px}
@@ -323,13 +324,13 @@ async function loadIris(){
 try{communityData=await loadJson("data/iris_community.json")}catch(e){console.error(e)}
 try{housingData=await loadJson("data/iris_housing.json")}catch(e){console.error(e)}
 try{incomeData=await loadJson("data/iris_income.json")}catch(e){console.error(e)}
-try{crimeData=await loadJson("data/crime_toulouse_2022.json")}catch(e){console.error(e)}
 }
 async function switchTab(tab){
 currentTab=tab;clearMap();document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
 if(tab==="schools")renderSchoolSidebar();
 if(tab==="community")metricSidebar("community");
 if(tab==="housing")metricSidebar("housing");
+setTimeout(()=>map.invalidateSize(),50);
 if(tab==="crime"){
   setSidebar(`
     <div class="section">
@@ -362,6 +363,9 @@ if(tab==="crime"){
     <div class="section">
       <div class="note small">このマップは公的データを見やすく表示することを目的としています。データの解釈や住む場所の判断は、利用者ご自身で行ってください。</div>
     </div>`);
+  if(!crimeData){
+    try{crimeData=await loadJson("data/crime_toulouse_2022.json")}catch(e){console.error(e);crimeData=null}
+  }
   if(!crimeData?.features?.length){
     setStatus("");
     showError("住宅侵入窃盗データを読み込めませんでした。GitHub Actionsを実行してデータを生成してください。");
@@ -386,6 +390,7 @@ document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>swit
 
 (async()=>{
 await loadSchools();await loadIris();switchTab("schools");
+setTimeout(()=>map.invalidateSize(),150);
 })();
 </script>
 </body>
