@@ -306,19 +306,34 @@ def read_income():
 def load_geometry():
     raw = download(IRIS_GEO_URL)
     obj = json.loads(raw.decode("utf-8"))
+
+    # The Opendatasoft dataset is an annual IRIS reference and its export
+    # already returns the current geometry for the filtered commune.
+    # The "year" property is a date field (for example 2024-01-01), and
+    # depending on the export format it may not be present in the GeoJSON
+    # properties. Therefore we deliberately do not reject features based on
+    # the year field here.
     features = []
+
     for feature in obj.get("features", []):
         p = feature.get("properties") or {}
-        year = str(p.get("year") or "")
-        com = str(p.get("com_code") or p.get("com_arm_code") or "")
-        iris = str(p.get("iris_code") or "")
+
+        com = str(
+            p.get("com_code")
+            or p.get("com_current_code")
+            or p.get("com_arm_code")
+            or ""
+        ).strip()
+
+        iris = str(p.get("iris_code") or "").strip()
+
         if com != TOULOUSE or not iris.startswith(TOULOUSE):
             continue
-        if year and not year.startswith("2024"):
-            continue
+
         geometry = feature.get("geometry")
         if not geometry:
             continue
+
         features.append({
             "type": "Feature",
             "geometry": geometry,
@@ -328,8 +343,13 @@ def load_geometry():
                 "commune": p.get("com_name") or "Toulouse",
             },
         })
+
     if not features:
-        raise RuntimeError("Toulouse 2024 IRIS geometry was not found.")
+        raise RuntimeError(
+            "Toulouse IRIS geometry was not found. "
+            "The geometry export returned no features for commune 31555."
+        )
+
     return features
 
 def main():
