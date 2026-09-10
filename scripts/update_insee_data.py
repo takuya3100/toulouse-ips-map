@@ -215,32 +215,92 @@ def read_housing():
     return out
 
 def read_income():
-    fields, reader = read_zip_csv(download(INSEE_URLS["income"]))
-    iris_field = find_field(fields, ["IRIS", "CODE_IRIS", "CODGEO"])
-    # Filosofi 2021 actual variable names.
-    # DISP_MED_A21 = median disposable income per consumption unit
-    # DISP_TP60_A21 = poverty rate at 60% of the metropolitan median
-    med = find_field(fields, ["DISP_MED_A21", "DISP_MED", "MED", "MEDIANE", "MEDIAN"])
-    poverty = find_field(fields, ["DISP_TP60_A21", "DISP_TP60", "TP60", "TAUXPAUV", "POV"])
-    if not iris_field or not med or not poverty:
-        # Keep the actual headers in the error so GitHub Actions shows exactly
-        # which INSEE CSV structure was downloaded. This makes the updater
-        # resilient to future INSEE file/header changes.
-        raise RuntimeError(
-            "Income variables not found: "
-            f"iris={iris_field}, med={med}, poverty={poverty}. "
-            f"CSV headers: {fields}"
+    blob = download(INSEE_URLS["income"])
+
+    # The INSEE Filosofi ZIP contains multiple CSV files. In particular,
+    # one of them is the variable dictionary with headers such as
+    # COD_VAR/LIB_VAR/LIB_VAR_LONG. We must select the actual IRIS data CSV
+    # by its headers rather than assuming the largest/first CSV is the data.
+    with zipfile.ZipFile(io.BytesIO(blob)) as z:
+        names = [
+            n for n in z.namelist()
+            if n.lower().endswith(".csv") and not n.endswith("/")
+        ]
+        if not names:
+            raise RuntimeError("No CSV found in income ZIP")
+
+        selected = None
+        selected_fields = None
+        selected_reader = None
+
+        for name in names:
+            raw = z.read(name)
+            decoded = None
+            for enc in ("utf-8-sig", "cp1252", "latin-1"):
+                try:
+                    decoded = raw.decode(enc)
+                    break
+                except UnicodeDecodeError:
+                    pass
+            if decoded is None:
+                continue
+
+            sample = decoded[:10000]
+            try:
+                dialect = csv.Sniffer().sniff(sample, delimiters=";,|\\t")
+                delimiter = dialect.delimiter
+            except csv.Error:
+                delimiter = ";"
+
+            reader = csv.DictReader(io.StringIO(decoded), delimiter=delimiter)
+            fields = reader.fieldnames or []
+
+            iris_field = find_field(fields, ["IRIS", "CODE_IRIS", "CODGEO"])
+            med = find_field(
+                fields,
+                ["DISP_MED_A21", "DISP_MED", "MED", "MEDIANE", "MEDIAN"]
+            )
+            poverty = find_field(
+                fields,
+                ["DISP_TP60_A21", "DISP_TP60", "TP60", "TAUXPAUV", "POV"]
+            )
+
+            if iris_field and med and poverty:
+                selected = name
+                selected_fields = fields
+                selected_reader = reader
+                break
+
+        if selected_reader is None:
+            raise RuntimeError(
+                "Could not find the IRIS income data CSV in the INSEE ZIP. "
+                f"CSV files found: {names}"
+            )
+
+        print(f"  Income data CSV: {selected}")
+
+        iris_field = find_field(
+            selected_fields, ["IRIS", "CODE_IRIS", "CODGEO"]
+        )
+        med = find_field(
+            selected_fields,
+            ["DISP_MED_A21", "DISP_MED", "MED", "MEDIANE", "MEDIAN"]
+        )
+        poverty = find_field(
+            selected_fields,
+            ["DISP_TP60_A21", "DISP_TP60", "TP60", "TAUXPAUV", "POV"]
         )
 
-    out = {}
-    for row in reader:
-        iris = iris_code_from_row(row, fields)
-        if not iris:
-            continue
-        out[iris] = {
-            "living_standard": to_num(row.get(med)),
-            "poverty_rate": to_num(row.get(poverty)),
-        }
+        out = {}
+        for row in selected_reader:
+            iris = iris_code_from_row(row, selected_fields)
+            if not iris:
+                continue
+            out[iris] = {
+                "living_standard": to_num(row.get(med)),
+                "poverty_rate": to_num(row.get(poverty)),
+            }
+
     return out
 
 def load_geometry():
