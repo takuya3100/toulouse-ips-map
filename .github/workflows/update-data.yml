@@ -15,16 +15,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install burglary map dependency
+        run: pip install pyshp
+
       - name: Fetch official education data
         run: python scripts/update_data.py
 
       - name: Fetch official INSEE data
         run: python scripts/update_insee_data.py
 
+      - name: Fetch official burglary map data
+        run: python scripts/update_crime_data.py
+
       - name: Commit changed map data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/schools.json data/iris_community.json data/iris_housing.json data/iris_income.json
+          git add data/schools.json data/iris_community.json data/iris_housing.json data/iris_income.json data/crime_toulouse_2022.json
           git diff --cached --quiet || git commit -m 'Update Toulouse map data'
           git push
