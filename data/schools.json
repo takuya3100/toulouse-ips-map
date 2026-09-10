@@ -1116,18 +1116,6 @@
     "lon": 1.3755795741196881
   },
   {
-    "uai": "0311789B",
-    "name": "Ecole maternelle publique Clément Ader",
-    "type": "maternelle",
-    "sector": "Public",
-    "commune_code": "31069",
-    "commune": "Blagnac",
-    "ips": null,
-    "year": "",
-    "lat": 43.63641041110074,
-    "lon": 1.386559843638737
-  },
-  {
     "uai": "0312233J",
     "name": "Ecole maternelle publique Suzanne Lacore",
     "type": "maternelle",
@@ -3660,18 +3648,6 @@
     "lon": 1.2831506131728827
   },
   {
-    "uai": "0312076N",
-    "name": "Ecole maternelle publique Maurice Fonvieille",
-    "type": "maternelle",
-    "sector": "Public",
-    "commune_code": "31417",
-    "commune": "Pibrac",
-    "ips": null,
-    "year": "",
-    "lat": 43.609412242937594,
-    "lon": 1.281259916825787
-  },
-  {
     "uai": "0311656G",
     "name": "Ecole maternelle publique bois de la Barthe",
     "type": "maternelle",
@@ -4450,18 +4426,6 @@
     "year": "2025-2026",
     "lat": 43.53984199380689,
     "lon": 1.5487112571127981
-  },
-  {
-    "uai": "0311659K",
-    "name": "Ecole maternelle publique Catala",
-    "type": "maternelle",
-    "sector": "Public",
-    "commune_code": "31506",
-    "commune": "Saint-Orens-de-Gameville",
-    "ips": null,
-    "year": "",
-    "lat": 43.57143911087312,
-    "lon": 1.5166296939339647
   },
   {
     "uai": "0311299U",
@@ -8292,42 +8256,6 @@
     "lon": 1.4579198247109437
   },
   {
-    "uai": "0311923X",
-    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONTAUDRAN",
-    "type": "elementaire",
-    "sector": "Public",
-    "commune_code": "31555",
-    "commune": "Toulouse",
-    "ips": 86.7,
-    "year": "2022-2023",
-    "lat": 43.5741697884381,
-    "lon": 1.484460220617808
-  },
-  {
-    "uai": "0311923X",
-    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONTAUDRAN",
-    "type": "elementaire",
-    "sector": "Public",
-    "commune_code": "31555",
-    "commune": "Toulouse",
-    "ips": 88.8,
-    "year": "2023-2024",
-    "lat": 43.5741697884381,
-    "lon": 1.484460220617808
-  },
-  {
-    "uai": "0311923X",
-    "name": "ECOLE ELEMENTAIRE PUBLIQUE MONTAUDRAN",
-    "type": "elementaire",
-    "sector": "Public",
-    "commune_code": "31555",
-    "commune": "Toulouse",
-    "ips": 87.7,
-    "year": "2024-2025",
-    "lat": 43.5741697884381,
-    "lon": 1.484460220617808
-  },
-  {
     "uai": "0310952S",
     "name": "ECOLE ELEMENTAIRE PUBLIQUE NORD",
     "type": "elementaire",
@@ -12070,18 +11998,6 @@
     "year": "",
     "lat": 43.58853505482809,
     "lon": 1.4517805169539733
-  },
-  {
-    "uai": "0310189M",
-    "name": "Ecole maternelle publique Jean Macé",
-    "type": "maternelle",
-    "sector": "Public",
-    "commune_code": "31555",
-    "commune": "Toulouse",
-    "ips": null,
-    "year": "",
-    "lat": 43.59517965975304,
-    "lon": 1.4786899262451
   },
   {
     "uai": "0310215R",
