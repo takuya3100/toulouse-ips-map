@@ -223,8 +223,13 @@ def read_income():
     med = find_field(fields, ["DISP_MED_A21", "DISP_MED", "MED", "MEDIANE", "MEDIAN"])
     poverty = find_field(fields, ["DISP_TP60_A21", "DISP_TP60", "TP60", "TAUXPAUV", "POV"])
     if not iris_field or not med or not poverty:
+        # Keep the actual headers in the error so GitHub Actions shows exactly
+        # which INSEE CSV structure was downloaded. This makes the updater
+        # resilient to future INSEE file/header changes.
         raise RuntimeError(
-            f"Income variables not found: iris={iris_field}, med={med}, poverty={poverty}"
+            "Income variables not found: "
+            f"iris={iris_field}, med={med}, poverty={poverty}. "
+            f"CSV headers: {fields}"
         )
 
     out = {}
