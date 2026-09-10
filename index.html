@@ -26,7 +26,18 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
 #map{flex:1;min-width:0}
 .popup-title{font-weight:bold;font-size:14px;margin-bottom:7px}.popup-row{font-size:12px;line-height:1.7}
 .metric-desc{font-size:11px;color:#666;line-height:1.6;margin-top:7px}
-.source{font-size:10px;color:#888;line-height:1.6}
+.legend-card{background:#fff;border:1px solid #eee;border-radius:8px;padding:11px 12px}
+.legend-title{font-size:12px;font-weight:bold;margin-bottom:7px}
+.gradient-bar{height:14px;border-radius:7px;background:linear-gradient(to right,#eff6ff,#bfdbfe,#60a5fa,#2563eb,#1e40af);border:1px solid #dbe3ec}
+.legend-labels{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#666;margin-top:5px}
+.legend-note{font-size:10px;color:#777;line-height:1.5;margin-top:6px}
+.source{font-size:10px;color:#888;line-height:1.7}
+.source a{color:#526f8f;text-decoration:underline}
+.popup-main-value{font-size:20px;font-weight:bold;color:#2563eb;margin:3px 0 7px}
+.popup-sub{font-size:10px;color:#777}
+.popup-section{border-top:1px solid #eee;margin-top:8px;padding-top:8px}
+.popup-link{font-size:11px;color:#526f8f}
+
 .iris-boundary{fill-opacity:.72;stroke:#777;stroke-width:1}
 @media(max-width:800px){
  header h1{font-size:19px}.container{display:block;height:auto}
@@ -166,11 +177,19 @@ function metricSidebar(kind){
 const list=kind==="community"?COMMUNITY_METRICS:HOUSING_METRICS;
 const title=kind==="community"?"👨‍👩‍👧 住民・世帯構成":"🏠 住宅・所得";
 const dataYear=kind==="community"?"INSEE 人口・世帯データ（2022年）":"INSEE 住宅データ（2022年）＋Filosofi（2021年）";
+const sourceHtml=kind==="community"?`
+<div><strong>INSEE 人口統計（2022年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8647014" target="_blank" rel="noopener">人口構造・人口推移（IRIS）</a></div>
+<div style="margin-top:7px"><strong>INSEE 世帯・家族統計（2022年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8647008" target="_blank" rel="noopener">カップル・家族・世帯（IRIS）</a></div>
+<div style="margin-top:7px"><strong>IRIS境界</strong><br><a href="https://public.opendatasoft.com/explore/dataset/georef-france-iris/information/" target="_blank" rel="noopener">IRIS地理データ（INSEE / IGN）</a></div>`:`
+<div><strong>INSEE 住宅統計（2022年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8647012" target="_blank" rel="noopener">住宅（IRIS）</a></div>
+<div style="margin-top:7px"><strong>INSEE Filosofi 所得統計（2021年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8229323" target="_blank" rel="noopener">Filosofi（IRIS）</a></div>
+<div style="margin-top:7px"><strong>IRIS境界</strong><br><a href="https://public.opendatasoft.com/explore/dataset/georef-france-iris/information/" target="_blank" rel="noopener">IRIS地理データ（INSEE / IGN）</a></div>`;
 setSidebar(`<div class="section"><div class="label">${title}</div>
 <select id="metric">${list.map((m,i)=>`<option value="${m[0]}">${m[1]}</option>`).join("")}</select>
 <div id="metricDesc" class="metric-desc"></div></div>
-<div class="section"><div class="note">${kind==="community"?"年齢と世帯構成を、Toulouse市内のIRISごとに比較します。":"所得・貧困と住宅の特徴を、Toulouse市内のIRISごとに比較します。"}<br><br>IRISはINSEEが市内の地域差を見るために使う統計上の区域で、人口はおおむね2,000人規模です。</div></div>
-<div class="section"><div class="source">出典：INSEE 公開データ<br>${dataYear}<br><br>※地図の色は地域差を見るための相対的な表示です。地域の良し悪しや安全性を直接示すものではありません。</div></div>
+<div class="section"><div class="note"><strong>色の見方</strong><br>色が濃いほど、選択した指標の値が高い地域です。<br>指標によって「高い」の意味は異なるため、色だけで地域の良し悪しを判断しないでください。<br><br>${kind==="community"?"年齢と世帯構成を、Toulouse市内のIRISごとに比較します。":"所得・貧困と住宅の特徴を、Toulouse市内のIRISごとに比較します。"}<br><br>IRISはINSEEが地域差を見るために使う統計上の区域で、人口はおおむね2,000人規模です。</div></div>
+<div class="section"><div id="legend" class="legend-card"></div></div>
+<div class="section"><div class="source"><strong>データの出典</strong><br>${sourceHtml}<br><br>※統計値は公的統計をもとに表示しています。色分けは地域差を見やすくするための相対的な表示です。<br>※生活水準・貧困率はFilosofi 2021年、人口・世帯・住宅はINSEE 2022年のデータです。</div></div>
 <div id="status" class="status"></div><div id="error" class="error"></div>`);
 $("metric").addEventListener("change",()=>renderIris(kind));
 renderIris(kind);
@@ -205,12 +224,16 @@ features=(key==="living_standard"||key==="poverty_rate")?(incomeData?.features||
 }
 const vals=features.map(f=>metricValue(f,key)).filter(v=>v!=null);
 if(!features.length){showError("INSEEデータをまだ読み込めません。GitHub Actionsの実行後に再読み込みしてください。");return}
-const min=Math.min(...vals),max=Math.max(...vals);
-const style=f=>{const v=metricValue(f,key);const t=v==null?0.08:(max===min?0.5:(v-min)/(max-min));return{color:"#777",weight:1,fillColor:v==null?"#cbd5e1":palette(t),fillOpacity:.72}};
+if(!vals.length){showError("この指標の値がありません。");return}
+const min=Math.min(...vals),max=Math.max(...vals),mid=min+(max-min)/2;
+const style=f=>{const v=metricValue(f,key);const t=v==null?0.03:(max===min?0.5:(v-min)/(max-min));return{color:"#777",weight:1,fillColor:v==null?"#e5e7eb":palette(t),fillOpacity:.72}};
+const legendValue=v=>formatMetric(kind,key,v).replace("/年","");
+$("legend").innerHTML=`<div class="legend-title">${escapeHtml(def[1])}（${escapeHtml(def[2])}）</div><div class="gradient-bar"></div><div class="legend-labels"><span>${legendValue(min)}</span><span>${legendValue(mid)}</span><span>${legendValue(max)}</span></div><div class="legend-note">低い ← 地域差 → 高い<br>灰色：データなし</div>`;
 irisLayer=L.geoJSON({type:"FeatureCollection",features},{style, onEachFeature:(f,l)=>{
 const p=f.properties,v=metricValue(f,key);
-l.bindPopup(`<div class="popup-title">${escapeHtml(p.name||p.iris)}</div><div class="popup-row"><strong>${escapeHtml(def[1])}：</strong>${formatMetric(kind,key,v)}</div><div class="popup-row"><strong>IRIS：</strong>${escapeHtml(p.iris)}</div>`);
-l.bindTooltip(escapeHtml(p.name||p.iris),{sticky:true});
+const value=v==null?"データなし":formatMetric(kind,key,v);
+l.bindPopup(`<div class="popup-title">${escapeHtml(p.name||p.iris)}</div><div class="popup-row">${escapeHtml(def[1])}</div><div class="popup-main-value">${escapeHtml(value)}</div><div class="popup-sub">${escapeHtml(def[2])}・${escapeHtml(def[3])}</div><div class="popup-section"><div class="popup-row"><strong>IRIS：</strong>${escapeHtml(p.iris)}</div><div class="popup-link">この色は、選択した指標の地域内での相対的な値を示しています。</div></div>`);
+l.bindTooltip(`${escapeHtml(p.name||p.iris)}：${escapeHtml(value)}`,{sticky:true});
 }}).addTo(map);
 const bounds=irisLayer.getBounds();if(bounds.isValid())map.fitBounds(bounds.pad(.04));
 $("status").textContent=`表示中：${features.length}地域 / 値あり：${vals.length}地域`;
