@@ -53,9 +53,21 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
 .source-box a{color:#426b95;text-decoration:underline}
 
 @media(max-width:800px){
- header h1{font-size:19px}.container{display:block;height:auto}
- .sidebar{width:100%;border-right:0;border-bottom:1px solid #ddd;max-height:none}
- #map{width:100%;height:65vh;min-height:450px}
+ body{overflow-x:hidden}
+ header{padding:14px 14px 12px}
+ header h1{font-size:19px;line-height:1.35}
+ header p{font-size:12px;line-height:1.6}
+ .tabs{display:flex;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+ .tab{flex:0 0 auto;font-size:13px;padding:10px 12px}
+ .container{display:block;height:auto}
+ .sidebar{width:100%;box-sizing:border-box;border-right:0;border-bottom:1px solid #ddd;max-height:none}
+ #map{width:100%;height:62vh;min-height:430px}
+ .leaflet-control{font-size:12px}
+ .section{padding:11px 12px}
+ .popup-main-value{font-size:20px}
+}
+.crime-gradient{
+background:linear-gradient(to right,#f1f5f9,#dbeafe,#93c5fd,#60a5fa,#3b82f6,#2563eb,#1d4ed8,#1e40af,#1e3a8a,#172554)!important;
 }
 </style>
 </head>
@@ -81,7 +93,7 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
 <script>
 const $=id=>document.getElementById(id);
 let schools=[],schoolMarkers=[],irisLayer=null,currentTab="schools";
-let communityData=null,housingData=null,incomeData=null;
+let communityData=null,housingData=null,incomeData=null,crimeData=null,crimeLayer=null;
 
 const SAMPLE=[
 {uai:"SAMPLE001",name:"サンプル小学校",type:"elementaire",sector:"Public",ips:100,year:"2024-2025",lat:43.6047,lon:1.4442},
@@ -101,6 +113,9 @@ function schoolColor(ips){if(ips==null)return"#A7ADB5";if(ips<=79)return"#E84A5F
 function clearMap(){
  schoolMarkers.forEach(m=>map.removeLayer(m)); schoolMarkers=[];
  if(irisLayer){map.removeLayer(irisLayer);irisLayer=null}
+ if(crimeLayer){map.removeLayer(crimeLayer);crimeLayer=null}
+ const frame=document.getElementById("crimeFrame");
+ if(frame) frame.remove();
 }
 function setSidebar(html){$("sidebar").innerHTML=html}
 function setStatus(text){const el=$("status");if(el)el.textContent=text}
@@ -308,6 +323,7 @@ async function loadIris(){
 try{communityData=await loadJson("data/iris_community.json")}catch(e){console.error(e)}
 try{housingData=await loadJson("data/iris_housing.json")}catch(e){console.error(e)}
 try{incomeData=await loadJson("data/iris_income.json")}catch(e){console.error(e)}
+try{crimeData=await loadJson("data/crime_toulouse_2022.json")}catch(e){console.error(e)}
 }
 async function switchTab(tab){
 currentTab=tab;clearMap();document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
@@ -319,15 +335,21 @@ if(tab==="crime"){
     <div class="section">
       <div class="label">🔐 住宅侵入窃盗</div>
       <div class="note">
-        住宅への侵入窃盗および未遂について、フランス内務省SSMSIが公開している公式の地図を表示しています。<br><br>
-        このデータは、警察・国家憲兵隊が記録した<strong>住宅侵入窃盗＋未遂</strong>を対象とし、1,000戸あたりの年間発生率として表示されます。
+        フランス内務省SSMSIが公開する、<strong>住宅侵入窃盗＋未遂</strong>の公的データをトゥールーズについて表示しています。<br><br>
+        2022年のデータで、200m四方の区画をもとに10段階のクラスに集約されています。
       </div>
+    </div>
+    <div class="section">
+      <div class="label">色の見方</div>
+      <div class="gradient-bar crime-gradient"></div>
+      <div class="legend-labels"><span>低い</span><span>高い</span></div>
+      <div class="legend-note">SSMSIが2022年のトゥールーズ都市圏内で設定した10段階の相対クラスです。具体的な発生率（‰）そのものではありません。</div>
     </div>
     <div class="section">
       <div class="label">データについて</div>
       <div class="note">
-        細粒度データは200m四方の区画をもとに作成され、各都市圏・各年ごとに10段階のクラスに集約されています。<br><br>
-        現在公開されている細粒度データは<strong>2016〜2022年</strong>です。したがって、他のタブの最新データとは年度が異なります。
+        対象は警察・国家憲兵隊が記録した住宅侵入窃盗および未遂です。未届出の事案は含まれません。<br><br>
+        この細粒度データは、各都市圏・各年ごとに10段階のクラスに集約されるため、他の都市や年度のクラスと単純に比較するものではありません。
       </div>
     </div>
     <div class="section">
@@ -340,10 +362,25 @@ if(tab==="crime"){
     <div class="section">
       <div class="note small">このマップは公的データを見やすく表示することを目的としています。データの解釈や住む場所の判断は、利用者ご自身で行ってください。</div>
     </div>`);
-  setStatus("");
-  const map = document.getElementById("map");
-  map.innerHTML = `<iframe src="https://ssmsi.shinyapps.io/cambriolageslogementsechelleinfracommunale/" title="SSMSI 住宅侵入窃盗の都市内地図" style="width:100%;height:100%;min-height:680px;border:0;background:#fff" loading="lazy"></iframe>`;
-}
+  if(!crimeData?.features?.length){
+    setStatus("");
+    showError("住宅侵入窃盗データを読み込めませんでした。GitHub Actionsを実行してデータを生成してください。");
+    return;
+  }
+  const colors=["#f1f5f9","#dbeafe","#93c5fd","#60a5fa","#3b82f6","#2563eb","#1d4ed8","#1e40af","#1e3a8a","#172554"];
+  crimeLayer=L.geoJSON(crimeData,{
+    style:f=>{
+      const c=Number(f.properties?.class);
+      return {color:"#ffffff",weight:.7,fillColor:colors[Math.max(0,Math.min(9,c-1))],fillOpacity:.72};
+    },
+    onEachFeature:(f,l)=>{
+      const c=Number(f.properties?.class);
+      l.bindPopup(`<div class="popup-title">トゥールーズ</div><div class="popup-row">2022年・住宅侵入窃盗＋未遂</div><div class="popup-main-value">相対クラス ${c}/10</div><div class="popup-section">このクラスは、2022年のトゥールーズ都市圏内でSSMSIが設定した10段階の区分です。</div>`);
+    }
+  }).addTo(map);
+  const bounds=crimeLayer.getBounds();
+  if(bounds.isValid())map.fitBounds(bounds.pad(.04));
+  setStatus(`トゥールーズ：2022年・${crimeData.features.length}区画`);
 }
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>switchTab(b.dataset.tab)));
 
