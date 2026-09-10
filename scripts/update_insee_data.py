@@ -304,15 +304,14 @@ def read_income():
     return out
 
 def load_geometry():
-    # Use the Opendatasoft records API rather than the GeoJSON export endpoint.
-    # The export endpoint can return an empty result for a valid `where`
-    # expression depending on the current dataset export configuration.
-    # The records API exposes geo_shape directly and supports pagination.
+    # Use the annual IRIS geometry dataset.  The millesime dataset keeps
+    # historical IRIS geometries and is more reliable for selecting a
+    # specific geography/year than the current federated export.
     import urllib.parse
 
     base = (
         "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/"
-        "georef-france-iris/records"
+        "georef-france-iris-millesime/records"
     )
 
     features = []
@@ -321,7 +320,8 @@ def load_geometry():
 
     while True:
         params = {
-            "where": f'com_code="{TOULOUSE}"',
+            "where": f'iris_code LIKE "{TOULOUSE}%"',
+            "select": "iris_code,iris_name,com_code,com_name,geo_shape,year",
             "limit": str(limit),
             "offset": str(offset),
         }
@@ -330,24 +330,22 @@ def load_geometry():
         obj = json.loads(raw.decode("utf-8"))
 
         results = obj.get("results") or []
+        print(f"  Geometry API batch offset={offset}: {len(results)} records")
         if not results:
             break
 
         for record in results:
             p = record.get("fields") if isinstance(record.get("fields"), dict) else record
 
-            com = str(p.get("com_code") or "").strip()
             iris = str(p.get("iris_code") or "").strip()
-
-            if com != TOULOUSE or not iris.startswith(TOULOUSE):
+            com = str(p.get("com_code") or "").strip()
+            if not iris.startswith(TOULOUSE) or (com and com != TOULOUSE):
                 continue
 
             geo = p.get("geo_shape")
             if not geo:
                 continue
 
-            # Opendatasoft normally returns geo_shape as a GeoJSON geometry
-            # object. Handle a wrapped {"geometry": ...} form as well.
             if isinstance(geo, dict) and isinstance(geo.get("geometry"), dict):
                 geometry = geo["geometry"]
             else:
@@ -372,7 +370,7 @@ def load_geometry():
 
     if not features:
         raise RuntimeError(
-            "Toulouse IRIS geometry was not found via the Opendatasoft records API."
+            "Toulouse IRIS geometry was not found via the Opendatasoft millesime records API."
         )
 
     return features
