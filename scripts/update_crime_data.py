@@ -103,15 +103,42 @@ def main():
 
         print(f"  Class field: {field_names[class_idx]}")
 
+        # SSMSI stores the 10 classes as French text labels (for example
+        # "moins de 2,9", "2,9 à ...", "plus de ..."), not as numbers.
+        # Convert those labels to their ordinal class 1..10 without
+        # interpreting the underlying rate ourselves.
+        import re
+
+        def class_sort_key(value):
+            text = str(value or "").strip().lower().replace(",", ".")
+            nums = re.findall(r"\\d+(?:\\.\\d+)?", text)
+            if not nums:
+                return float("inf")
+            return float(nums[0])
+
+        ordered_rows = sorted(
+            city_rows,
+            key=lambda i: class_sort_key(records[i][class_idx])
+        )
+
+        # The Toulouse extract should contain exactly the 10 official
+        # SSMSI classes. The ordinal is only used to preserve the official
+        # low-to-high class order in the map.
+        if len(ordered_rows) != 10:
+            raise RuntimeError(
+                f"Expected 10 Toulouse SSMSI classes, got {len(ordered_rows)}."
+            )
+
         features = []
-        for i in city_rows:
+        for ordinal, i in enumerate(ordered_rows, start=1):
             geom = shapes[i].__geo_interface__
-            cls = int(float(records[i][class_idx]))
+            label = str(records[i][class_idx] or "").strip()
             features.append({
                 "type": "Feature",
                 "geometry": geom,
                 "properties": {
-                    "class": cls,
+                    "class": ordinal,
+                    "class_label": label,
                     "city": "Toulouse",
                     "year": 2022
                 }
