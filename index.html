@@ -39,6 +39,19 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
 .popup-link{font-size:11px;color:#526f8f}
 
 .iris-boundary{fill-opacity:.72;stroke:#777;stroke-width:1}
+.range-wrap{position:relative;height:30px;margin:8px 2px 2px}
+.range-track{position:absolute;left:0;right:0;top:12px;height:6px;border-radius:3px;background:linear-gradient(to right,#E84A5F 0%,#E84A5F 26.36%,#F58A2A 26.36%,#F58A2A 40%,#F6C445 40%,#F6C445 53.64%,#8CCB5E 53.64%,#8CCB5E 67.27%,#238B57 67.27%,#238B57 100%)}
+.range-wrap input[type=range]{position:absolute;left:0;top:4px;width:100%;height:22px;margin:0;background:transparent;pointer-events:none;appearance:none;-webkit-appearance:none}
+.range-wrap input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid #555;box-shadow:0 1px 3px rgba(0,0,0,.25);pointer-events:auto;cursor:pointer}
+.range-wrap input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid #555;box-shadow:0 1px 3px rgba(0,0,0,.25);pointer-events:auto;cursor:pointer}
+.range-values{display:flex;justify-content:space-between;font-size:11px;color:#555}
+.number-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+.number-row input{width:78px;padding:6px 7px;border:1px solid #ccc;border-radius:5px;font-size:12px}
+.definition-box{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:11px 12px;font-size:11px;line-height:1.75}
+.definition-box strong{font-size:12px}
+.source-box{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:11px 12px;font-size:10.5px;line-height:1.7}
+.source-box a{color:#426b95;text-decoration:underline}
+
 @media(max-width:800px){
  header h1{font-size:19px}.container{display:block;height:auto}
  .sidebar{width:100%;border-right:0;border-bottom:1px solid #ddd;max-height:none}
@@ -49,7 +62,7 @@ select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #ccc;border-r
 <body>
 <header>
 <h1>トゥールーズの住まい探しデータマップ</h1>
-<p>住む場所を決める際の参考として、フランスの公的データを4つの視点から地図で見られるようにしています。</p>
+<p>フランスの公的データを、住まい探しに使いやすいよう4つの視点から地図で見られるようにしています。データの解釈や判断は、利用する方ご自身で行ってください。</p>
 </header>
 
 <nav class="tabs">
@@ -105,10 +118,22 @@ setSidebar(`
 <div class="section"><div class="label">設置者</div>
 <label class="check-row"><input type="checkbox" id="public" checked>● 公立</label>
 <label class="check-row"><input type="checkbox" id="private" checked>■ 私立</label></div>
-<div class="section"><div class="label">IPS</div>
-<div style="font-size:11px;color:#777">現在のIPSフィルターをそのまま使用できます。</div>
+<div class="section"><div class="label">IPSの範囲</div>
+<div style="font-size:11px;color:#777;line-height:1.6">スライダーまたは数値入力でIPSの範囲を指定できます。</div>
+<div class="range-wrap">
+<div class="range-track"></div>
+<input type="range" id="ipsMinRange" min="50" max="160" value="50">
+<input type="range" id="ipsMaxRange" min="50" max="160" value="160">
+</div>
+<div class="range-values"><span>50</span><span>160</span></div>
 <div class="number-row"><input type="number" id="nMin" min="50" max="160" value="50"><span>〜</span><input type="number" id="nMax" min="50" max="160" value="160"></div></div>
-<div class="section"><div class="label">IPSの目安</div><div class="legend">
+<div class="section"><div class="label">IPSとは</div>
+<div class="definition-box">
+<strong>IPS（Indice de position sociale）</strong>は、保護者の職業・社会的カテゴリー（PCS）をもとに、児童・生徒の社会経済・文化的背景を把握するための統計指標です。<br><br>
+学校に通う子どもたちの社会的構成を、学校単位で表すために使われています。数値が高いほど、平均的に社会的に有利な背景を持つ子どもが多いことを示します。<br><br>
+※IPSそのものが、世帯収入・学力・教育の質・安全性を直接測定する指標ではありません。
+</div></div>
+<div class="section"><div class="label">IPSの区分</div><div class="legend">
 <div class="legend-item"><span class="legend-color" style="background:#E84A5F"></span>79以下</div>
 <div class="legend-item"><span class="legend-color" style="background:#F58A2A"></span>80〜94</div>
 <div class="legend-item"><span class="legend-color" style="background:#F6C445"></span>95〜109</div>
@@ -117,7 +142,17 @@ setSidebar(`
 <div class="legend-item"><span class="legend-color" style="background:#A7ADB5"></span>IPSなし（幼稚園など）</div>
 </div></div>
 <div class="section"><div class="label">マーカー</div><div class="legend">● 公立　　■ 私立</div></div>
-<div class="section"><div class="note">IPSは学校の教育の質や安全性を直接示す指標ではありません。学校に通う子どもたちの社会的・経済的背景を平均的に示す指標です。特に数ポイント程度の差は、過度に比較しないことをおすすめします。<br><br>対象：Toulouse Métropoleの37自治体</div></div>
+<div class="section"><div class="note"><strong>データについて</strong><br>
+小学校（élémentaire）のIPSについては、2025-2026年度のデータが現在公開されていないため、表示できる最新年度は2024-2025年度です。<br><br>
+対象：Toulouse Métropoleの37自治体
+</div></div>
+<div class="section"><div class="source-box"><strong>データの出典</strong><br>
+・<a href="https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/information/" target="_blank" rel="noopener">教育省「Annuaire de l'éducation」</a>（学校情報）<br>
+・<a href="https://data.education.gouv.fr/explore/dataset/fr-en-ips-ecoles-ap2022/information/" target="_blank" rel="noopener">教育省「Indices de position sociale des écoles」</a>（小学校IPS）<br>
+・<a href="https://data.education.gouv.fr/explore/dataset/fr-en-ips-colleges-ap2023/information/" target="_blank" rel="noopener">教育省「Indices de position sociale des collèges」</a>（中学校IPS）<br>
+・<a href="https://data.education.gouv.fr/explore/dataset/fr-en-ips-lycees-ap2023/information/" target="_blank" rel="noopener">教育省「Indices de position sociale des lycées」</a>（高校IPS）<br>
+・<a href="https://www.education.gouv.fr/depp/l-indice-de-position-sociale-ips-357755" target="_blank" rel="noopener">教育省「L'indice de position sociale (IPS)」</a>（IPSの説明）
+</div></div>
 <div id="status" class="status"></div><div id="error" class="error"></div>`);
 setSchoolControls();
 }
@@ -126,10 +161,28 @@ function setSchoolControls(){
 const years=[...new Set(schools.map(s=>s.year).filter(Boolean))].sort((a,b)=>b.localeCompare(a));
 $("year").innerHTML='<option value="all">すべて</option>'+years.map(y=>`<option>${escapeHtml(y)}</option>`).join("");
 if(years.length)$("year").value=years[0];
-const events=["year","public","private"].map(id=>$(id)?.addEventListener("change",renderSchools));
-document.querySelectorAll(".type").forEach(x=>x.addEventListener("change",()=>{const all=[...document.querySelectorAll(".type")];$("allTypes").checked=all.every(y=>y.checked);renderSchools()}));
-$("allTypes").addEventListener("change",()=>{document.querySelectorAll(".type").forEach(x=>x.checked=$("allTypes").checked);renderSchools()});
-$("nMin").addEventListener("change",renderSchools);$("nMax").addEventListener("change",renderSchools);
+["year","public","private"].forEach(id=>$(id)?.addEventListener("change",renderSchools));
+document.querySelectorAll(".type").forEach(x=>x.addEventListener("change",()=>{
+const all=[...document.querySelectorAll(".type")];$("allTypes").checked=all.every(y=>y.checked);renderSchools()
+}));
+$("allTypes").addEventListener("change",()=>{
+document.querySelectorAll(".type").forEach(x=>x.checked=$("allTypes").checked);renderSchools()
+});
+
+const minRange=$("ipsMinRange"),maxRange=$("ipsMaxRange"),minInput=$("nMin"),maxInput=$("nMax");
+function syncFromRange(){
+let min=Number(minRange.value),max=Number(maxRange.value);
+if(min>max){if(document.activeElement===minRange)max=min;else min=max;}
+minRange.value=min;maxRange.value=max;minInput.value=min;maxInput.value=max;renderSchools();
+}
+function syncFromInput(){
+let min=Math.max(50,Math.min(160,Number(minInput.value)||50));
+let max=Math.max(50,Math.min(160,Number(maxInput.value)||160));
+if(min>max){if(document.activeElement===minInput)max=min;else min=max;}
+minInput.value=min;maxInput.value=max;minRange.value=min;maxRange.value=max;renderSchools();
+}
+minRange.addEventListener("input",syncFromRange);maxRange.addEventListener("input",syncFromRange);
+minInput.addEventListener("change",syncFromInput);maxInput.addEventListener("change",syncFromInput);
 renderSchools();
 }
 
@@ -150,46 +203,53 @@ marker.bindPopup(`<div class="popup-title">${escapeHtml(s.name)}</div><div class
 schoolMarkers.push(marker);
 });
 if($("status"))$("status").textContent=`表示中：${schoolMarkers.length}校 / データ：${schools.length}校`;
-if($("yearInfo"))$("yearInfo").innerHTML=year==="all"?"年度を選択すると、学校種ごとのIPSデータ状況を表示します。":`<strong>${escapeHtml(year)}年度</strong><br>・幼稚園（maternelle）：表示（IPSなし）`;
+if($("yearInfo"))$("yearInfo").innerHTML=year==="all"?"年度を選択すると、その年度の学校データを表示します。<br><br>※小学校（élémentaire）のIPSは2025-2026年度のデータが公開されていないため、最新は2024-2025年度です。":`<strong>${escapeHtml(year)}年度</strong><br>・幼稚園（maternelle）：学校位置を表示（IPSなし）<br>・小学校（élémentaire）：${year==="2025-2026"?"IPSデータは未公開。最新は2024-2025年度です。":"IPSデータを表示"}<br>・中学校（collège）：IPSデータを表示<br>・高校（lycée）：IPSデータを表示`;
 }
 
 const COMMUNITY_METRICS=[
-["age_0_14","0〜14歳","割合","2022年"],
-["age_15_29","15〜29歳","割合","2022年"],
-["age_30_44","30〜44歳","割合","2022年"],
-["age_45_59","45〜59歳","割合","2022年"],
-["age_60_74","60〜74歳","割合","2022年"],
-["age_75_plus","75歳以上","割合","2022年"],
-["single_household","単身世帯","割合","2022年"],
-["child_household","子どものいる世帯","割合","2022年"],
-["single_parent_household","ひとり親世帯","割合","2022年"]
+["age_0_14","0〜14歳","総人口に占める0〜14歳人口の割合","2022年","そのIRISに住む人口のうち、0〜14歳の人が占める割合です。"],
+["age_15_29","15〜29歳","総人口に占める15〜29歳人口の割合","2022年","そのIRISに住む人口のうち、15〜29歳の人が占める割合です。"],
+["age_30_44","30〜44歳","総人口に占める30〜44歳人口の割合","2022年","そのIRISに住む人口のうち、30〜44歳の人が占める割合です。"],
+["age_45_59","45〜59歳","総人口に占める45〜59歳人口の割合","2022年","そのIRISに住む人口のうち、45〜59歳の人が占める割合です。"],
+["age_60_74","60〜74歳","総人口に占める60〜74歳人口の割合","2022年","そのIRISに住む人口のうち、60〜74歳の人が占める割合です。"],
+["age_75_plus","75歳以上","総人口に占める75歳以上人口の割合","2022年","そのIRISに住む人口のうち、75歳以上の人が占める割合です。"],
+["single_household","単身世帯","総世帯数に占める単身世帯の割合","2022年","そのIRISの世帯のうち、1人で暮らす世帯が占める割合です。"],
+["child_household","子どものいる世帯","総世帯数に占める子どものいる世帯の割合","2022年","そのIRISの世帯のうち、子どものいる世帯が占める割合です。子どものいるカップル世帯と、ひとり親世帯を合わせて算出しています。"],
+["single_parent_household","ひとり親世帯","総世帯数に占めるひとり親世帯の割合","2022年","そのIRISの世帯のうち、ひとり親世帯が占める割合です。"]
 ];
 const HOUSING_METRICS=[
-["living_standard","生活水準","€/年・1人あたり換算","2021年"],
-["poverty_rate","貧困率","割合","2021年"],
-["old_housing","1990年以前に建てられた住宅","割合","2022年"],
-["house_rate","戸建て率","割合","2022年"],
-["owner_rate","持ち家率","割合","2022年"],
-["hlm_rate","社会住宅（HLM）率","割合","2022年"]
+["living_standard","生活水準","世帯の可処分所得を消費単位（UC）で調整した中央値","2021年","世帯の可処分所得を消費単位（UC）で割って算出する「niveau de vie（生活水準）」の中央値です。"],
+["poverty_rate","貧困率","貧困線を下回る人の割合","2021年","Filosofiにおける貧困率です。貧困線はフランス本土の所得中央値の60%に設定されています。"],
+["old_housing","1990年以前に建てられた住宅","主たる住居に占める割合","2022年","主たる住居のうち、1990年以前に建てられた住宅が占める割合です。"],
+["house_rate","戸建て率","主たる住居に占める戸建て住宅の割合","2022年","主たる住居のうち、戸建て住宅が占める割合です。"],
+["owner_rate","持ち家率","主たる住居に占める持ち家の割合","2022年","主たる住居のうち、所有者が居住している住宅が占める割合です。"],
+["hlm_rate","社会住宅（HLM）率","主たる住居に占めるHLM住宅の割合","2022年","主たる住居のうち、HLM（Habitation à loyer modéré）に分類される住宅が占める割合です。"]
 ];
 
 function metricSidebar(kind){
 const list=kind==="community"?COMMUNITY_METRICS:HOUSING_METRICS;
 const title=kind==="community"?"👨‍👩‍👧 住民・世帯構成":"🏠 住宅・所得";
-const dataYear=kind==="community"?"INSEE 人口・世帯データ（2022年）":"INSEE 住宅データ（2022年）＋Filosofi（2021年）";
 const sourceHtml=kind==="community"?`
 <div><strong>INSEE 人口統計（2022年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8647014" target="_blank" rel="noopener">人口構造・人口推移（IRIS）</a></div>
 <div style="margin-top:7px"><strong>INSEE 世帯・家族統計（2022年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8647008" target="_blank" rel="noopener">カップル・家族・世帯（IRIS）</a></div>
-<div style="margin-top:7px"><strong>IRIS境界</strong><br><a href="https://public.opendatasoft.com/explore/dataset/georef-france-iris/information/" target="_blank" rel="noopener">IRIS地理データ（INSEE / IGN）</a></div>`:`
+<div style="margin-top:7px"><strong>IRIS境界（INSEE / IGN）</strong><br><a href="https://www.data.gouv.fr/datasets/contours-iris-r-2" target="_blank" rel="noopener">Contours... IRIS®</a></div>`:`
 <div><strong>INSEE 住宅統計（2022年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8647012" target="_blank" rel="noopener">住宅（IRIS）</a></div>
 <div style="margin-top:7px"><strong>INSEE Filosofi 所得統計（2021年）</strong><br><a href="https://www.insee.fr/fr/statistiques/8229323" target="_blank" rel="noopener">Filosofi（IRIS）</a></div>
-<div style="margin-top:7px"><strong>IRIS境界</strong><br><a href="https://public.opendatasoft.com/explore/dataset/georef-france-iris/information/" target="_blank" rel="noopener">IRIS地理データ（INSEE / IGN）</a></div>`;
+<div style="margin-top:7px"><strong>IRIS境界（INSEE / IGN）</strong><br><a href="https://www.data.gouv.fr/datasets/contours-iris-r-2" target="_blank" rel="noopener">Contours... IRIS®</a></div>`;
 setSidebar(`<div class="section"><div class="label">${title}</div>
-<select id="metric">${list.map((m,i)=>`<option value="${m[0]}">${m[1]}</option>`).join("")}</select>
+<select id="metric">${list.map(m=>`<option value="${m[0]}">${m[1]}</option>`).join("")}</select>
 <div id="metricDesc" class="metric-desc"></div></div>
-<div class="section"><div class="note"><strong>色の見方</strong><br>色が濃いほど、選択した指標の値が高い地域です。<br>指標によって「高い」の意味は異なるため、色だけで地域の良し悪しを判断しないでください。<br><br>${kind==="community"?"年齢と世帯構成を、Toulouse市内のIRISごとに比較します。":"所得・貧困と住宅の特徴を、Toulouse市内のIRISごとに比較します。"}<br><br>IRISはINSEEが地域差を見るために使う統計上の区域で、人口はおおむね2,000人規模です。</div></div>
+<div class="section"><div class="definition-box"><strong>このタブについて</strong><br>
+このマップは、フランスの公的統計をIRIS単位で地図上に表示したものです。色が濃いほど、選択した指標の値が高い地域です。<br><br>
+${kind==="community"?"年齢は総人口、世帯指標は総世帯数を分母としています。":"住宅指標は主たる住居を基本とし、生活水準・貧困率はFilosofiの定義に基づきます。"}<br><br>
+データの解釈や住む場所の判断は、このデータを見る方ご自身で行ってください。
+</div></div>
 <div class="section"><div id="legend" class="legend-card"></div></div>
-<div class="section"><div class="source"><strong>データの出典</strong><br>${sourceHtml}<br><br>※統計値は公的統計をもとに表示しています。色分けは地域差を見やすくするための相対的な表示です。<br>※生活水準・貧困率はFilosofi 2021年、人口・世帯・住宅はINSEE 2022年のデータです。</div></div>
+<div class="section"><div id="metricDefinition" class="definition-box"></div></div>
+<div class="section"><div class="source-box"><strong>データの出典</strong><br>${sourceHtml}<br><br>
+※統計値の年度は指標によって異なります。各指標の説明と凡例をご確認ください。<br>
+※色分けは地域差を見やすくするための相対的な表示です。色の濃淡そのものに「良い・悪い」の意味はありません。
+</div></div>
 <div id="status" class="status"></div><div id="error" class="error"></div>`);
 $("metric").addEventListener("change",()=>renderIris(kind));
 renderIris(kind);
@@ -206,7 +266,7 @@ return (kind==="community"?COMMUNITY_METRICS:HOUSING_METRICS).find(x=>x[0]===key
 function metricValue(feature,key){const v=feature.properties?.[key];return typeof v==="number"&&Number.isFinite(v)?v:null}
 function formatMetric(kind,key,v){
 if(v==null)return"データなし";
-if(key==="living_standard")return Math.round(v).toLocaleString("fr-FR")+" €/年";
+if(key==="living_standard")return Math.round(v).toLocaleString("fr-FR")+" €/年・UC";
 return v.toFixed(1)+" %";
 }
 function palette(t){
@@ -216,7 +276,7 @@ const i=Math.max(0,Math.min(4,Math.floor(t*5)));return stops[Math.min(i,4)];
 function renderIris(kind){
 clearMap();
 const key=$("metric").value, def=getMetricDef(kind,key);
-$("metricDesc").textContent=`${def[1]}：${def[2]}／${def[3]}`;
+$("metricDesc").textContent=`${def[2]}／${def[3]}`;
 let features;
 if(kind==="community")features=communityData?.features||[];
 else{
@@ -227,12 +287,13 @@ if(!features.length){showError("INSEEデータをまだ読み込めません。G
 if(!vals.length){showError("この指標の値がありません。");return}
 const min=Math.min(...vals),max=Math.max(...vals),mid=min+(max-min)/2;
 const style=f=>{const v=metricValue(f,key);const t=v==null?0.03:(max===min?0.5:(v-min)/(max-min));return{color:"#777",weight:1,fillColor:v==null?"#e5e7eb":palette(t),fillOpacity:.72}};
-const legendValue=v=>formatMetric(kind,key,v).replace("/年","");
-$("legend").innerHTML=`<div class="legend-title">${escapeHtml(def[1])}（${escapeHtml(def[2])}）</div><div class="gradient-bar"></div><div class="legend-labels"><span>${legendValue(min)}</span><span>${legendValue(mid)}</span><span>${legendValue(max)}</span></div><div class="legend-note">低い ← 地域差 → 高い<br>灰色：データなし</div>`;
+const legendValue=v=>formatMetric(kind,key,v);
+$("legend").innerHTML=`<div class="legend-title">${escapeHtml(def[1])}</div><div class="gradient-bar"></div><div class="legend-labels"><span>${legendValue(min)}</span><span>${legendValue(mid)}</span><span>${legendValue(max)}</span></div><div class="legend-note">低い ← 地域差 → 高い<br>灰色：データなし</div>`;
+$("metricDefinition").innerHTML=`<strong>${escapeHtml(def[1])}の意味</strong><br>${escapeHtml(def[4])}`;
 irisLayer=L.geoJSON({type:"FeatureCollection",features},{style, onEachFeature:(f,l)=>{
 const p=f.properties,v=metricValue(f,key);
 const value=v==null?"データなし":formatMetric(kind,key,v);
-l.bindPopup(`<div class="popup-title">${escapeHtml(p.name||p.iris)}</div><div class="popup-row">${escapeHtml(def[1])}</div><div class="popup-main-value">${escapeHtml(value)}</div><div class="popup-sub">${escapeHtml(def[2])}・${escapeHtml(def[3])}</div><div class="popup-section"><div class="popup-row"><strong>IRIS：</strong>${escapeHtml(p.iris)}</div><div class="popup-link">この色は、選択した指標の地域内での相対的な値を示しています。</div></div>`);
+l.bindPopup(`<div class="popup-title">${escapeHtml(p.name||p.iris)}</div><div class="popup-row">${escapeHtml(def[1])}</div><div class="popup-main-value">${escapeHtml(value)}</div><div class="popup-sub">${escapeHtml(def[2])}・${escapeHtml(def[3])}</div><div class="popup-section">${escapeHtml(def[4])}</div><div class="popup-section"><div class="popup-row"><strong>IRIS：</strong>${escapeHtml(p.iris)}</div><div class="popup-link">この色は、選択した指標の地域内での相対的な値を示しています。</div></div>`);
 l.bindTooltip(`${escapeHtml(p.name||p.iris)}：${escapeHtml(value)}`,{sticky:true});
 }}).addTo(map);
 const bounds=irisLayer.getBounds();if(bounds.isValid())map.fitBounds(bounds.pad(.04));
