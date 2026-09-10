@@ -386,6 +386,7 @@ if(tab==="crime"){
   if(bounds.isValid())map.fitBounds(bounds.pad(.04));
   setStatus(`トゥールーズ：2022年・${crimeData.features.length}区画`);
 }
+}
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>switchTab(b.dataset.tab)));
 
 (async()=>{
