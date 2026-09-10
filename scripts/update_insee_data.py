@@ -18,13 +18,11 @@ INSEE_URLS = {
     "income": "https://www.insee.fr/fr/statistiques/fichier/8229323/BASE_TD_FILO_IRIS_2021_DISP_CSV.zip",
 }
 
-# Geometry is the 2024 IRIS reference used for the 2022 RP population/family/housing data.
-# It is sourced from the INSEE/IGN-attributed Opendatasoft geographic reference.
-IRIS_GEO_URL = (
-    "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/"
-    "georef-france-iris/exports/geojson"
-    "?where=com_code%3D%2231555%22"
-)
+# Geometry is fetched from the official IGN WFS service.
+# The 2022 INSEE population/family/housing data use the geography
+# in force on 2024-01-01. The IGN IRIS layer is used only for geometry.
+IRIS_WFS_URL = "https://data.geopf.fr/wfs/ows"
+IRIS_WFS_TYPENAME = "STATISTICALUNITS.IRIS:contours_iris"
 
 def download(url):
     req = urllib.request.Request(
@@ -304,53 +302,71 @@ def read_income():
     return out
 
 def load_geometry():
-    # Use the annual IRIS geometry dataset.  The millesime dataset keeps
-    # historical IRIS geometries and is more reliable for selecting a
-    # specific geography/year than the current federated export.
+    """Fetch Toulouse IRIS polygons from the official IGN WFS as GeoJSON.
+
+    The previous Opendatasoft endpoints returned zero records in GitHub
+    Actions even though the dataset exists. IGN's public WFS exposes the
+    official Contours...IRIS layer directly and supports an INSEE commune
+    filter.
+    """
     import urllib.parse
 
-    base = (
-        "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/"
-        "georef-france-iris-millesime/records"
-    )
-
     features = []
-    offset = 0
-    limit = 100
+    start_index = 0
+    count = 500
 
     while True:
         params = {
-            "where": f'iris_code LIKE "{TOULOUSE}%"',
-            "select": "iris_code,iris_name,com_code,com_name,geo_shape,year",
-            "limit": str(limit),
-            "offset": str(offset),
+            "SERVICE": "WFS",
+            "VERSION": "2.0.0",
+            "REQUEST": "GetFeature",
+            "TYPENAMES": IRIS_WFS_TYPENAME,
+            "SRSNAME": "EPSG:4326",
+            "OUTPUTFORMAT": "application/json",
+            "CQL_FILTER": f"INSEE_COM='{TOULOUSE}'",
+            "COUNT": str(count),
+            "STARTINDEX": str(start_index),
         }
-        url = base + "?" + urllib.parse.urlencode(params)
+
+        url = IRIS_WFS_URL + "?" + urllib.parse.urlencode(params)
         raw = download(url)
         obj = json.loads(raw.decode("utf-8"))
 
-        results = obj.get("results") or []
-        print(f"  Geometry API batch offset={offset}: {len(results)} records")
-        if not results:
+        batch = obj.get("features") or []
+        print(
+            f"  IGN IRIS WFS batch start={start_index}: "
+            f"{len(batch)} features"
+        )
+
+        if not batch:
             break
 
-        for record in results:
-            p = record.get("fields") if isinstance(record.get("fields"), dict) else record
-
-            iris = str(p.get("iris_code") or "").strip()
-            com = str(p.get("com_code") or "").strip()
-            if not iris.startswith(TOULOUSE) or (com and com != TOULOUSE):
+        for feature in batch:
+            if not isinstance(feature, dict):
                 continue
 
-            geo = p.get("geo_shape")
-            if not geo:
+            props = feature.get("properties") or {}
+
+            iris = str(
+                props.get("CODE_IRIS")
+                or props.get("code_iris")
+                or props.get("IRIS")
+                or ""
+            ).strip()
+
+            com = str(
+                props.get("INSEE_COM")
+                or props.get("insee_com")
+                or props.get("DEPCOM")
+                or ""
+            ).strip()
+
+            if len(iris) != 9 or iris[:5] != TOULOUSE:
+                continue
+            if com and com != TOULOUSE:
                 continue
 
-            if isinstance(geo, dict) and isinstance(geo.get("geometry"), dict):
-                geometry = geo["geometry"]
-            else:
-                geometry = geo
-
+            geometry = feature.get("geometry")
             if not isinstance(geometry, dict) or not geometry.get("type"):
                 continue
 
@@ -359,18 +375,43 @@ def load_geometry():
                 "geometry": geometry,
                 "properties": {
                     "iris": iris,
-                    "name": p.get("iris_name") or iris,
-                    "commune": p.get("com_name") or "Toulouse",
+                    "name": (
+                        props.get("NOM_IRIS")
+                        or props.get("nom_iris")
+                        or props.get("LIBIRIS")
+                        or iris
+                    ),
+                    "commune": "Toulouse",
                 },
             })
 
-        if len(results) < limit:
+        # WFS 2.0 pagination. If fewer than COUNT are returned, this was
+        # the final batch.
+        if len(batch) < count:
             break
-        offset += limit
+
+        start_index += count
 
     if not features:
         raise RuntimeError(
-            "Toulouse IRIS geometry was not found via the Opendatasoft millesime records API."
+            "Toulouse IRIS geometry was not found via the official IGN WFS."
+        )
+
+    # Avoid duplicate IRIS polygons if the service returns overlapping
+    # pagination results.
+    unique = {}
+    for feature in features:
+        iris = feature["properties"]["iris"]
+        unique[iris] = feature
+
+    features = list(unique.values())
+
+    print(f"  Toulouse IRIS geometry features: {len(features)}")
+
+    if len(features) < 100:
+        raise RuntimeError(
+            f"Only {len(features)} Toulouse IRIS geometries were returned; "
+            "expected roughly 150. Aborting to avoid publishing incomplete data."
         )
 
     return features
