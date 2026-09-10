@@ -314,7 +314,36 @@ currentTab=tab;clearMap();document.querySelectorAll(".tab").forEach(b=>b.classLi
 if(tab==="schools")renderSchoolSidebar();
 if(tab==="community")metricSidebar("community");
 if(tab==="housing")metricSidebar("housing");
-if(tab==="crime"){setSidebar(`<div class="section"><div class="label">🔐 住宅侵入窃盗</div><div class="note">このタブは次の実装で追加します。公式SSMSIの住宅侵入窃盗・未遂の細粒度データを使用する予定です。</div></div>`);setStatus("")}
+if(tab==="crime"){
+  setSidebar(`
+    <div class="section">
+      <div class="label">🔐 住宅侵入窃盗</div>
+      <div class="note">
+        住宅への侵入窃盗および未遂について、フランス内務省SSMSIが公開している公式の地図を表示しています。<br><br>
+        このデータは、警察・国家憲兵隊が記録した<strong>住宅侵入窃盗＋未遂</strong>を対象とし、1,000戸あたりの年間発生率として表示されます。
+      </div>
+    </div>
+    <div class="section">
+      <div class="label">データについて</div>
+      <div class="note">
+        細粒度データは200m四方の区画をもとに作成され、各都市圏・各年ごとに10段階のクラスに集約されています。<br><br>
+        現在公開されている細粒度データは<strong>2016〜2022年</strong>です。したがって、他のタブの最新データとは年度が異なります。
+      </div>
+    </div>
+    <div class="section">
+      <div class="label">出典</div>
+      <div class="note">
+        <a href="https://www.interieur.gouv.fr/Interstats/Datavisualisation/Cambriolages-de-logements-a-l-echelle-infracommunale" target="_blank" rel="noopener">フランス内務省 SSMSI：住宅侵入窃盗の都市内地図</a><br>
+        <a href="https://www.data.gouv.fr/datasets/fonds-des-cartes-de-chaleur-des-taux-de-cambriolages-et-tentatives-de-cambriolages-de-logements-enregistres-par-la-police-et-la-gendarmerie-nationales" target="_blank" rel="noopener">data.gouv.fr：公式データセット</a>
+      </div>
+    </div>
+    <div class="section">
+      <div class="note small">このマップは公的データを見やすく表示することを目的としています。データの解釈や住む場所の判断は、利用者ご自身で行ってください。</div>
+    </div>`);
+  setStatus("");
+  const map = document.getElementById("map");
+  map.innerHTML = `<iframe src="https://ssmsi.shinyapps.io/cambriolageslogementsechelleinfracommunale/" title="SSMSI 住宅侵入窃盗の都市内地図" style="width:100%;height:100%;min-height:680px;border:0;background:#fff" loading="lazy"></iframe>`;
+}
 }
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>switchTab(b.dataset.tab)));
 
