@@ -302,107 +302,93 @@ def read_income():
     return out
 
 def load_geometry():
-    """Fetch Toulouse IRIS polygons from the official IGN WFS as GeoJSON.
+    """Fetch Toulouse IRIS polygons from the official IGN WFS.
 
-    The previous Opendatasoft endpoints returned zero records in GitHub
-    Actions even though the dataset exists. IGN's public WFS exposes the
-    official Contours...IRIS layer directly and supports an INSEE commune
-    filter.
+    The IGN WFS rejects the CQL_FILTER used by the previous version.
+    We therefore use a geographic BBOX to retrieve the IRIS polygons
+    around Toulouse, then filter the returned features by INSEE commune/
+    IRIS code in Python.
     """
     import urllib.parse
 
+    # Approximate Toulouse city bounding box in WGS84.
+    # The final selection is still done by INSEE commune/IRIS code.
+    bbox = "1.35,43.50,1.55,43.70"
+
+    params = {
+        "SERVICE": "WFS",
+        "VERSION": "2.0.0",
+        "REQUEST": "GetFeature",
+        "TYPENAMES": IRIS_WFS_TYPENAME,
+        "SRSNAME": "EPSG:4326",
+        "OUTPUTFORMAT": "application/json",
+        "BBOX": bbox + ",EPSG:4326",
+        "COUNT": "1000",
+    }
+
+    url = IRIS_WFS_URL + "?" + urllib.parse.urlencode(params)
+    raw = download(url)
+    obj = json.loads(raw.decode("utf-8"))
+
+    all_features = obj.get("features") or []
+    print(f"  IGN IRIS WFS BBOX returned: {len(all_features)} features")
+
     features = []
-    start_index = 0
-    count = 500
 
-    while True:
-        params = {
-            "SERVICE": "WFS",
-            "VERSION": "2.0.0",
-            "REQUEST": "GetFeature",
-            "TYPENAMES": IRIS_WFS_TYPENAME,
-            "SRSNAME": "EPSG:4326",
-            "OUTPUTFORMAT": "application/json",
-            "CQL_FILTER": f"INSEE_COM='{TOULOUSE}'",
-            "COUNT": str(count),
-            "STARTINDEX": str(start_index),
-        }
+    for feature in all_features:
+        if not isinstance(feature, dict):
+            continue
 
-        url = IRIS_WFS_URL + "?" + urllib.parse.urlencode(params)
-        raw = download(url)
-        obj = json.loads(raw.decode("utf-8"))
+        props = feature.get("properties") or {}
 
-        batch = obj.get("features") or []
-        print(
-            f"  IGN IRIS WFS batch start={start_index}: "
-            f"{len(batch)} features"
-        )
+        iris = str(
+            props.get("CODE_IRIS")
+            or props.get("code_iris")
+            or props.get("CODEIRIS")
+            or props.get("IRIS")
+            or ""
+        ).strip()
 
-        if not batch:
-            break
+        com = str(
+            props.get("INSEE_COM")
+            or props.get("insee_com")
+            or props.get("DEPCOM")
+            or props.get("CODE_COM")
+            or ""
+        ).strip()
 
-        for feature in batch:
-            if not isinstance(feature, dict):
-                continue
+        # Toulouse IRIS codes are 9 digits and start with commune code 31555.
+        # Prefer the IRIS code because it is the stable join key used by
+        # the INSEE statistical datasets.
+        if not iris.startswith(TOULOUSE):
+            continue
+        if len(iris) != 9:
+            continue
+        if com and com != TOULOUSE:
+            continue
 
-            props = feature.get("properties") or {}
+        geometry = feature.get("geometry")
+        if not isinstance(geometry, dict) or not geometry.get("type"):
+            continue
 
-            iris = str(
-                props.get("CODE_IRIS")
-                or props.get("code_iris")
-                or props.get("IRIS")
-                or ""
-            ).strip()
+        features.append({
+            "type": "Feature",
+            "geometry": geometry,
+            "properties": {
+                "iris": iris,
+                "name": (
+                    props.get("NOM_IRIS")
+                    or props.get("nom_iris")
+                    or props.get("LIBIRIS")
+                    or iris
+                ),
+                "commune": "Toulouse",
+            },
+        })
 
-            com = str(
-                props.get("INSEE_COM")
-                or props.get("insee_com")
-                or props.get("DEPCOM")
-                or ""
-            ).strip()
-
-            if len(iris) != 9 or iris[:5] != TOULOUSE:
-                continue
-            if com and com != TOULOUSE:
-                continue
-
-            geometry = feature.get("geometry")
-            if not isinstance(geometry, dict) or not geometry.get("type"):
-                continue
-
-            features.append({
-                "type": "Feature",
-                "geometry": geometry,
-                "properties": {
-                    "iris": iris,
-                    "name": (
-                        props.get("NOM_IRIS")
-                        or props.get("nom_iris")
-                        or props.get("LIBIRIS")
-                        or iris
-                    ),
-                    "commune": "Toulouse",
-                },
-            })
-
-        # WFS 2.0 pagination. If fewer than COUNT are returned, this was
-        # the final batch.
-        if len(batch) < count:
-            break
-
-        start_index += count
-
-    if not features:
-        raise RuntimeError(
-            "Toulouse IRIS geometry was not found via the official IGN WFS."
-        )
-
-    # Avoid duplicate IRIS polygons if the service returns overlapping
-    # pagination results.
     unique = {}
     for feature in features:
-        iris = feature["properties"]["iris"]
-        unique[iris] = feature
+        unique[feature["properties"]["iris"]] = feature
 
     features = list(unique.values())
 
