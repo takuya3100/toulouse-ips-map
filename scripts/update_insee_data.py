@@ -216,9 +216,12 @@ def read_housing():
 
 def read_income():
     fields, reader = read_zip_csv(download(INSEE_URLS["income"]))
-    iris_field = find_field(fields, ["IRIS", "CODGEO", "CODE_IRIS"])
-    med = find_field(fields, ["MED", "MEDIANE"])
-    poverty = find_field(fields, ["TP60", "TAUXPAUV"])
+    iris_field = find_field(fields, ["IRIS", "CODE_IRIS", "CODGEO"])
+    # Filosofi 2021 actual variable names.
+    # DISP_MED_A21 = median disposable income per consumption unit
+    # DISP_TP60_A21 = poverty rate at 60% of the metropolitan median
+    med = find_field(fields, ["DISP_MED_A21", "DISP_MED", "MED", "MEDIANE", "MEDIAN"])
+    poverty = find_field(fields, ["DISP_TP60_A21", "DISP_TP60", "TP60", "TAUXPAUV", "POV"])
     if not iris_field or not med or not poverty:
         raise RuntimeError(
             f"Income variables not found: iris={iris_field}, med={med}, poverty={poverty}"
